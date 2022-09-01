@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-A7GEKAJ"
   DTS:CreatorName="DESKTOP-A7GEKAJ\beki2"
-  DTS:DTSID="{823CB5BB-32B8-499D-9731-B453B11C28DC}"
+  DTS:DTSID="{2CA2FE03-DF96-4C44-A994-55756C9C3401}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="12.0.2430.0"
   DTS:LocaleID="4105"
   DTS:ObjectName="PKG_LoadData_From_Sales_force"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{6FCBB9D8-B602-4DA5-8F93-BA952AFF0B30}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{20A0E76F-85BB-4AF6-9854-4C70D8227479}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
