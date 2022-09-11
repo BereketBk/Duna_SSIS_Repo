@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-A7GEKAJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAAB2JgMxYcUtTWUqqdMDkprnhu2h/RWZa/xhV9rgO0/nwAAAAAOgAAAAAIAACAAAAC9kksq1paOWteniPZZ0q9T/x8/fI5WZE6nKWVolidOLJAAAADp9HrUR3kiji027KuNpMygseo27RgcpT3KE/lf2QqPGWCkLElH9hfBSohNcQw+pf1zWpvwFclrC7e9yKAJwLEei4nLmBEOby/b6YhH1tnIGhun3720pNNzoEv4lcvsIwjfykWOC8bOwGHL6c4a7Rdh/gcIpzEJMnPR9DAe19198h2cH7lizb8f5lHhKjNJJsNAAAAAptsMikHGjXXkB2HVzNgJlKbYXP3ddXEaOQtoCGBOd9cy783PKZ/H975BQ/5Cf772ENyqlJqwScG0O2g2dQZY7w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAADdcEHF/4oEDqdlb/bswsdFF1Cd4/322f2jolhZKKHwsAAAAAAOgAAAAAIAACAAAABqbCFFcICve/dRAPxol9rlV+JTCquudnVB/xN0WhaqrpAAAACAuX6vRinduA8gJNifmYX0br79WWNek4b1Fk0rCum548KAxUGe2H8o6GQuwV14fWGnjRDIS0H5ONspFOeTUywPeU+OH0+kcLU9yb179czIEUiPINFIlvwWuo3wztL4pf/BTooO37qC1EJD0AiY1jjXBSvjpRUDwrUd25W0gRQzEf198RmUQOq7Fv11RIIWJV9AAAAA/a6s83Z48/g06NjLGsyF9aNV3VJ3OwjPVzUWj4cdaw7LEA1Y0s8Gz4a+8X0N46tqh6he01yvg/zLsngw3sGO3A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -35,9 +35,116 @@
           <SSIS:Package SSIS:Name="Pkg_Bereket_Weldemichael_LendingQB.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Pkg_Bereket_Weldemichael_QuickenLoan.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
-        <SSIS:ConnectionManagers />
+        <SSIS:ConnectionManagers>
+          <SSIS:ConnectionManager SSIS:Name="OData Source.conmgr" />
+        </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
-          <SSIS:ProjectConnectionParameters />
+          <SSIS:ProjectConnectionParameters>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.AuthType">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.ConnectByProxy">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDcyNTI2MTAwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzMzOTAxMDk1OTM5NzYsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDcwNzg2M2EwLTEwNzQtMjAwMC04NGE1LTUyYTczNGZjNWRkYSw3MDc4NjNhMC0xMDc0LTIwMDAtODRhNS01MmE3MzRmYzVkZGEsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxmRU5OZ053UGgyanlnSW5rVUw0bjVoeWxBRlU0bTJOZTVEMW5rejlZdE10TWQwakc0TlZyeFRocVluV3VuMHN1U3VtWCs5N2FhVVI5aHBFN1FQSEtUVCt0NGgzRHNRaG1Zd2l6ajZ1ZUFER0phTS9mRUh1b2ZNMDdqRjlUam1MVy9mMjBVUmtJWnErZWRkWlM3QVh3MzZlS0lISWZyV1h3UWF4UEV3a2N0a3puUzhWSDJwQk5sK2pQWU1HR0tBNWVzOXBXSWpnQ0g0OE9FTXRRcXdrenBqUXJBa1ZZUkUvdW1vZnZnck9oYURBaVpsbFE2QnRXa1lmVSt2SXoyOFRjY0hmU2FIT3NiRW56aXZodmpLeEJqVVI3UXFuRll1NnYzMzEzRDVwSmVPdnAxaHBkaXRBdXZ0S2VZdXhVQUVCRHh4NndiRmd4L1VEdytvR3JZQWlyRGc9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.TargetServerVersion">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">150</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.Url">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.OData Source.UserName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+          </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
             <SSIS:PackageMetaData SSIS:Name="Pkg_Bereket_Weldemichael_LendingWise.dtsx">
               <SSIS:Properties>
@@ -228,10 +335,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">29</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D1C49A58-0AC2-4A37-B406-589A57299079}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3F4D9532-049C-44C9-9E53-5BE6B65479AF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -383,110 +490,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.AuthType">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">4</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.ConnectByProxy">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDcyMjE0NjIwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzMwNzg2MjgzNjE2NzMsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLGJiNWE2M2EwLTUwZjAtMjAwMC04NmViLTYzZmRiZTBmN2VkZixiYjVhNjNhMC01MGYwLTIwMDAtODZlYi02M2ZkYmUwZjdlZGYsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxnRnAzMjFDWTZrZ216U2RYcnhVQm45NWNCVjF6TnZkbmtZMkRMT2g1V24yMEJ1R2JBS2lVd1hnUEx6aG5sZjBwUThVT2RlSC94S09ObjBmVFhYNVhsL3RpK3g3cElMOEZ5VHJxN0oxblozVWs5V1hHcUY1WUMyRlhVU3dKd3BmNUx1M3VNbHBVSGdvZENWRGx3M0UxVUNhTEVaZzNqU1ZCT3ZpaitHWUFYZEQ4RlFEanIrY1hJcWRYMXJ3TDlUZm5qNEZsSlRFSElFR0wwTkJCb096TzdWRlYvdHRHOEFPNTF6eUI2R2dHZmRWaDY0MWRNdVloWWd1VXpsNDNKVUNuNGU2YXVZMUZ0alUyc3M1UmZMcVJ0M0lPNnJhVWowOTdaTG12SEpiY0t3ZHJqR21CL0dwK0hoQTdiVWNCcnJ3SnNkQkJWYXFPQjFZeXFtUVQ0REt6MUE9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.Password">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.TargetServerVersion">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">150</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.Url">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.OData Source.UserName">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
