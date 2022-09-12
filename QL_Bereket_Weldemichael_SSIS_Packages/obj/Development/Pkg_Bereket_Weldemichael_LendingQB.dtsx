@@ -11,21 +11,41 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{A45ADB8D-3C3F-453E-9BDB-8111A5840999}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{31814242-1938-4410-802A-D95E1A9C8B88}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{C4ACAE15-33EE-42A2-9171-70A8BB938EAF}"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{0C5CC472-B3C8-4A1E-BCD7-D634F95AD966}"
       DTS:ObjectName="DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C4ACAE15-33EE-42A2-9171-70A8BB938EAF}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0C5CC472-B3C8-4A1E-BCD7-D634F95AD966}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OData Source]"
+      DTS:CreationName="ODATA"
+      DTS:DTSID="{7BCB354F-0918-41B6-A2DE-A4236839DCE2}"
+      DTS:ObjectName="OData Source">
+      <DTS:ObjectData>
+        <ODataConnectionManager
+          UserName="sharepoint@dunatk.com"
+          Url="https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc"
+          ConnectionString="Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie=&quot;SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDc0ODE3NTgwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzU2ODE1ODYzNDUwMTIsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLGY4NTI2NGEwLTIwYTYtMjAwMC04NGE1LTU5YjMyNGM1MGYzZixmODUyNjRhMC0yMGE2LTIwMDAtODRhNS01OWIzMjRjNTBmM2YsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxXUS9Pdzl1Z0VZb0d4cWE2UlBkeXlIM3VYeFIya0tSYkhiMkJKcTZ5TmUyYlRXOGhXMWVLM2dDbVgzSU1lTUN5NW56Mm5JK2tzdWxQZkg2c3p4VGNOZ09VWHNTRXh4NkRxeEFSdVJsbUxFVk1za2g2Z0hISC9CUTJzeDZaanpQYnlueHVXMmxYb3BlY3k3NUZEOEg4cmIweDMxM243TDJzemVJcUd1QzgrbEFuQStvY1pDdW1GQVpnK0FXcEl4ZW1sZ1dpZWNnbnhIWmJtL283ZTY4RTJ3QUcyWGdwRVcwOWpCZnl4Q1RmdGZteURMZElhUUc0UnJJbiswM1ZQOVVwZ3JpT25LRThwTkY0eC9ERzM3ZFh4RERNMXV6NDRrTFFKOW8vb3ZqeVZwY1ludEdwWkRwRGpLZUorYlpZQjhQZ1pWS0h2bnVGWGZmT0tsQ3oyVEV1Ymc9PTwvU1A+&quot;;User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104"
+          MicrosoftOnlineServicesAuth="True"
+          AuthType="MicrosoftOnlineService"
+          ConnectByProxy="False">
+          <Password
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACw6avIsHTKW/VS7ufZqz9Xs8gWVRuXEGpKidY/bo3VegAAAAAOgAAAAAIAACAAAACeIH8P4YZw8XozfiU8qSrCUJTrsYY5UePsmfezx4hf7iAAAAA74c4m8+aF4I7uUUvem6woClEifRfsKvVIPn/X2uxta0AAAAB9ScWETC/yJuAex2qseF7Z44KqO2bC+jyAQ4J5SAvwWfoJwFIJDHyrHqSbo2VJT/MPjDhnk4CIxheBIwqAJku2</Password>
+        </ODataConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -34,9 +54,8 @@
     <DTS:Executable
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
-      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{CCD77B80-C328-4A67-85A7-378A941FA485}"
+      DTS:DTSID="{7A2373E3-180D-4CAA-9E82-5F9406EEC404}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -85,8 +104,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OData Source.Connections[Connection]"
-                  connectionManagerID="{35AF162D-0444-459E-8A6E-A93034568F84}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OData Source]"
+                  connectionManagerID="Package.ConnectionManagers[OData Source]"
+                  connectionManagerRefId="Package.ConnectionManagers[OData Source]"
                   description="Connection to OData Service"
                   name="Connection" />
               </connections>
@@ -3052,7 +3071,7 @@
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="34.2857148695971,45.1176476915811" />
+          TopLeft="142.857145289986,73.4117657354547" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3064,25 +3083,37 @@
         <NodeLayout
           Size="143.2,41.6"
           Id="Package\Data Flow Task\OData Source"
-          TopLeft="177.777780805315,131.529413609356" />
+          TopLeft="212,60" />
         <NodeLayout
-          Size="140.8,41.6"
+          Size="170.4,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="674.920646414466,137.494119502434" />
+          TopLeft="715,75" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output]"
-          TopLeft="320.977780805315,155.311766555895">
+          TopLeft="355.2,80.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="353.94286560915,0"
+              EndConnector="359.8,15"
               Start="0,0"
-              End="346.44286560915,0">
+              End="352.3,15">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="346.44286560915,0" />
+                    End="175.9,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="175.9,0"
+                    Point2="179.9,0"
+                    Point3="179.9,4" />
+                  <mssgle:LineSegment
+                    End="179.9,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.9,11"
+                    Point2="179.9,15"
+                    Point3="183.9,15" />
+                  <mssgle:LineSegment
+                    End="352.3,15" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
