@@ -11,22 +11,21 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{97CC8F22-199A-4AEE-B65E-93CFD932FA23}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{FA9AF77B-83FC-4938-9FF8-B05E8F4B23F7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Test_Sharepoint_Stg]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
       DTS:CreationName="OLEDB"
-      DTS:DelayValidation="True"
-      DTS:DTSID="{0C5CC472-B3C8-4A1E-BCD7-D634F95AD966}"
-      DTS:ObjectName="Test_Sharepoint_Stg">
+      DTS:DTSID="{CED73653-EFF5-41C2-838A-09AC3C77CF5C}"
+      DTS:ObjectName="DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0C5CC472-B3C8-4A1E-BCD7-D634F95AD966}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CED73653-EFF5-41C2-838A-09AC3C77CF5C}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -35,8 +34,9 @@
     <DTS:Executable
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{7A2373E3-180D-4CAA-9E82-5F9406EEC404}"
+      DTS:DTSID="{EFBD34EE-4322-4B5D-8DA0-D50EF14BBDB9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -85,7 +85,7 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OData Source.Connections[Connection]"
-                  connectionManagerID="{7BCB354F-0918-41B6-A2DE-A4236839DCE2}:external"
+                  connectionManagerID="{3795CD2B-8A77-4C29-8DE9-F2DCB404F3A7}:external"
                   connectionManagerRefId="Project.ConnectionManagers[OData Source]"
                   description="Connection to OData Service"
                   name="Connection" />
@@ -1981,8 +1981,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Test_Sharepoint_Stg]"
-                  connectionManagerRefId="Package.ConnectionManagers[Test_Sharepoint_Stg]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3052,7 +3052,7 @@
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="142.857145289986,73.4117657354547" />
+          TopLeft="158.571431271884,72.647059842377" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3064,37 +3064,37 @@
         <NodeLayout
           Size="143.2,41.6"
           Id="Package\Data Flow Task\OData Source"
-          TopLeft="212,60" />
+          TopLeft="202,137" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="763,69" />
+          TopLeft="749,151" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output]"
-          TopLeft="355.2,80.8">
+          TopLeft="345.2,157.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="407.8,9"
+              EndConnector="403.8,14"
               Start="0,0"
-              End="400.3,9">
+              End="396.3,14">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="199.9,0" />
+                    End="197.9,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="199.9,0"
-                    Point2="203.9,0"
-                    Point3="203.9,4" />
+                    Point1="197.9,0"
+                    Point2="201.9,0"
+                    Point3="201.9,4" />
                   <mssgle:LineSegment
-                    End="203.9,5" />
+                    End="201.9,10" />
                   <mssgle:CubicBezierSegment
-                    Point1="203.9,5"
-                    Point2="203.9,9"
-                    Point3="207.9,9" />
+                    Point1="201.9,10"
+                    Point2="201.9,14"
+                    Point3="205.9,14" />
                   <mssgle:LineSegment
-                    End="400.3,9" />
+                    End="396.3,14" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-A7GEKAJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAAYSW2PnxxJKuAME8VTI9uKZzO4Yr+vHlCDcv8fkTlZigAAAAAOgAAAAAIAACAAAAAvzA8So/ySr+KTXEE/UztrH9J6fUrUCxhhL+bFuLZBz5AAAACxyaIvL+wFbVWGgAAyPP7UGsZFYddAMpP4+Z17Zo5RYDPDfe6hICtEtAfUp3BiUGVyZYdieuFxud4XR66e2VIepts5qgaobgA8C+hLngio6uDPokwYBykmY0pU0Y1AT6N+kizcnLXs4aJhlbGwl7zrLmv0cMkv1YpkczZjA1urRzWQdbWpDwxV3Jew81iyxQtAAAAAD/yYe+tYUJibVl3mbcpFV9S2Mt/tUEhJKfETkG7XoBriSgxpW+h9wkk/dacm8xCStsGW3Bg7vmy8vJ+lWLAd3g==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAADBUV3GXtOhPDVH+NuqbnAuQOcTE/PTpWrlvLvuLTG08gAAAAAOgAAAAAIAACAAAACFh2++qIQizW8fXO0Qo5OqKG48JG+6VNoW7gZfvPQm0pAAAAAHh+EBEIqCsdpCLFRG+A9ev02ZVovfWc9KOTPh1vmPwQXCqL2rlBDNYiRBh6cPQgQU2XvSKkHTWxCI0uXfrXD2JsIGkCoN/zxhOIPkDTcMVZYFSBcyPlUslJhmHJmSo3cQX2wobOcBei4u9AWrrc+Rra5y2GpYXWcUS7d/Cdm4V8g0XjJRHHF0EAMQVQOlIHlAAAAAe/nDewc5bpo53sVPicJTbxiGrljDFpKEetRkxxnuPE2w3t9rObKzwP0F3dAaAPhrADtMsDBhBmq+psiG0WQKdQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -70,7 +70,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.OData Source.Password">
+            <SSIS:Parameter SSIS:Name="CM.OData Source.ConnectionString">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -80,7 +80,8 @@
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDc0ODU0NTgwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzU3MTg1ODU4MTY0OTIsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDdmNTY2NGEwLTkwZmYtMjAwMC01YmJjLWUzZTA1MDU5MDJiMSw3ZjU2NjRhMC05MGZmLTIwMDAtNWJiYy1lM2UwNTA1OTAyYjEsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxWRzRGQ0ZJMjZieXdIbTErczl1czU5SXRmUjdmT0MrK3hSeXpnaS9TMU9uSDhrU29WeGxpYlQyTFFxcWo0ZjVlRkxGcEhlMnRwTlhnOWRuWGt0S3J3bGtRWjJzOFlGVUhHZys1YlRpSVdDRFNmUXZHU05ObTl1NmFrSnd0clNGQklOb0VGbFJRdUsrS3E1bEw0cDdGd0hCR0Mwck8rMFpnUEVFZTRuNXZkeVVuUDVsbGdRc3p3aTlVNzFRQkQxUzJpQlF1OUFTS1BIRnQ3aU9IN3Y5SWZzaUM4RlJrWitTbmZBSFlNUnFLbjg5Y2VYUVhhbW14OFk2ZndZN2dLWGNzeGE4RmtVNU1YU3Y1WGdHckhheTF0bW5oUFB6cGM3ZGUrSU5weUw4RGRDUXFSdTJ2UkVLckNuUFNCYXV3cUZDUUdXZXNHL0h2S0RIT0dIaXJ1WUVBK3c9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -97,36 +98,6 @@
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Value">150</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.OData Source.Url">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.OData Source.UserName">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
@@ -320,17 +291,17 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">54</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">60</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{97CC8F22-199A-4AEE-B65E-93CFD932FA23}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FA9AF77B-83FC-4938-9FF8-B05E8F4B23F7}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -345,7 +316,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -356,11 +327,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0C5CC472-B3C8-4A1E-BCD7-D634F95AD966}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CED73653-EFF5-41C2-838A-09AC3C77CF5C}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.ConnectRetryCount">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.ConnectRetryCount">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -375,7 +346,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.ConnectRetryInterval">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.ConnectRetryInterval">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -390,7 +361,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.ConnectUsingManagedIdentity">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.ConnectUsingManagedIdentity">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -405,7 +376,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.InitialCatalog">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -420,7 +391,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.Password">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.Password">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -434,7 +405,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -449,7 +420,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.ServerName">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.ServerName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -464,7 +435,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Test_Sharepoint_Stg.UserName">
+                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
