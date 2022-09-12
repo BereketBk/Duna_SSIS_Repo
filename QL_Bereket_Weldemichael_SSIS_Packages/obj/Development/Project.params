@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
-    SSIS:Name="Par_URL">
+    SSIS:Name="ODataSource_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{6328b1c6-3261-4f00-8df9-ceabc3b9a1fb}</SSIS:Property>
+        SSIS:Name="ID">{59a0f025-0765-4210-80d5-ec30d7f4d913}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -16,16 +16,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc</SSIS:Property>
+        SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDc0ODE5MzcwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzU2ODMzNzkyODk2NzUsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDI0NTM2NGEwLWMwNzYtMjAwMC01YmJjLWU2OWFkZTliZWY1NSwyNDUzNjRhMC1jMDc2LTIwMDAtNWJiYy1lNjlhZGU5YmVmNTUsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxLM2IxTGF4d3ptWG5nK2lvYk9USmpXTEhxYm9jNy9KWnpJTVVUSnlhUWlCVWU0R1ZMVDRKYzRKVG1sY0Q0RVdYWUNJcGxGZjhYUU5YdjVsMmJyTzE0Q0ZPVy9Dc2xDMFRhclFnVVhUWWQrUXl5RS9jOE1mQWZIcU5IMnNSNkkyak52Zi9YdFQ2YWxuRURyWTZndjdwb3pBK0JrMlhMb3ZHaXRHamVCN2JxRW5UbVBlNUJJNWRieXpYOThka1dJNHAvcXVNb05MSUhBc0orYzBvZmhhODF1VktmMGdoYUEzWWpNS0h5dWM4cjNyenZSa0xGNjRxUHJmemdpUHZBc3NRbEU1Q0pweHJjZ2NlQ2FQdmhyVHliN05Gbi9DQnRrSkE1eFFPSTh1K3ZhMm4yQ0dKcmlxZS95ZXFRbHZEY0RpRi80d3o1T3VwMkIybUVyeHdRQThITXc9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="Par_UserName">
+    SSIS:Name="UserName">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{e40307d3-338d-484b-b7cb-ff3e8e282a29}</SSIS:Property>
+        SSIS:Name="ID">{6ffbb945-3845-4cf1-b7a6-d0da8e9f9a04}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -46,7 +46,7 @@
     SSIS:Name="Password">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{86666029-b692-454d-ab4a-c5204cdbac06}</SSIS:Property>
+        SSIS:Name="ID">{c9986b03-9af1-4401-81e4-dfa2c4672dd0}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
