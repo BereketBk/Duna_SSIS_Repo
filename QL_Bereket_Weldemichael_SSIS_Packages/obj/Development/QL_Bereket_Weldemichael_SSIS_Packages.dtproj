@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-A7GEKAJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAABOCCGfITdUdYcAtMcBOXdGncj6g+f7StDWgAA/B2HQcgAAAAAOgAAAAAIAACAAAAB9MkyHyeCtRDEdjwpXspiHBSUMuxT0hQ8DulaEWQmytpAAAACaPaFD7qfX4cHUHIJYZyZhGxZ7YRLApB+bkArEMjTOjoO5dmYlRtMWT3suGO1j220heDvbqGlfCUY6yH2oPhUTSXsQOaHwWoaMGKFBcmC2Idkby1auQ3DzDuzueQWIQjgTlvHkN8OdEQWFXt4V3s5bZsVgLOYgVYdqWcbC3MhuNJTOw5Ozv+swQJ572+M2ar5AAAAAs/WaWOwuDnxUhLjvvxQDaH8Vy3hPKTzO3QP1mo+Mw3wyqUKWmBLVbzH9SRUyk+4XhiJJEUcGi8AG03uJGrX9zw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAADKCypIQsWD0neQhRMrLY4E3xq80YKOZ+jUoXNEpOHAogAAAAAOgAAAAAIAACAAAAC2ZKsojiy7z2tzk8QMsJihmbj/Ac4dhFNB0XUbU2O7zpAAAAAB/qfPUDDFqGj6YrIixEDoGOA/j61Rh2DY8mSe206828F8dQwb2hDJS7M21zuY4Hm4qNsCF8EwnsQuIdpZSF5JojrW7ORqZWXtXV4WAb5uAXS3R9YWfHoGo0kvbS/EDezQIIOEyZMLeS5hADxoAW8agAa7euLSZIwImRZBwkHiqDla5ZjFh6HIG+Fv/xhUU81AAAAA5OBd6IZjAfzUFpR99HyytW+7dAMiyllrQriNE1UTwTYLEnfnAOzVTq6BsnfX9q6e6kOdIL9UojMa/4Cq4700JQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -97,21 +97,6 @@
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Value">https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.OData Source.UserName">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -306,10 +291,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">93</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">98</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{63336F5A-39E5-400F-84E4-672FDA248790}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{24D525FB-14C8-447C-8C6E-61EAF1D1C5F0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

@@ -8,6 +8,8 @@
     DTS:Name="ConnectionString">@[$Project::ODataSource_ConnectionString]</DTS:PropertyExpression>
   <DTS:PropertyExpression
     DTS:Name="Password">@[$Project::ODataSource_Password]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::ODataSource_UserName]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <ODataConnectionManager
       UserName="sharepoint@dunatk.com"
@@ -17,7 +19,7 @@
       AuthType="MicrosoftOnlineService"
       ConnectByProxy="False">
       <Password
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAADzYnnsZQwj6t5BMu8Y+JAISGjx3vEK58VV+JKsfk7zigAAAAAOgAAAAAIAACAAAAAqBopmeWotoqQRby2lnevL096HcooyJCUtStfc5z5v4TAAAADWyEdOG33uRAJAGUKmLJn+yEBMduvh2w71RjxAJnI3MmguaciT48XWm1BeoME2UDVAAAAAMjwcUagpC6PMMYDop4u1AKuvbKrOeY7j6aY1Rx82z9NWJkeCoqQC4xTiVlLcz9YC0llzx2yuXfJNDv0h0n41lw==</Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAACQfnaf6cWDCs3MGubP+ALqXe1Nidu9a57wWHhpDEpn0wAAAAAOgAAAAAIAACAAAAAHNJJJ0eh3NSGD59fymosCQjxD0UDRJceXK6MH2CXzRDAAAAC0EgZAwY0iX5z6HmXm5gmVta8jJtUY55SzjWHxm228eaREBtW9Meh2DhtOKRsSDYhAAAAAPV813v2741u2Nz6xvJWAVWssCbzgvc8t/WFr8T3vLOU2xaHxYOV8ugbX2+J8gHYyhxtWidem6fjjhkeNX64GDw==</Password>
     </ODataConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

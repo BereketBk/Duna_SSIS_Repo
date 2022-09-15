@@ -38,7 +38,28 @@
         SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAABGjRyjIZ5XyJK07Lhrx5j+/FhyH+4wVhcJX2D0f/rFsgAAAAAOgAAAAAIAACAAAACoO+gUssvqM1oI3pU4b7iqx7EHeXMUsXPp4hp0NVS9P4AAAACtQrBxfSiez+l2iONXAJfU0L7x4qNIyw/VLV7RzjGQIKOyheZH7o6v0qsR09Hj9RNyWEVimM+MO1vC3sy4UJ1d1pNPO4qYzdhR6M8YkfgHJfUoecKzQQzbzi9LSIg7JqT/cSw28fquqe6b6I19cDFKTRGZwWJTHcUPZBfsxs2l70AAAADEveVWK6oXKD7RerxGtKly40E1UNHseok3XJNDDFs7fI9zsv3nURGyEEu4bnawZYLqUVdc6EKuLNdyP6R1CnjW</SSIS:Property>
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAABZ2B9Eoy9Ub3Cv0cHscMbkuQonezGyDJGZxLzgJfjeJQAAAAAOgAAAAAIAACAAAAAvQHqbbt9FSbCs3g47bYYenb1YbsYYT8cCDYE9qru89oAAAACokgO/5srTSMbCgG95T12EK4p3716p38jA4aLj2V4QFjswlPlzAbIeSXzEvSf4mIVNPYps5EUeK3boqjh11XKESzLrjSRSWrd5doYpMcxVq6954e96SIaOLA4c/PqWtjmFhGFdqh91BEP6o9DHE6/ndzYBQW2//fQQUQ6kmauJaEAAAAD9wurx76AiHLOVbB6o8Trkkkyt3TSTJUuzHd7hHKrzG/r3vvcb2nooSWslfPPq8TpGmP99Jh3HpbSl7xl0S/6T</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="ODataSource_UserName">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{00ff11f3-4075-44d6-8e71-e5410e3a7861}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
