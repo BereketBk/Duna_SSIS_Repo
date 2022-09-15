@@ -11,21 +11,33 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="60"
-  DTS:VersionGUID="{FA9AF77B-83FC-4938-9FF8-B05E8F4B23F7}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{63336F5A-39E5-400F-84E4-672FDA248790}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{CED73653-EFF5-41C2-838A-09AC3C77CF5C}"
-      DTS:ObjectName="DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase">
+      DTS:DTSID="{688C4AA8-4FFD-4F8F-B147-A8B598A3EDC6}"
+      DTS:ObjectName="DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=MyDatabase;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CED73653-EFF5-41C2-838A-09AC3C77CF5C}DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=QL_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{688C4AA8-4FFD-4F8F-B147-A8B598A3EDC6}DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Stg_Bereket_Weldemicahel_Conn_Mngr]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{460F09EE-30A9-4765-95DA-6A4F9FE14DB1}"
+      DTS:ObjectName="Stg_Bereket_Weldemicahel_Conn_Mngr">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=QL_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{460F09EE-30A9-4765-95DA-6A4F9FE14DB1}DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -46,6 +58,72 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Data Flow Task\Audit"
+              componentClassID="Microsoft.Lineage"
+              contactInfo="Audit;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Includes data about the environment in which the package runs. Map system variables to new output columns. For example, add the name of the computer and operator to the data flow."
+              name="Audit">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Audit.Inputs[Audit Input 1]"
+                  name="Audit Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Audit.Outputs[Audit Output 1]"
+                  exclusionGroup="1"
+                  name="Audit Output 1"
+                  synchronousInputId="Package\Data Flow Task\Audit.Inputs[Audit Input 1]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[LoadDate]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[LoadDate]"
+                      name="LoadDate">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">4</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[LoadedBy]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[LoadedBy]"
+                      name="LoadedBy">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">5</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[SourceName]"
+                      dataType="wstr"
+                      length="64"
+                      lineageId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[SourceName]"
+                      name="SourceName">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies which audit item this column produces."
+                          name="LineageItemSelected"
+                          typeConverter="LineageItemSelected">2</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Data Flow Task\OData Source"
               componentClassID="Microsoft.ManagedComponentHost"
@@ -85,7 +163,7 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OData Source.Connections[Connection]"
-                  connectionManagerID="{3795CD2B-8A77-4C29-8DE9-F2DCB404F3A7}:external"
+                  connectionManagerID="{A2E0422F-3526-44EA-B5C3-DA3A11CE5EDA}:external"
                   connectionManagerRefId="Project.ConnectionManagers[OData Source]"
                   description="Connection to OData Service"
                   name="Connection" />
@@ -1938,7 +2016,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Test_Sharepoint_Conn]</property>
+                  name="OpenRowset">[Stg_Bereket_Weldemichael_QL]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1981,8 +2059,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.MyDatabase]"
+                  connectionManagerID="Package.ConnectionManagers[Stg_Bereket_Weldemicahel_Conn_Mngr]"
+                  connectionManagerRefId="Package.ConnectionManagers[Stg_Bereket_Weldemicahel_Conn_Mngr]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2594,6 +2672,26 @@
                       cachedName="Path"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Path]"
                       lineageId="Package\Data Flow Task\OData Source.Outputs[Output].Columns[Path]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      cachedDataType="date"
+                      cachedName="LoadDate"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      lineageId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[LoadDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoadedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="LoadedBy"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadedBy]"
+                      lineageId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[LoadedBy]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SourceName]"
+                      cachedDataType="wstr"
+                      cachedLength="64"
+                      cachedName="SourceName"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      lineageId="Package\Data Flow Task\Audit.Outputs[Audit Output 1].Columns[SourceName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2997,6 +3095,20 @@
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Path]"
                       dataType="nText"
                       name="Path" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadedBy]"
+                      dataType="wstr"
+                      length="15"
+                      name="LoadedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="64"
+                      name="SourceName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3028,15 +3140,46 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Output]"
+              refId="Package\Data Flow Task.Paths[Audit Output 1]"
               endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Audit Output 1"
+              startId="Package\Data Flow Task\Audit.Outputs[Audit Output 1]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Output]"
+              endId="Package\Data Flow Task\Audit.Inputs[Audit Input 1]"
               name="Output"
               startId="Package\Data Flow Task\OData Source.Outputs[Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DEC8DB5E-E9A5-4865-86EB-0EFB137B676B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{688C4AA8-4FFD-4F8F-B147-A8B598A3EDC6}"
+          SQLTask:SqlStatementSource="exec udp_Stg_Bereket_Weldemichael_QL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{29CD1C20-E8C3-476C-9F7B-7F236F4D3DD0}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -3048,11 +3191,49 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="158.571431271884,72.647059842377" />
+          TopLeft="282.857147674171,197.294120414034" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="237.857146907826,45.1176476915815" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="319.057146907826,86.7176476915815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.0000007663454,110.576472722453"
+              Start="0,0"
+              End="39.0000007663454,103.076472722453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.2882363612265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.2882363612265"
+                    Point2="0,55.2882363612265"
+                    Point3="4,55.2882363612265" />
+                  <mssgle:LineSegment
+                    End="35.0000007663454,55.2882363612265" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.0000007663454,55.2882363612265"
+                    Point2="39.0000007663454,55.2882363612265"
+                    Point3="39.0000007663454,59.2882363612265" />
+                  <mssgle:LineSegment
+                    End="39.0000007663454,103.076472722453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3060,41 +3241,79 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Data Flow Task\OData Source"
-          TopLeft="202,137" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="749,151" />
+          TopLeft="466.349214291085,227.712421494235" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Data Flow Task\OData Source"
+          TopLeft="163.650796437751,37.8104580466173" />
+        <NodeLayout
+          Size="102.4,41.6"
+          Id="Package\Data Flow Task\Audit"
+          TopLeft="312.222227539335,124.738563784816" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Output]"
-          TopLeft="345.2,157.8">
+          TopLeft="235.250796437751,79.4104580466173">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="403.8,14"
+              EndConnector="128.171431101585,45.3281057381987"
               Start="0,0"
-              End="396.3,14">
+              End="128.171431101585,37.8281057381987">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="197.9,0" />
+                    End="0,18.6640528690994" />
                   <mssgle:CubicBezierSegment
-                    Point1="197.9,0"
-                    Point2="201.9,0"
-                    Point3="201.9,4" />
+                    Point1="0,18.6640528690994"
+                    Point2="0,22.6640528690994"
+                    Point3="4,22.6640528690994" />
                   <mssgle:LineSegment
-                    End="201.9,10" />
+                    End="124.171431101585,22.6640528690994" />
                   <mssgle:CubicBezierSegment
-                    Point1="201.9,10"
-                    Point2="201.9,14"
-                    Point3="205.9,14" />
+                    Point1="124.171431101585,22.6640528690994"
+                    Point2="128.171431101585,22.6640528690994"
+                    Point3="128.171431101585,26.6640528690994" />
                   <mssgle:LineSegment
-                    End="396.3,14" />
+                    End="128.171431101585,37.8281057381987" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Audit Output 1]"
+          TopLeft="363.422227539335,166.338563784816">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="188.12698675175,61.3738577094187"
+              Start="0,0"
+              End="188.12698675175,53.8738577094187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6869288547094" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.6869288547094"
+                    Point2="0,30.6869288547094"
+                    Point3="4,30.6869288547094" />
+                  <mssgle:LineSegment
+                    End="184.12698675175,30.6869288547094" />
+                  <mssgle:CubicBezierSegment
+                    Point1="184.12698675175,30.6869288547094"
+                    Point2="188.12698675175,30.6869288547094"
+                    Point3="188.12698675175,34.6869288547094" />
+                  <mssgle:LineSegment
+                    End="188.12698675175,53.8738577094187" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
