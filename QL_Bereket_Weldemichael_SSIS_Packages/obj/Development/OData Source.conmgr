@@ -5,6 +5,8 @@
   DTS:DTSID="{A2E0422F-3526-44EA-B5C3-DA3A11CE5EDA}"
   DTS:CreationName="ODATA">
   <DTS:PropertyExpression
+    DTS:Name="AuthType">@[$Project::ODataSource_AuthType]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
     DTS:Name="ConnectionString">@[$Project::ODataSource_ConnectionString]</DTS:PropertyExpression>
   <DTS:PropertyExpression
     DTS:Name="Password">@[$Project::ODataSource_Password]</DTS:PropertyExpression>
@@ -19,7 +21,7 @@
       AuthType="MicrosoftOnlineService"
       ConnectByProxy="False">
       <Password
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAADPfAvJ7d7tCQHAPAZ342LoHUiMxzZYjBEY5DDWkBKaaAAAAAAOgAAAAAIAACAAAACkMs/6joCCDEktx+KsfT7KWIYeYKYFTSiOlxKIfEadHTAAAAAjzrj5Thc6kojUzmek0+2lHcHd4jk4cMDRaANr5f1JhS7hKgWSc7E07l2mqeygyDJAAAAAtQnatV64AKp+3bugtD/TCMgQVG0w5dRTPbizJ2pcsj5Fh0u4xPZRuFR0Tn+8hiicD8D0tSPQ22Eyuet6Y2jd9g==</Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAABhLvQGixDM+pOXD6qL7dIr9dTsuaenDSqIXg+0skGSjQAAAAAOgAAAAAIAACAAAABFjfIstz2tI7cjIwaKv0CMbyEb8Y3LyjZBDCFAB2lDbjAAAAAvM4ZVfYxRp66QMVZx+/q209wIb2qdFlwXDj1XgKYF7E2gavKzoKOzPR01F19RWz1AAAAAzEjyD1PFnemDBj79Q5HlRI0+sAGEHAHANhqCpjVgEsMu8iIx4ji0zApvW81FVvqC7Evwe1DuApEl5bKfa1N2qA==</Password>
     </ODataConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
