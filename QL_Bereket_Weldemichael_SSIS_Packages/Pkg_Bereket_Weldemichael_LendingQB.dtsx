@@ -11,11 +11,23 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="116"
-  DTS:VersionGUID="{61B19ADE-2674-4E99-B968-F0080C887DAB}">
+  DTS:VersionBuild="162"
+  DTS:VersionGUID="{D9F6C873-3DDF-43CD-9DE8-98DABAFEA37C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{23FF89B5-0F1E-48BF-9C25-A735019EE8B0}"
+      DTS:ObjectName="DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=QL_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{23FF89B5-0F1E-48BF-9C25-A735019EE8B0}DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[QL_BK_Wmichael_Stg_Conn]"
       DTS:CreationName="OLEDB"
@@ -29,10 +41,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager 1]"
       DTS:CreationName="SMTP"
-      DTS:DTSID="{A56ECB38-1EF1-43BA-AE9E-A47311DC2723}"
-      DTS:ObjectName="SMTP Connection Manager">
+      DTS:DTSID="{F3CE77B9-9493-4C07-9400-4340E15736D9}"
+      DTS:ObjectName="SMTP Connection Manager 1">
       <DTS:ObjectData>
         <SmtpConnectionManager
           ConnectionString="SmtpServer=587;UseWindowsAuthentication=True;EnableSsl=False;"
@@ -48,7 +60,7 @@
       DTS:ObjectName="Par_FromEmail">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">qletlteam@gmail.com</DTS:Property>
+        DTS:Name="ParameterValue">bwmichael07@gmail.com</DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -84,13 +96,15 @@
       DTS:ObjectName="Par_ToEmail">
       <DTS:Property
         DTS:DataType="8"
-        DTS:Name="ParameterValue">qletlteam@gmail.com</DTS:Property>
+        DTS:Name="ParameterValue">bwmichael07@gmail.com</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{F57EA49F-7055-4A58-AD6B-A9BE0A14A82F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;Hello Team&#xA;&#xA;This is to inform you that we have encountered the following failures while executing&quot;+ @[System::PackageName] +&#xA;&quot; Accordingly error details are the following &quot; +&#xA;&quot;Error Code is&quot;+ (DT_WSTR,50)@[System::ErrorCode]+ &quot;&#xA;Error Description:&quot;+  @[System::ErrorDescription] +&quot;and the failure happened at &quot;&#xA;+ @[System::SourceName]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Var_Body">
@@ -100,13 +114,32 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{315F491D-0336-42A1-80BD-18D7E2B6E878}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_EmailFrom">
+      <DTS:VariableValue
+        DTS:DataType="8">bwmichael07@gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A2E7B334-C64E-4D47-967C-8445ED83C795}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Var_EmailTo">
+      <DTS:VariableValue
+        DTS:DataType="8">bwmichael07@gmail.com</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{637A63D9-34C0-4C88-9880-E1C7BAFCEA8E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::PackageName]+&quot;failed&quot;"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Var_Subject">
       <DTS:VariableValue
-        DTS:DataType="8"
-        xml:space="preserve"></DTS:VariableValue>
+        DTS:DataType="8">Package1failed</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -506,7 +539,7 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_Loading_LendingQB\OData Source.Connections[Connection]"
-                  connectionManagerID="{A2E0422F-3526-44EA-B5C3-DA3A11CE5EDA}:external"
+                  connectionManagerID="{C735BA7A-B59C-4681-8A5E-22560DBF2044}:external"
                   connectionManagerRefId="Project.ConnectionManagers[OData Source]"
                   description="Connection to OData Service"
                   name="Connection" />
@@ -2344,11 +2377,11 @@ where [refTable].[MarketSourceCode] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg"
+              refId="Package\DFT_Loading_LendingQB\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB_BK_WMichael_Stg"
+              name="OLE DB Destination"
               usesDispositions="true"
               version="4">
               <properties>
@@ -2401,1092 +2434,1098 @@ where [refTable].[MarketSourceCode] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[QL_BK_Wmichael_Stg_Conn]"
-                  connectionManagerRefId="Package.ConnectionManagers[QL_BK_Wmichael_Stg_Conn]"
+                  refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input]"
+                  refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ContentTypeID]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContentTypeID]"
                       cachedDataType="nText"
                       cachedName="ContentTypeID"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ContentTypeID]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContentTypeID]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ContentTypeID]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Title]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Title]"
                       cachedDataType="nText"
                       cachedName="Title"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Title]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ComplianceAssetId]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ComplianceAssetId]"
                       cachedDataType="nText"
                       cachedName="ComplianceAssetId"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ComplianceAssetId]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComplianceAssetId]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ComplianceAssetId]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LastLoadDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastLoadDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="LastLoadDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LastLoadDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastLoadDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LastLoadDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LeadSource]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeadSource]"
                       cachedDataType="nText"
                       cachedName="LeadSource"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LeadSource]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeadSource]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LeadSource]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LeadId]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeadId]"
                       cachedDataType="nText"
                       cachedName="LeadId"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LeadId]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeadId]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LeadId]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrFirstName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrFirstName]"
                       cachedDataType="nText"
                       cachedName="BorrFirstName"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrFirstName]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrFirstName]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrFirstName]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrLastName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrLastName]"
                       cachedDataType="nText"
                       cachedName="BorrLastName"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrLastName]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrLastName]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrLastName]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrBirthDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrBirthDate]"
                       cachedDataType="r8"
                       cachedName="BorrBirthDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrBirthDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrBirthDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrBirthDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrGender]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrGender]"
                       cachedDataType="nText"
                       cachedName="BorrGender"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrGender]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrGender]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrGender]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrEmailAddress]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrEmailAddress]"
                       cachedDataType="nText"
                       cachedName="BorrEmailAddress"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrEmailAddress]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrEmailAddress]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrEmailAddress]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrAddress]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrAddress]"
                       cachedDataType="nText"
                       cachedName="BorrAddress"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrAddress]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrAddress]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrAddress]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrCity]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrCity]"
                       cachedDataType="nText"
                       cachedName="BorrCity"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrCity]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrCity]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrCity]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrState]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrState]"
                       cachedDataType="nText"
                       cachedName="BorrState"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrState]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrState]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrState]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrZip]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrZip]"
                       cachedDataType="r8"
                       cachedName="BorrZip"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrZip]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrZip]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrZip]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrNoYearsOnJob]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrNoYearsOnJob]"
                       cachedDataType="r8"
                       cachedName="BorrNoYearsOnJob"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrNoYearsOnJob]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrNoYearsOnJob]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrNoYearsOnJob]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[IsBorrSelfEmployeedFlag]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IsBorrSelfEmployeedFlag]"
                       cachedDataType="nText"
                       cachedName="IsBorrSelfEmployeedFlag"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[IsBorrSelfEmployeedFlag]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsBorrSelfEmployeedFlag]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[IsBorrSelfEmployeedFlag]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BorrTotalIncome]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BorrTotalIncome]"
                       cachedDataType="r8"
                       cachedName="BorrTotalIncome"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrTotalIncome]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrTotalIncome]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BorrTotalIncome]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanOfficer]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanOfficer]"
                       cachedDataType="nText"
                       cachedName="LoanOfficer"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficer]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficer]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanOfficer]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanOfficerEmail]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanOfficerEmail]"
                       cachedDataType="nText"
                       cachedName="LoanOfficerEmail"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficerEmail]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficerEmail]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanOfficerEmail]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[OfficeID]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OfficeID]"
                       cachedDataType="nText"
                       cachedName="OfficeID"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[OfficeID]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OfficeID]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[OfficeID]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[IntialLoanAmount]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IntialLoanAmount]"
                       cachedDataType="r8"
                       cachedName="IntialLoanAmount"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[IntialLoanAmount]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IntialLoanAmount]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[IntialLoanAmount]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[TotalLoanAmt]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TotalLoanAmt]"
                       cachedDataType="r8"
                       cachedName="TotalLoanAmt"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[TotalLoanAmt]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalLoanAmt]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[TotalLoanAmt]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Net_Buy_Price]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Net_Buy_Price]"
                       cachedDataType="r8"
                       cachedName="Net_Buy_Price"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Net_Buy_Price]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Net_Buy_Price]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Net_Buy_Price]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[TopQualificationRatios]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TopQualificationRatios]"
                       cachedDataType="r8"
                       cachedName="TopQualificationRatios"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[TopQualificationRatios]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TopQualificationRatios]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[TopQualificationRatios]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[BottomQualificationRatios]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BottomQualificationRatios]"
                       cachedDataType="r8"
                       cachedName="BottomQualificationRatios"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BottomQualificationRatios]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BottomQualificationRatios]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[BottomQualificationRatios]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanToValueRatio]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanToValueRatio]"
                       cachedDataType="r8"
                       cachedName="LoanToValueRatio"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanToValueRatio]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanToValueRatio]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanToValueRatio]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[CombinedLoanToValueRatio]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CombinedLoanToValueRatio]"
                       cachedDataType="r8"
                       cachedName="CombinedLoanToValueRatio"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CombinedLoanToValueRatio]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CombinedLoanToValueRatio]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[CombinedLoanToValueRatio]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[InterestRate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InterestRate]"
                       cachedDataType="r8"
                       cachedName="InterestRate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[InterestRate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[AppraisedValue]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AppraisedValue]"
                       cachedDataType="r8"
                       cachedName="AppraisedValue"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[AppraisedValue]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AppraisedValue]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[AppraisedValue]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[AnnualPercentageRate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnnualPercentageRate]"
                       cachedDataType="r8"
                       cachedName="AnnualPercentageRate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[AnnualPercentageRate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AnnualPercentageRate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[AnnualPercentageRate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[HouseOnSaleStreet]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HouseOnSaleStreet]"
                       cachedDataType="nText"
                       cachedName="HouseOnSaleStreet"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleStreet]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleStreet]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[HouseOnSaleStreet]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[HouseOnSaleState]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HouseOnSaleState]"
                       cachedDataType="nText"
                       cachedName="HouseOnSaleState"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleState]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleState]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[HouseOnSaleState]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[HouseOnSaleZip]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[HouseOnSaleZip]"
                       cachedDataType="r8"
                       cachedName="HouseOnSaleZip"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleZip]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleZip]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[HouseOnSaleZip]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanProgram]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanProgram]"
                       cachedDataType="nText"
                       cachedName="LoanProgram"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanProgram]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanProgram]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanProgram]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[AmortizationType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AmortizationType]"
                       cachedDataType="nText"
                       cachedName="AmortizationType"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[AmortizationType]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AmortizationType]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[AmortizationType]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanTerm]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanTerm]"
                       cachedDataType="r8"
                       cachedName="LoanTerm"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanTerm]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanTerm]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanTerm]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[CreditPullDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreditPullDate]"
                       cachedDataType="r8"
                       cachedName="CreditPullDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CreditPullDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreditPullDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[CreditPullDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[FinallCreditScore]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FinallCreditScore]"
                       cachedDataType="r8"
                       cachedName="FinallCreditScore"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[FinallCreditScore]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinallCreditScore]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FinallCreditScore]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[UnderwriterRiskAssess]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnderwriterRiskAssess]"
                       cachedDataType="nText"
                       cachedName="UnderwriterRiskAssess"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[UnderwriterRiskAssess]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanType]"
                       cachedDataType="nText"
                       cachedName="LoanType"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanType]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanType]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanType]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanPurpose]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanPurpose]"
                       cachedDataType="nText"
                       cachedName="LoanPurpose"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanPurpose]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanPurpose]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanPurpose]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[MilestoneStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MilestoneStatus]"
                       cachedDataType="nText"
                       cachedName="MilestoneStatus"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[MilestoneStatus]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MilestoneStatus]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[MilestoneStatus]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[CurrentMilestone]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrentMilestone]"
                       cachedDataType="nText"
                       cachedName="CurrentMilestone"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestone]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestone]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[CurrentMilestone]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanStatus]"
                       cachedDataType="nText"
                       cachedName="LoanStatus"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatus]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatus]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanStatus]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LeadDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LeadDate]"
                       cachedDataType="r8"
                       cachedName="LeadDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LeadDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeadDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LeadDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ApplicationDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ApplicationDate]"
                       cachedDataType="r8"
                       cachedName="ApplicationDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ApplicationDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LockDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LockDate]"
                       cachedDataType="r8"
                       cachedName="LockDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LockDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LockDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LockDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LockExpireDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LockExpireDate]"
                       cachedDataType="r8"
                       cachedName="LockExpireDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LockExpireDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LockExpireDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LockExpireDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LastModifiedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastModifiedDate]"
                       cachedDataType="r8"
                       cachedName="LastModifiedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LastModifiedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanStatusActionDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanStatusActionDate]"
                       cachedDataType="r8"
                       cachedName="LoanStatusActionDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatusActionDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatusActionDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanStatusActionDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[FundedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FundedDate]"
                       cachedDataType="r8"
                       cachedName="FundedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[FundedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FundedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FundedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanExpirationDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanExpirationDate]"
                       cachedDataType="r8"
                       cachedName="LoanExpirationDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanExpirationDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanExpirationDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanExpirationDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanInformationDocumentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanInformationDocumentDate]"
                       cachedDataType="r8"
                       cachedName="LoanInformationDocumentDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanInformationDocumentDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanInformationDocumentDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanInformationDocumentDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[InitialDisclosureProvidedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InitialDisclosureProvidedDate]"
                       cachedDataType="r8"
                       cachedName="InitialDisclosureProvidedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialDisclosureProvidedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialDisclosureProvidedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[InitialDisclosureProvidedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[CurrentMilestoneTrackingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrentMilestoneTrackingDate]"
                       cachedDataType="r8"
                       cachedName="CurrentMilestoneTrackingDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestoneTrackingDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestoneTrackingDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[CurrentMilestoneTrackingDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ApplicationReturnedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ApplicationReturnedDate]"
                       cachedDataType="r8"
                       cachedName="ApplicationReturnedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationReturnedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationReturnedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ApplicationReturnedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ApprovalDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ApprovalDate]"
                       cachedDataType="r8"
                       cachedName="ApprovalDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ApprovalDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ConditionalApprovalDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConditionalApprovalDate]"
                       cachedDataType="r8"
                       cachedName="ConditionalApprovalDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ConditionalApprovalDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConditionalApprovalDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ConditionalApprovalDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ConditionsReceivedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConditionsReceivedDate]"
                       cachedDataType="r8"
                       cachedName="ConditionsReceivedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ConditionsReceivedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConditionsReceivedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ConditionsReceivedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DocumentPreparedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DocumentPreparedDate]"
                       cachedDataType="r8"
                       cachedName="DocumentPreparedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentPreparedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentPreparedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DocumentPreparedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DocumentSigningDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DocumentSigningDate]"
                       cachedDataType="r8"
                       cachedName="DocumentSigningDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSigningDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSigningDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DocumentSigningDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[FinalDocumentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FinalDocumentDate]"
                       cachedDataType="r8"
                       cachedName="FinalDocumentDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[FinalDocumentDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinalDocumentDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FinalDocumentDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoanSetupDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoanSetupDate]"
                       cachedDataType="r8"
                       cachedName="LoanSetupDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanSetupDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanSetupDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[LoanSetupDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[EstimatedLoanClosingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EstimatedLoanClosingDate]"
                       cachedDataType="r8"
                       cachedName="EstimatedLoanClosingDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[EstimatedLoanClosingDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EstimatedLoanClosingDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[EstimatedLoanClosingDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ActualClosingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ActualClosingDate]"
                       cachedDataType="r8"
                       cachedName="ActualClosingDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ActualClosingDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActualClosingDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ActualClosingDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ProcessingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ProcessingDate]"
                       cachedDataType="r8"
                       cachedName="ProcessingDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ProcessingDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessingDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ProcessingDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DocumentResubmittedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DocumentResubmittedDate]"
                       cachedDataType="r8"
                       cachedName="DocumentResubmittedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentResubmittedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentResubmittedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DocumentResubmittedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DocumentReviewedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DocumentReviewedDate]"
                       cachedDataType="r8"
                       cachedName="DocumentReviewedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentReviewedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentReviewedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DocumentReviewedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DocumentShippingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DocumentShippingDate]"
                       cachedDataType="r8"
                       cachedName="DocumentShippingDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentShippingDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentShippingDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DocumentShippingDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ApplicationStartedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ApplicationStartedDate]"
                       cachedDataType="r8"
                       cachedName="ApplicationStartedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationStartedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationStartedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ApplicationStartedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DocumentSubmittalDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DocumentSubmittalDate]"
                       cachedDataType="r8"
                       cachedName="DocumentSubmittalDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSubmittalDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSubmittalDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DocumentSubmittalDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[UnderwritingReceivedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnderwritingReceivedDate]"
                       cachedDataType="r8"
                       cachedName="UnderwritingReceivedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[UnderwritingReceivedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwritingReceivedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[UnderwritingReceivedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[InitialClosingDisclosureSentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InitialClosingDisclosureSentDate]"
                       cachedDataType="r8"
                       cachedName="InitialClosingDisclosureSentDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialClosingDisclosureSentDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialClosingDisclosureSentDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[InitialClosingDisclosureSentDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[InitialLoanEstimateSentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InitialLoanEstimateSentDate]"
                       cachedDataType="r8"
                       cachedName="InitialLoanEstimateSentDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateSentDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateSentDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[InitialLoanEstimateSentDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[InitialLoanEstimateDueDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[InitialLoanEstimateDueDate]"
                       cachedDataType="r8"
                       cachedName="InitialLoanEstimateDueDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateDueDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateDueDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[InitialLoanEstimateDueDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ClosingDisclosureRecievedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ClosingDisclosureRecievedDate]"
                       cachedDataType="r8"
                       cachedName="ClosingDisclosureRecievedDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ClosingDisclosureRecievedDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClosingDisclosureRecievedDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ClosingDisclosureRecievedDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DisbursementDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DisbursementDate]"
                       cachedDataType="r8"
                       cachedName="DisbursementDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DisbursementDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DisbursementDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DisbursementDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[DenialDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DenialDate]"
                       cachedDataType="r8"
                       cachedName="DenialDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DenialDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DenialDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[DenialDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[QAFailDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QAFailDate]"
                       cachedDataType="r8"
                       cachedName="QAFailDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[QAFailDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QAFailDate]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[QAFailDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[IsConstructionLoan]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[IsConstructionLoan]"
                       cachedDataType="nText"
                       cachedName="IsConstructionLoan"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[IsConstructionLoan]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsConstructionLoan]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[IsConstructionLoan]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ApprovalStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ApprovalStatus]"
                       cachedDataType="nText"
                       cachedName="ApprovalStatus"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalStatus]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalStatus]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ApprovalStatus]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[PropertyOccupancyType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PropertyOccupancyType]"
                       cachedDataType="nText"
                       cachedName="PropertyOccupancyType"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[PropertyOccupancyType]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyOccupancyType]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[PropertyOccupancyType]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Closer_Name]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Closer_Name]"
                       cachedDataType="nText"
                       cachedName="Closer_Name"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Closer_Name]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Closer_Name]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Closer_Name]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Loan_Processor_Name]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Loan_Processor_Name]"
                       cachedDataType="nText"
                       cachedName="Loan_Processor_Name"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Loan_Processor_Name]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Loan_Processor_Name]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Loan_Processor_Name]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Underwriter_Name]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Underwriter_Name]"
                       cachedDataType="nText"
                       cachedName="Underwriter_Name"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Underwriter_Name]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Underwriter_Name]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Underwriter_Name]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[QAStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MarketSource]"
+                      cachedDataType="nText"
+                      cachedName="MarketSource"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MarketSource]"
+                      lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[MarketSource]" />
+                    <inputColumn
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QAStatus]"
                       cachedDataType="nText"
                       cachedName="QAStatus"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[QAStatus]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QAStatus]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[QAStatus]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[MortgageInsuranceCompany]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MortgageInsuranceCompany]"
                       cachedDataType="nText"
                       cachedName="MortgageInsuranceCompany"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[MortgageInsuranceCompany]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MortgageInsuranceCompany]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[MortgageInsuranceCompany]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[TotalFees]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TotalFees]"
                       cachedDataType="r8"
                       cachedName="TotalFees"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[TotalFees]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalFees]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[TotalFees]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[OriginationFee]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OriginationFee]"
                       cachedDataType="r8"
                       cachedName="OriginationFee"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[OriginationFee]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OriginationFee]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[OriginationFee]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Id]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Id]"
                       cachedDataType="i4"
                       cachedName="Id"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Id]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ContentType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ContentType]"
                       cachedDataType="nText"
                       cachedName="ContentType"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ContentType]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContentType]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ContentType]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Modified]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Modified]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Modified"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Modified]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Created]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Created]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Created"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Created]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[CreatedById]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedById]"
                       cachedDataType="i4"
                       cachedName="CreatedById"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[CreatedById]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[ModifiedById]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ModifiedById]"
                       cachedDataType="i4"
                       cachedName="ModifiedById"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedById]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedById]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[ModifiedById]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Owshiddenversion]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Owshiddenversion]"
                       cachedDataType="i4"
                       cachedName="Owshiddenversion"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Owshiddenversion]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Owshiddenversion]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Owshiddenversion]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Version]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Version]"
                       cachedDataType="nText"
                       cachedName="Version"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Version]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[Path]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Path]"
                       cachedDataType="nText"
                       cachedName="Path"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Path]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Path]"
                       lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[Path]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoadDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoadDate]"
                       cachedDataType="date"
                       cachedName="LoadDate"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
                       lineageId="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns.Outputs[Audit Output 1].Columns[LoadDate]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[LoadedBy]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LoadedBy]"
                       cachedDataType="wstr"
                       cachedLength="15"
                       cachedName="LoadedBy"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoadedBy]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadedBy]"
                       lineageId="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns.Outputs[Audit Output 1].Columns[LoadedBy]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[SourceName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SourceName]"
                       cachedDataType="wstr"
                       cachedLength="64"
                       cachedName="SourceName"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
                       lineageId="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns.Outputs[Audit Output 1].Columns[SourceName]" />
                     <inputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].Columns[NewMarketSourceName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NewMarketSourceName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="NewMarketSourceName"
-                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSourceName]"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSourceName]"
                       lineageId="Package\DFT_Loading_LendingQB\Lookup.Outputs[Lookup Match Output].Columns[NewMarketSourceName]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ContentTypeID]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContentTypeID]"
                       dataType="nText"
                       name="ContentTypeID" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
                       dataType="nText"
                       name="Title" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ComplianceAssetId]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ComplianceAssetId]"
                       dataType="nText"
                       name="ComplianceAssetId" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LastLoadDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastLoadDate]"
                       dataType="dbTimeStamp"
                       name="LastLoadDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LeadSource]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeadSource]"
                       dataType="nText"
                       name="LeadSource" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LeadId]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeadId]"
                       dataType="nText"
                       name="LeadId" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrFirstName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrFirstName]"
                       dataType="nText"
                       name="BorrFirstName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrLastName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrLastName]"
                       dataType="nText"
                       name="BorrLastName" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrBirthDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrBirthDate]"
                       dataType="r8"
                       name="BorrBirthDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrGender]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrGender]"
                       dataType="nText"
                       name="BorrGender" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrEmailAddress]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrEmailAddress]"
                       dataType="nText"
                       name="BorrEmailAddress" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrAddress]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrAddress]"
                       dataType="nText"
                       name="BorrAddress" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrCity]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrCity]"
                       dataType="nText"
                       name="BorrCity" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrState]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrState]"
                       dataType="nText"
                       name="BorrState" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrZip]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrZip]"
                       dataType="r8"
                       name="BorrZip" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrNoYearsOnJob]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrNoYearsOnJob]"
                       dataType="r8"
                       name="BorrNoYearsOnJob" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[IsBorrSelfEmployeedFlag]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsBorrSelfEmployeedFlag]"
                       dataType="nText"
                       name="IsBorrSelfEmployeedFlag" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BorrTotalIncome]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BorrTotalIncome]"
                       dataType="r8"
                       name="BorrTotalIncome" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficer]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficer]"
                       dataType="nText"
                       name="LoanOfficer" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficerEmail]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanOfficerEmail]"
                       dataType="nText"
                       name="LoanOfficerEmail" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[OfficeID]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OfficeID]"
                       dataType="nText"
                       name="OfficeID" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[IntialLoanAmount]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IntialLoanAmount]"
                       dataType="r8"
                       name="IntialLoanAmount" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[TotalLoanAmt]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalLoanAmt]"
                       dataType="r8"
                       name="TotalLoanAmt" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Net_Buy_Price]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Net_Buy_Price]"
                       dataType="r8"
                       name="Net_Buy_Price" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[TopQualificationRatios]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TopQualificationRatios]"
                       dataType="r8"
                       name="TopQualificationRatios" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[BottomQualificationRatios]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BottomQualificationRatios]"
                       dataType="r8"
                       name="BottomQualificationRatios" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanToValueRatio]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanToValueRatio]"
                       dataType="r8"
                       name="LoanToValueRatio" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CombinedLoanToValueRatio]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CombinedLoanToValueRatio]"
                       dataType="r8"
                       name="CombinedLoanToValueRatio" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InterestRate]"
                       dataType="r8"
                       name="InterestRate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[AppraisedValue]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AppraisedValue]"
                       dataType="r8"
                       name="AppraisedValue" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[AnnualPercentageRate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AnnualPercentageRate]"
                       dataType="r8"
                       name="AnnualPercentageRate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleStreet]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleStreet]"
                       dataType="nText"
                       name="HouseOnSaleStreet" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleState]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleState]"
                       dataType="nText"
                       name="HouseOnSaleState" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleZip]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HouseOnSaleZip]"
                       dataType="r8"
                       name="HouseOnSaleZip" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanProgram]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanProgram]"
                       dataType="nText"
                       name="LoanProgram" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[AmortizationType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AmortizationType]"
                       dataType="nText"
                       name="AmortizationType" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanTerm]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanTerm]"
                       dataType="r8"
                       name="LoanTerm" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CreditPullDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreditPullDate]"
                       dataType="r8"
                       name="CreditPullDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[FinallCreditScore]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinallCreditScore]"
                       dataType="r8"
                       name="FinallCreditScore" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess]"
                       dataType="nText"
                       name="UnderwriterRiskAssess" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanType]"
                       dataType="nText"
                       name="LoanType" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanPurpose]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanPurpose]"
                       dataType="nText"
                       name="LoanPurpose" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[MilestoneStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MilestoneStatus]"
                       dataType="nText"
                       name="MilestoneStatus" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestone]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestone]"
                       dataType="nText"
                       name="CurrentMilestone" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatus]"
                       dataType="nText"
                       name="LoanStatus" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LeadDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LeadDate]"
                       dataType="r8"
                       name="LeadDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationDate]"
                       dataType="r8"
                       name="ApplicationDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LockDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LockDate]"
                       dataType="r8"
                       name="LockDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LockExpireDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LockExpireDate]"
                       dataType="r8"
                       name="LockExpireDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastModifiedDate]"
                       dataType="r8"
                       name="LastModifiedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatusActionDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanStatusActionDate]"
                       dataType="r8"
                       name="LoanStatusActionDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[FundedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FundedDate]"
                       dataType="r8"
                       name="FundedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanExpirationDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanExpirationDate]"
                       dataType="r8"
                       name="LoanExpirationDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanInformationDocumentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanInformationDocumentDate]"
                       dataType="r8"
                       name="LoanInformationDocumentDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialDisclosureProvidedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialDisclosureProvidedDate]"
                       dataType="r8"
                       name="InitialDisclosureProvidedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestoneTrackingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentMilestoneTrackingDate]"
                       dataType="r8"
                       name="CurrentMilestoneTrackingDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationReturnedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationReturnedDate]"
                       dataType="r8"
                       name="ApplicationReturnedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalDate]"
                       dataType="r8"
                       name="ApprovalDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ConditionalApprovalDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConditionalApprovalDate]"
                       dataType="r8"
                       name="ConditionalApprovalDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ConditionsReceivedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ConditionsReceivedDate]"
                       dataType="r8"
                       name="ConditionsReceivedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentPreparedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentPreparedDate]"
                       dataType="r8"
                       name="DocumentPreparedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSigningDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSigningDate]"
                       dataType="r8"
                       name="DocumentSigningDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[FinalDocumentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FinalDocumentDate]"
                       dataType="r8"
                       name="FinalDocumentDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoanSetupDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoanSetupDate]"
                       dataType="r8"
                       name="LoanSetupDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[EstimatedLoanClosingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EstimatedLoanClosingDate]"
                       dataType="r8"
                       name="EstimatedLoanClosingDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ActualClosingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActualClosingDate]"
                       dataType="r8"
                       name="ActualClosingDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ProcessingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProcessingDate]"
                       dataType="r8"
                       name="ProcessingDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentResubmittedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentResubmittedDate]"
                       dataType="r8"
                       name="DocumentResubmittedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentReviewedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentReviewedDate]"
                       dataType="r8"
                       name="DocumentReviewedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentShippingDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentShippingDate]"
                       dataType="r8"
                       name="DocumentShippingDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationStartedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApplicationStartedDate]"
                       dataType="r8"
                       name="ApplicationStartedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSubmittalDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DocumentSubmittalDate]"
                       dataType="r8"
                       name="DocumentSubmittalDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[UnderwritingReceivedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwritingReceivedDate]"
                       dataType="r8"
                       name="UnderwritingReceivedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialClosingDisclosureSentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialClosingDisclosureSentDate]"
                       dataType="r8"
                       name="InitialClosingDisclosureSentDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateSentDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateSentDate]"
                       dataType="r8"
                       name="InitialLoanEstimateSentDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateDueDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[InitialLoanEstimateDueDate]"
                       dataType="r8"
                       name="InitialLoanEstimateDueDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ClosingDisclosureRecievedDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClosingDisclosureRecievedDate]"
                       dataType="r8"
                       name="ClosingDisclosureRecievedDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DisbursementDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DisbursementDate]"
                       dataType="r8"
                       name="DisbursementDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[DenialDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DenialDate]"
                       dataType="r8"
                       name="DenialDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[QAFailDate]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QAFailDate]"
                       dataType="r8"
                       name="QAFailDate" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[IsConstructionLoan]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsConstructionLoan]"
                       dataType="nText"
                       name="IsConstructionLoan" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovalStatus]"
                       dataType="nText"
                       name="ApprovalStatus" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[PropertyOccupancyType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyOccupancyType]"
                       dataType="nText"
                       name="PropertyOccupancyType" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Closer_Name]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Closer_Name]"
                       dataType="nText"
                       name="Closer_Name" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Loan_Processor_Name]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Loan_Processor_Name]"
                       dataType="nText"
                       name="Loan_Processor_Name" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Underwriter_Name]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Underwriter_Name]"
                       dataType="nText"
                       name="Underwriter_Name" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[MarketSource]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MarketSource]"
                       dataType="nText"
                       name="MarketSource" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[QAStatus]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QAStatus]"
                       dataType="nText"
                       name="QAStatus" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[MortgageInsuranceCompany]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MortgageInsuranceCompany]"
                       dataType="nText"
                       name="MortgageInsuranceCompany" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[TotalFees]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalFees]"
                       dataType="r8"
                       name="TotalFees" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[OriginationFee]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OriginationFee]"
                       dataType="r8"
                       name="OriginationFee" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ContentType]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ContentType]"
                       dataType="nText"
                       name="ContentType" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modified]"
                       dataType="dbTimeStamp"
                       name="Modified" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
                       dataType="dbTimeStamp"
                       name="Created" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedById]"
                       dataType="i4"
                       name="CreatedById" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedById]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedById]"
                       dataType="i4"
                       name="ModifiedById" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Owshiddenversion]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Owshiddenversion]"
                       dataType="i4"
                       name="Owshiddenversion" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Version]"
                       dataType="nText"
                       name="Version" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[Path]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Path]"
                       dataType="nText"
                       name="Path" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSource]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
+                      dataType="dbTimeStamp"
+                      name="LoadDate" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LoadedBy]"
+                      dataType="wstr"
+                      length="15"
+                      name="LoadedBy" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
+                      dataType="wstr"
+                      length="64"
+                      name="SourceName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSource]"
                       codePage="1252"
                       dataType="str"
                       length="7"
                       name="NewMarketSource" />
                     <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSourceName]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSourceName]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="NewMarketSourceName" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoadDate]"
-                      dataType="dbTimeStamp"
-                      name="LoadDate" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[LoadedBy]"
-                      dataType="wstr"
-                      length="15"
-                      name="LoadedBy" />
-                    <externalMetadataColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input].ExternalColumns[SourceName]"
-                      dataType="wstr"
-                      length="64"
-                      name="SourceName" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT_Loading_LendingQB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_Loading_LendingQB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3498,7 +3537,7 @@ where [refTable].[MarketSourceCode] = ?</property>
           <paths>
             <path
               refId="Package\DFT_Loading_LendingQB.Paths[Audit Output 1]"
-              endId="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg.Inputs[OLE DB Destination Input]"
+              endId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Audit Output 1"
               startId="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns.Outputs[Audit Output 1]" />
             <path
@@ -3574,42 +3613,660 @@ where [refTable].[MarketSourceCode] = ?</property>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\Send Mail Task"
-          DTS:CreationName="Microsoft.SendMailTask"
-          DTS:Description="Send Mail Task"
-          DTS:DTSID="{B098D0C7-F29C-4FCB-BC6C-BA578D7E6253}"
-          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:refId="Package.EventHandlers[OnError]\Script Task"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{B74CC5C4-EC84-4C99-B040-5574257F2368}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Send Mail Task">
+          DTS:ObjectName="Script Task">
           <DTS:Variables />
-          <DTS:PropertyExpression
-            DTS:Name="FromLine">@[$Package::Par_FromEmail]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="LoggingMode">@[$Package::Par_PassWord]</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="MessageSource">"Hello Team
-The package " + @[System::PackageName] +"has failed accounting for the following errors 
- Error Code"+(DT_WSTR,50)@[System::ErrorCode]+" and with an  " +
-" Error Descritpion:"+ @[System::ErrorDescription] +@[System::SourceDescription]+  " at " 
-+"Error Source" + @[System::SourceName] + "
-
- 
-Please contact our team should you require further explanations
-
-Thank you
-
-Great Weekend"</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="Subject">@[System::PackageName]+ "Failure"</DTS:PropertyExpression>
-          <DTS:PropertyExpression
-            DTS:Name="ToLine">@[$Package::Par_ToEmail]</DTS:PropertyExpression>
           <DTS:ObjectData>
-            <SendMailTask:SendMailTaskData
-              SendMailTask:SMTPServer="{A56ECB38-1EF1-43BA-AE9E-A47311DC2723}"
-              SendMailTask:From="qletlteam@gmail.com"
-              SendMailTask:To="qletlteam@gmail.com"
-              SendMailTask:Subject="Package1Failure"
-              SendMailTask:MessageSource="Hello Team&#xA;The package Package1has failed accounting for the following errors &#xA; Error Code0 and with an   Error Descritpion: at Error Source&#xA;&#xA; &#xA;Please contact our team should you require further explanations&#xA;&#xA;Thank you&#xA;&#xA;Great Weekend" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+            <ScriptProject
+              Name="ST_d31f7d366635474a98747265eec7d67c"
+              VSTAMajorVersion="15"
+              VSTAMinorVersion="0"
+              Language="CSharp"
+              ReadOnlyVariables="User::Var_Body,User::Var_EmailFrom,User::Var_EmailTo,User::Var_Subject">
+              <ProjectItem
+                Name="Properties\Resources.resx"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d31f7d366635474a98747265eec7d67c.Properties.Settings.get_Default():ST_d31f7d366635474a98747265eec7d67c.Properties.Sett" +
+    "ings")]
+
+namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="ST_d31f7d366635474a98747265eec7d67c.csproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{649ebde7-c236-40af-9d93-bad413e34a19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_d31f7d366635474a98747265eec7d67c</RootNamespace>
+    <AssemblyName>ST_d31f7d366635474a98747265eec7d67c</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+              <ProjectItem
+                Name="ScriptMain.cs"
+                Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+#endregion
+
+namespace ST_d31f7d366635474a98747265eec7d67c
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+        {
+            // TODO: Add your code here
+
+
+            //User::User::Var_Body,User::Var_EmailFrom,User::Var_EmailTo,User::Var_Subject
+            String Var_EmailFrom = Dts.Variables["Var_EmailFrom"].Value.ToString();
+            String Var_EmailTo = Dts.Variables["Var_EmailTo"].Value.ToString();
+            String Var_Subject = Dts.Variables["Var_Subject"].Value.ToString();
+            String Var_Body = Dts.Variables["Var_Body"].Value.ToString();
+
+            {
+                MailMessage email = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                // START
+                email.From = new MailAddress(Var_EmailFrom);
+                email.To.Add(Var_EmailTo);
+                email.Subject = Var_Subject;
+                email.Body = Var_Body;
+                //END
+
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("bwmichael07@gmail.com", "ymhgbqlmlrjpgwvx"
+);
+                SmtpServer.EnableSsl = true;
+                SmtpServer.Send(email);
+                MessageBox.Show("Email was Successfully Sent ");
+            }
+
+
+        }
+
+                
+
+
+
+                    
+                
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_d31f7d366635474a98747265eec7d67c</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_d31f7d366635474a98747265eec7d67c</msb:DisplayName>
+    <msb:ProjectId>{57A36889-5300-4731-ADE2-C7937F07B048}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_d31f7d366635474a98747265eec7d67c.csproj" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d31f7d366635474a98747265eec7d67c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HP Inc.")]
+[assembly: AssemblyProduct("ST_d31f7d366635474a98747265eec7d67c")]
+[assembly: AssemblyCopyright("Copyright @ HP Inc. 2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Resources.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d31f7d366635474a98747265eec7d67c.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d31f7d366635474a98747265eec7d67c.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d31f7d366635474a98747265eec7d67c.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_d31f7d366635474a98747265eec7d67c.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <BinaryItem
+                Name="ST_d31f7d366635474a98747265eec7d67c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAN85K2MAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAA/jAA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKwwAABPAAAAAEAAAJQEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAABBEAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAJQEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADg
+MAAAAAAAAEgAAAACAAUAuCEAADwOAAABAAAAAAAAAPQvAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBAD1AAAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAAoKAigQAAAKbxEAAApyHQAAcG8SAAAKbxMAAApvFAAACgsCKBAAAApvEQAACnI1AABw
+bxIAAApvEwAACm8UAAAKDAIoEAAACm8RAAAKck0AAHBvEgAACm8TAAAKbxQAAAoNcxUAAAoTBHJf
+AABwcxYAAAoRBAZzFwAACm8YAAAKEQRvGQAACgdvGgAAChEECG8bAAAKEQQJbxwAAAolIEsCAABv
+HQAACiVyfQAAcHKpAABwcx4AAApvHwAACiUXbyAAAAoRBG8hAAAKcssAAHAoIgAACiYqHgIoIwAA
+CioeAigkAAAKKq5+AQAABC0ecgUBAHDQAwAAAiglAAAKbyYAAApzJwAACoABAAAEfgEAAAQqGn4C
+AAAEKh4CgAIAAAQqGn4DAAAEKh4CKCgAAAoqLnMIAAAGgAMAAAQqAEJTSkIBAAEAAAAAAAwAAAB2
+NC4wLjMwMzE5AAAAAAUAbAAAAFAEAAAjfgAAvAQAAEwGAAAjU3RyaW5ncwAAAAAICwAAeAEAACNV
+UwCADAAAEAAAACNHVUlEAAAAkAwAAKwBAAAjQmxvYgAAAAAAAAACAAABVx2iAQkDAAAA+gEzABYA
+AAEAAAAlAAAABQAAAAYAAAAJAAAAAQAAACgAAAACAAAAEAAAAAEAAAACAAAAAwAAAAQAAAABAAAA
+BQAAAAEAAAABAAAAAACsAwEAAAAAAAYAOgKwBAYAyQKwBAYAhgGdBA8AJAUAAAYAswFBBAYAHQJB
+BAYA/gFBBAYAsAJBBAYAWgJBBAYAcwJBBAYAygFBBAYA5QH3AgoAjgI5AwoABQE5Aw4AdwCcAwYA
++wPrAwYAaQGdBAYAyAXrAwYAgATQBAYAcAQsBA4AOQGGAw4AmgGGAw4AIQEXBAYATgGwBAoAdAM5
+AxIAZgWwABIAgwCwAA4A/wWcAw4ApgWcAw4AUwScAw4AYgPbBQ4AEwbbBRYAKwaJBRYA8gWJBQYA
+0ADrAwYAjADrAwYAQwZBBAAAAAABAAAAAAABAAEAAQAQAAwEOgA5AAEAAQAAABAA1wQzBUkAAQAD
+AAABEABwBTMFXQADAAcAAwEAALoFAABBAAQACgARAAAEmQARAPUAnQARAGcAoQAGBikApQBWgJ4F
+qABWgNUAqABQIAAAAACGABIEBgABAFEhAAAAAIYYkAQGAAEAWSEAAAAAgxiQBAYAAQBhIQAAAACT
+CHwErAABAI0hAAAAAJMI3QCxAAEAlCEAAAAAkwjpALYAAQCcIQAAAACWCOYFvAACAKMhAAAAAIYY
+kAQGAAIAqyEAAAAAkRiWBMEAAgAAAAEA8QIJAJAEAQARAJAEBgAZAJAECgApAJAEEAAxAJAEEAA5
+AJAEEABBAJAEEABJAJAEEABRAJAEEABZAJAEEABhAJAEEABpAJAEBgCJAJAEBgCxAJAEFQDBAJAE
+BgBxALIFJADJAGIFKQDRAOIDLgDZAOcCNACRABEDOAB5AJAEBgDhAJAEEADpAJAEEAB5APIDPAB5
+AGkEQgDxAF4AEAB5AM8FEAB5ADYGEADhAAoGAQD5AJAERwDhAHkFTQDhANQDVADhAGIAWQAJASYG
+XwBxAJAEBgCRAJAEBgAZAZ4AZgAZAT8GbwCZAJAEdQC5AJAEBgAIABQAjwAIABgAlAApAHMA/AAu
+AAsA1AAuABMA3QAuABsA/AAuACMABQEuACsALgEuADMALgEuADsANAEuAEMABQEuAEsAQQEuAFMA
+LgEuAFsAXwFDAGMAlABJAHMA/ABhAHsAlABjAGsAlAAbAAMAAQAEAAMAAACABMUAAAD9AMoAAADq
+Bc8AAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEAAABrIM9WAAAAAAAAOgAAAAQAAAAAAAAA
+AAAAAH0AMQAAAAAADwAAAAAAAAAAAAAAhgAaAwAAAAAEAAAAAAAAAAAAAAB9AOsDAAAAAA8AAAAA
+AAAAAAAAAIYACgAAAAAABAAAAAAAAAAAAAAAfQCJBQAAAAAAAAAAAQAAAOEEAAAFAAIAAAAAAAA8
+TW9kdWxlPgBNaWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBT
+VF9kMzFmN2QzNjY2MzU0NzRhOTg3NDcyNjVlZWM3ZDY3YwBBZGQAU2VuZABkZWZhdWx0SW5zdGFu
+Y2UATWFpbE1lc3NhZ2UAVmFyaWFibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5k
+bGUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1
+cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFz
+ZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdl
+bmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVB
+dHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUA
+QXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2Vt
+Ymx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENv
+bXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFz
+c2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0
+ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUA
+Z2V0X1ZhbHVlAHZhbHVlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVG9TdHJpbmcATWljcm9z
+b2Z0LlNxbFNlcnZlci5TY3JpcHRUYXNrAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlRhc2tzLlNj
+cmlwdFRhc2sATmV0d29ya0NyZWRlbnRpYWwAU2NyaXB0T2JqZWN0TW9kZWwAU3lzdGVtLkNvbXBv
+bmVudE1vZGVsAFN5c3RlbS5OZXQuTWFpbABTVF9kMzFmN2QzNjY2MzU0NzRhOTg3NDcyNjVlZWM3
+ZDY3Yy5kbGwAc2V0X0VuYWJsZVNzbABnZXRfSXRlbQBTeXN0ZW0Ac2V0X0Zyb20ARW51bQByZXNv
+dXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0
+aW9uAFN5c3RlbS5SZWZsZWN0aW9uAE1haWxBZGRyZXNzQ29sbGVjdGlvbgBnZXRfVG8AQ3VsdHVy
+ZUluZm8AZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNz
+AFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF9kMzFm
+N2QzNjY2MzU0NzRhOTg3NDcyNjVlZWM3ZDY3Yy5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJj
+ZXMARGVidWdnaW5nTW9kZXMAU1RfZDMxZjdkMzY2NjM1NDc0YTk4NzQ3MjY1ZWVjN2Q2N2MuUHJv
+cGVydGllcwBnZXRfVmFyaWFibGVzAFNldHRpbmdzAHNldF9DcmVkZW50aWFscwBTeXN0ZW0uV2lu
+ZG93cy5Gb3JtcwBTdWNjZXNzAE1haWxBZGRyZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBPYmpl
+Y3QAc2V0X1N1YmplY3QAU3lzdGVtLk5ldABnZXRfRGVmYXVsdABEaWFsb2dSZXN1bHQAU210cENs
+aWVudABzZXRfUG9ydABJQ3JlZGVudGlhbHNCeUhvc3QAU2hvdwBNZXNzYWdlQm94AHNldF9Cb2R5
+AGdldF9Bc3NlbWJseQAAG1YAYQByAF8ARQBtAGEAaQBsAEYAcgBvAG0AABdWAGEAcgBfAEUAbQBh
+AGkAbABUAG8AABdWAGEAcgBfAFMAdQBiAGoAZQBjAHQAABFWAGEAcgBfAEIAbwBkAHkAAB1zAG0A
+dABwAC4AZwBtAGEAaQBsAC4AYwBvAG0AACtiAHcAbQBpAGMAaABhAGUAbAAwADcAQABnAG0AYQBp
+AGwALgBjAG8AbQAAIXkAbQBoAGcAYgBxAGwAbQBsAHIAagBwAGcAdwB2AHgAADlFAG0AYQBpAGwA
+IAB3AGEAcwAgAFMAdQBjAGMAZQBzAHMAZgB1AGwAbAB5ACAAUwBlAG4AdAAgAABxUwBUAF8AZAAz
+ADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgANwA0ADcAMgA2ADUAZQBlAGMANwBkADYA
+NwBjAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAfj8gWAClL0O5
+mYpfUA141gAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERVQgHBQ4ODg4SPQQgABJlBCAAEmkFIAES
+bRwDIAAcAyAADgUgAQESdQQgABJ5BSACAQ4OBiABARKAgQQgAQECBSABARI9BgABEYCJDggAARKA
+jRGAkQUgABKAlQcgAgEOEoCVCLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGEk0DBhJRAwYS
+EAIGCAMGERQEAAASTQQAABJRBQABARJRBAAAEhADAAABBAgAEk0ECAASUQQIABIQCAEACAAAAAAA
+HgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF9kMzFmN2QzNjY2
+MzU0NzRhOTg3NDcyNjVlZWM3ZDY3YwAABQEAAAAADAEAB0hQIEluYy4AAB0BABhDb3B5cmlnaHQg
+QCBIUCBJbmMuIDIwMjIAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEAVA4URnJhbWV3
+b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43AAAAtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAANQwAAAAAAAA
+AAAAAO4wAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgMAAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAANgQAAAAAAAAAAAAANgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAM9WayAAAAEAz1ZrID8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBJYDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAHIDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAwAAgAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAEgAUAAgAEkAbgBjAC4AAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBp
+AHAAdABpAG8AbgAAAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgA
+NwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBu
+AAAAAAAxAC4AMAAuADgAMgA5ADkALgAyADIAMgAyADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEA
+bABOAGEAbQBlAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgANwA0
+ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AZABsAGwAAABWABkAAQBMAGUAZwBhAGwAQwBvAHAA
+eQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABIAFAAIABJAG4AYwAuACAAMgAw
+ADIAMgAAAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgA
+AQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2
+ADYANgAzADUANAA3ADQAYQA5ADgANwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AZABsAGwA
+AABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfAGQAMwAxAGYANwBkADMANgA2
+ADYAMwA1ADQANwA0AGEAOQA4ADcANAA3ADIANgA1AGUAZQBjADcAZAA2ADcAYwAAAEIADwABAFAA
+cgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAyADkAOQAuADIAMgAyADIAMwAA
+AAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAyADkA
+OQAuADIAMgAyADIAMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAAAxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+            </ScriptProject>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -3630,25 +4287,25 @@ Great Weekend"</DTS:PropertyExpression>
         <NodeLayout
           Size="196.8,41.6"
           Id="Package\DFT_Loading_LendingQB"
-          TopLeft="263.571433060023,230.176473816374" />
+          TopLeft="305.71429092057,308.941180803372" />
         <NodeLayout
           Size="212.8,41.6"
           Id="Package\ESQL_Truncate_Lending_QB"
-          TopLeft="255.714290069074,67.2941185908335" />
+          TopLeft="295.00000502382,86.4117659177749" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="362.042861564549,108.894118590833">
+          TopLeft="402.757147972195,128.011765917775">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,121.28235522554"
+              EndConnector="0,180.929414885597"
               Start="0,0"
-              End="0,113.78235522554">
+              End="0,173.429414885597">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,113.78235522554" />
+                    End="0,173.429414885597" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3660,6 +4317,18 @@ Great Weekend"</DTS:PropertyExpression>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package.EventHandlers[OnError]\Script Task"
+          TopLeft="350.714291686915,82.5882364523867" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\DFT_Loading_LendingQB">
     <LayoutInfo>
@@ -3668,41 +4337,41 @@ Great Weekend"</DTS:PropertyExpression>
         <NodeLayout
           Size="178.4,41.6"
           Id="Package\DFT_Loading_LendingQB\OData Source"
-          TopLeft="364.444450650897,15.7189544688184" />
+          TopLeft="377.539688969146,2.44281049177587" />
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns"
-          TopLeft="700.317472243795,273.431376327693" />
+          Size="120,41.6"
+          Id="Package\DFT_Loading_LendingQB\Multicast"
+          TopLeft="27.8769846017263,300.040853881162" />
         <NodeLayout
-          Size="192.8,41.6"
+          Size="188.8,41.6"
           Id="Package\DFT_Loading_LendingQB\DC_Changing_DataType"
-          TopLeft="368.253974525296,90.3137264077547" />
+          TopLeft="374.801593684421,96.0490206058371" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\DFT_Loading_LendingQB\Lookup"
+          TopLeft="372.222228561129,185.122551615882" />
+        <NodeLayout
+          Size="213.6,41.6"
+          Id="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns"
+          TopLeft="713.412710562043,303.807193747167" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DFT_Loading_LendingQB\OLE DB Destination"
+          TopLeft="754.067473159152,453.513078255774" />
         <EdgeLayout
           Id="Package\DFT_Loading_LendingQB.Paths[Output]"
-          TopLeft="453.644450650897,57.3189544688184">
+          TopLeft="467.970641326783,44.0428104917759">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.0095238743993,32.9947719389363"
+              EndConnector="0,52.0062101140612"
               Start="0,0"
-              End="11.0095238743993,25.4947719389363">
+              End="0,44.5062101140612">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.4973859694681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.4973859694681"
-                    Point2="0,16.4973859694681"
-                    Point3="4,16.4973859694681" />
-                  <mssgle:LineSegment
-                    End="7.00952387439929,16.4973859694681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.00952387439929,16.4973859694681"
-                    Point2="11.0095238743993,16.4973859694681"
-                    Point3="11.0095238743993,20.4973859694681" />
-                  <mssgle:LineSegment
-                    End="11.0095238743993,25.4947719389363" />
+                    End="0,44.5062101140612" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3711,138 +4380,92 @@ Great Weekend"</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\DFT_Loading_LendingQB\Multicast"
-          TopLeft="26.9841274436639,268.496735791709" />
-        <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\DFT_Loading_LendingQB\Lookup"
-          TopLeft="380.952387439962,186.928107196759" />
         <EdgeLayout
           Id="Package\DFT_Loading_LendingQB.Paths[Lookup No Match Output]"
-          TopLeft="437.485720773295,228.528107196759">
+          TopLeft="436.488895227796,226.722551615882">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-350.501593329631,39.9686285949497"
+              EndConnector="-348.611910626069,73.3183022652806"
               Start="0,0"
-              End="-350.501593329631,32.4686285949497">
+              End="-348.611910626069,65.8183022652806">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.2169363868504" />
+                    End="0,25.6969930183742" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.2169363868504"
-                    Point2="0,16.2169363868504"
-                    Point3="-4,16.2169363868504" />
+                    Point1="0,25.6969930183742"
+                    Point2="0,29.6969930183742"
+                    Point3="-4,29.6969930183742" />
                   <mssgle:LineSegment
-                    End="-346.501593329631,16.2169363868504" />
+                    End="-344.611910626069,29.6969930183742" />
                   <mssgle:CubicBezierSegment
-                    Point1="-346.501593329631,16.2169363868504"
-                    Point2="-350.501593329631,16.2169363868504"
-                    Point3="-350.501593329631,20.2169363868504" />
+                    Point1="-344.611910626069,29.6969930183742"
+                    Point2="-348.611910626069,29.6969930183742"
+                    Point3="-348.611910626069,33.6969930183742" />
                   <mssgle:LineSegment
-                    End="-350.501593329631,32.4686285949497" />
+                    End="-348.611910626069,65.8183022652806" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-231.057183383566,21.2169363868504,111.6127734375,11.609375"
+              BoundingBox="-230.112342031785,34.6969930183742,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_Loading_LendingQB.Paths[Lookup Match Output]"
-          TopLeft="490.019054106628,228.528107196759">
+          TopLeft="496.755561894462,226.722551615882">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="293.898418137166,44.9032691309337"
+              EndConnector="323.457148667581,77.0846421312854"
               Start="0,0"
-              End="293.898418137166,37.4032691309337">
+              End="323.457148667581,69.5846421312854">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.2191254655654" />
+                    End="0,27.2225189136803" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.2191254655654"
-                    Point2="0,18.2191254655654"
-                    Point3="4,18.2191254655654" />
+                    Point1="0,27.2225189136803"
+                    Point2="0,31.2225189136803"
+                    Point3="4,31.2225189136803" />
                   <mssgle:LineSegment
-                    End="289.898418137166,18.2191254655654" />
+                    End="319.457148667581,31.2225189136803" />
                   <mssgle:CubicBezierSegment
-                    Point1="289.898418137166,18.2191254655654"
-                    Point2="293.898418137166,18.2191254655654"
-                    Point3="293.898418137166,22.2191254655654" />
+                    Point1="319.457148667581,31.2225189136803"
+                    Point2="323.457148667581,31.2225189136803"
+                    Point3="323.457148667581,35.2225189136803" />
                   <mssgle:LineSegment
-                    End="293.898418137166,37.4032691309337" />
+                    End="323.457148667581,69.5846421312854" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="98.7578223498332,23.2191254655654,96.3827734375,11.609375"
+              BoundingBox="113.53718761504,36.2225189136803,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="204,41.6"
-          Id="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg"
-          TopLeft="694.444456270763,433.33333941067" />
-        <EdgeLayout
-          Id="Package\DFT_Loading_LendingQB.Paths[Audit Output 1]"
-          TopLeft="783.917472243795,315.031376327693">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.5269840269684,118.301963082977"
-              Start="0,0"
-              End="12.5269840269684,110.801963082977">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.1509815414883" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,55.1509815414883"
-                    Point2="0,59.1509815414883"
-                    Point3="4,59.1509815414883" />
-                  <mssgle:LineSegment
-                    End="8.52698402696842,59.1509815414883" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.52698402696842,59.1509815414883"
-                    Point2="12.5269840269684,59.1509815414883"
-                    Point3="12.5269840269684,63.1509815414883" />
-                  <mssgle:LineSegment
-                    End="12.5269840269684,110.801963082977" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_Loading_LendingQB.Paths[Derived Column Output]"
-          TopLeft="464.203180982629,131.913726407755">
+          TopLeft="467.911911122775,137.649020605837">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.0143807890048"
+              EndConnector="0,47.4735310100446"
               Start="0,0"
-              End="0,47.5143807890048">
+              End="0,39.9735310100446">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5143807890048" />
+                    End="0,39.9735310100446" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3851,6 +4474,47 @@ Great Weekend"</DTS:PropertyExpression>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Loading_LendingQB.Paths[Audit Output 1]"
+          TopLeft="820.212710562043,345.407193747167">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.0547625971089,108.105884508607"
+              Start="0,0"
+              End="19.0547625971089,100.605884508607">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.0529422543036" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.0529422543036"
+                    Point2="0,54.0529422543036"
+                    Point3="4,54.0529422543036" />
+                  <mssgle:LineSegment
+                    End="15.0547625971089,54.0529422543036" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.0547625971089,54.0529422543036"
+                    Point2="19.0547625971089,54.0529422543036"
+                    Point3="19.0547625971089,58.0529422543036" />
+                  <mssgle:LineSegment
+                    End="19.0547625971089,100.605884508607" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="&#xA;"
+          ParentId="Package\DFT_Loading_LendingQB"
+          FontInfo="{assembly:Null}"
+          Size="28.8,56"
+          Id="4bc29f7c-5ebd-4c8e-99c1-fff6c4286988"
+          TopLeft="734.821441085363,126.176472357813" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -3878,7 +4542,7 @@ Great Weekend"</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_Loading_LendingQB\OLE DB_BK_WMichael_Stg">
+    design-time-name="Package\DFT_Loading_LendingQB\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3890,17 +4554,5 @@ Great Weekend"</DTS:PropertyExpression>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="180.8,48"
-          Id="Package.EventHandlers[OnError]\Send Mail Task"
-          TopLeft="391.181818181818,59.5454545454545" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

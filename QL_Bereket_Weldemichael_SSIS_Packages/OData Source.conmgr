@@ -1,27 +1,21 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:DelayValidation="True"
   DTS:ObjectName="OData Source"
-  DTS:DTSID="{A2E0422F-3526-44EA-B5C3-DA3A11CE5EDA}"
+  DTS:DTSID="{C735BA7A-B59C-4681-8A5E-22560DBF2044}"
   DTS:CreationName="ODATA">
   <DTS:PropertyExpression
-    DTS:Name="AuthType">@[$Project::ODataSource_AuthType]</DTS:PropertyExpression>
+    DTS:Name="ConnectionString">@[$Project::ODataSource_ConnectionString2]</DTS:PropertyExpression>
   <DTS:PropertyExpression
-    DTS:Name="ConnectionString">@[$Project::ODataSource_ConnectionString]</DTS:PropertyExpression>
+    DTS:Name="Password">@[$Project::ODataSource_Password3]</DTS:PropertyExpression>
   <DTS:PropertyExpression
-    DTS:Name="Password">@[$Project::ODataSource_Password]</DTS:PropertyExpression>
-  <DTS:PropertyExpression
-    DTS:Name="UserName">@[$Project::ODataSource_UserName]</DTS:PropertyExpression>
+    DTS:Name="UserName">@[$Project::ODataSource_UserName2]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <ODataConnectionManager
       UserName="sharepoint@dunatk.com"
       Url="https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc"
-      ConnectionString="Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie=&quot;SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDc1NjQ0OTgwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzY1MDg5ODM3NDkzNzMsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLGUwYTE2NGEwLTkwZDYtMjAwMC01YmJjLWUwYjVhMDIxZjAyYixlMGExNjRhMC05MGQ2LTIwMDAtNWJiYy1lMGI1YTAyMWYwMmIsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxCbTRYTkxRNEZpam03dXpoejNnSGVISUdPdmxHRGhVUGY3TzgvVUxvL1ZFemFFRUlEVndGWENqLzg5N3BPVEl1cW10NjdEN05wVE1iT1BjTDl6aUhUOHJIejRJUXdjVlNvTC9MSWtQdEtVOHMzWkFyZGdQT0Z6dHMrbVh6Wjk1ZGdmSk5nd3ZZeVB1RCtBOWJMaHhiNkQ5NHgzUUJGLzBMOGJQS3cyRm94VWFaNTFLZXJ3Tm1Wb2pNWlMwNU1WRVBraWtTc3BiOHpIU29jYU8waFBWcGVWTkZQNmZsamE5cDJHYUpBcEszYmpSYytRNmlzZ0ptQ29kT0NUditiZFhrZGt0bGN0WktrT1I3YVNoSEV5ZGlhQmpGSmJoNjZiYnc1VmJId2dkTEhTWVk5Ykx6NHBWcHNReld2TjNmbUpQcXFTa3NIQitSYWxkK1prRitneVZJYXc9PTwvU1A+&quot;;User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104"
+      ConnectionString="Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie=&quot;SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDgxNjgwNjkwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwODI1NDQ2OTc0MzAzOTEsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDdkZTE2NmEwLTAwMjQtMjAwMC03ZDAyLWMwYzU2MDEzYTYxYyw3ZGUxNjZhMC0wMDI0LTIwMDAtN2QwMi1jMGM1NjAxM2E2MWMsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxuSzFMMzFSLy9RWGdpL3RXN0Mxc25PaHN4UmhxdUh3dTRUY3h6dnNCTW1GM3JUZnN6YlVxbk5SMTdzbnNCRU42TGhtN0VRTWd4WGtPRDROb1lPbTVVQWlJVElDT1FYbU5GN0lXdnZqMWlLMDVlQTBxaFhKTkQrS3dxSUlRcW1SQ1VON0VYUWt1eEtnMUE3c2I2OW04eUNiWm5ZSndSbW9vazZkN3Z6am9ZU2wyUDZlZ1hsT2dzNHplSWg1TFArc2pEQWpoRXZVdGZOemF3UTc5Z1BxMWQwS240YmpsbGRoSTVWMUxtL2hjZlFHaWFtaE1MWDdLY3JLM1pyVytyVlpHaUYraFp6YzY3aytkcHpTS2VNNys5ZVlreUV3ckhyVlBxaUc0OUxEViszWTFIRTliVWNaaXhNOVdVMzIyZWVvOXJzeEQyRzBMSkhDMFRnMWNBcldRM2c9PTwvU1A+&quot;;User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104"
       MicrosoftOnlineServicesAuth="True"
       AuthType="MicrosoftOnlineService"
-      ConnectByProxy="False">
-      <Password
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAAH/jsBNVyrMw00n/syjKtl9QcyvNuNol2q5vuj8uC4jwAAAAAOgAAAAAIAACAAAADC8Qd+M6y/P2EmwAQkk0JhMxoTFa8VSjF77FgiyWw/vTAAAABP0Ulr+mlD0mkE7wfXgUpXEjl/w1eIIy4RsQ5tGPtjzdiXZ4kgNLCh2jgUmDLYReBAAAAAUxJT7syTYovQ1wp5weDBBXxDTxFYpsgcH42XxB1bTCTp5mLBs+TSo6xXfl0tkdWvNX4EaIMB9ZHZv7ajFFSNyw==</Password>
-    </ODataConnectionManager>
+      ConnectByProxy="False" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
