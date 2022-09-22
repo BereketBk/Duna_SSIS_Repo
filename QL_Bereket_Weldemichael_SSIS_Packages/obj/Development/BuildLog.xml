@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>QL_Bereket_Weldemichael_SSIS_Packages</Name>
-    <LastWriteTime>2022-09-21T16:33:18.7033563Z</LastWriteTime>
+    <LastWriteTime>2022-09-22T00:27:16.519965Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Pkg_Bereket_Weldemichael_LendingWise.dtsx</Name>
-      <LastWriteTime>2022-09-19T23:47:41.4585801Z</LastWriteTime>
+      <LastWriteTime>2022-09-21T22:53:54.7755123Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -17,13 +17,13 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Pkg_Bereket_Weldemichael_LendingQB.dtsx</Name>
-      <LastWriteTime>2022-09-21T16:33:18.6473396Z</LastWriteTime>
+      <Name>Pkg_Bereket_Weldemichael_QuickenLoan.dtsx</Name>
+      <LastWriteTime>2022-09-17T18:37:09.7086883Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Pkg_Bereket_Weldemichael_QuickenLoan.dtsx</Name>
-      <LastWriteTime>2022-09-17T18:37:09.7086883Z</LastWriteTime>
+      <Name>Pkg_Bereket_Weldemichael_LendingQB1.dtsx</Name>
+      <LastWriteTime>2022-09-22T00:37:19.2943032Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
