@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-A7GEKAJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAABTjEistOYuLxGPJq1QO8UbxIW8C2SxK0SuqN8Y8SIUIAAAAAAOgAAAAAIAACAAAAB8TlTb/UlVLYhlr6uxAm4ur8BKIm9fRsSmjomNOHlE85AAAAAIcCo74IY/btfVd0srKpgfVxVpdLd16jmywKEVTuOPX3FrM0T3BllfedHdEAUySJVp+LEv6/2U4ZeCAuRacHtfWRxKVIX0UV8RgnngjyVp+Da1IH0hRlIgcavfumoTkcXfDBAsxlkT8zzgKwoPZn2lrcYjE5/m6uz5VDAm5TojHjfcGciEZY2xqsmTACUarSBAAAAAnS5H47bDa8Dgl/od4wRZQl1FvgynVATlEnENFC+WzeUtS72aXlPVWP491Hr1jc0fC4POMWZoXj2AWG4kmqnupg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAACP6Puf2feaVWfg0fOl5iJFe4OhXcAxXB/UJsp1Of3PZAAAAAAOgAAAAAIAACAAAAAHETVQiknCmdvwFuo1iwPHA05vFRY+ZKS4zkdUwd2hH5AAAACQTWTGIThM3RKzPv7vxWx0ZSsHrcvhA+aeLDEPhOHpIm2xprKd1lzmahLViPu9bqw5HG0JIQXbQ3hgRXE87DOIqZuCTauxpooH73Cp3WRe2+f7iYv2UxHt0sRlI09+9J5x0To3G4uPrfPh004Z3y9WJOPMGWY2Rjso07LDlYDmiP/D6mE3SpxBd9Dq5iqB8dZAAAAA5Fi1EaIdVPZuq9U9lfBfvKn3SrWSES2jBuHSVkvzXBPmIEnZlpz4uCDHFkQNQZG/NvcF8qtafEA7pqUhKO8xjw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -308,20 +308,61 @@
                 <SSIS:Property SSIS:Name="Name">Pkg_Bereket_Weldemichael_LendingQB1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">191</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">202</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E611134A-AE5F-4EFB-ACD2-70556958DC02}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A4E5D616-D102-472A-A446-ABBDB7AD3D88}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="DESKTOPA7GEKAJSQLEXPRESSQL_STG_ConnectByProxy">
                   <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
+                    <SSIS:Property SSIS:Name="ID">{52E21E25-D013-457E-8E4C-C812F3790532}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
                     </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="DESKTOPA7GEKAJSQLEXPRESSSSIS_LOG_ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{7E3D9499-F066-437C-A69C-1D8D4E0374D7}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="QL_BK_Wmichael_Stg_Conn_ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{8CCF2F86-AEDC-431C-9E2D-C74CB67F600F}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="SMTPConnectionManager1_ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{0684C406-71A0-4DA8-80B4-B83BD6D17314}</SSIS:Property>
                     <SSIS:Property SSIS:Name="CreationName">
                     </SSIS:Property>
                     <SSIS:Property SSIS:Name="Description">
@@ -466,21 +507,6 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG.ConnectByProxy">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -614,21 +640,6 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.QL_BK_Wmichael_Stg_Conn.ConnectByProxy">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.QL_BK_Wmichael_Stg_Conn.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -760,21 +771,6 @@
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.SMTP Connection Manager 1.ConnectByProxy">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.SMTP Connection Manager 1.ConnectionString">

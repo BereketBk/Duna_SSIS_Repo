@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>QL_Bereket_Weldemichael_SSIS_Packages</Name>
-    <LastWriteTime>2022-09-22T00:27:16.519965Z</LastWriteTime>
+    <LastWriteTime>2022-09-23T01:45:27.3971835Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -23,7 +23,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Pkg_Bereket_Weldemichael_LendingQB1.dtsx</Name>
-      <LastWriteTime>2022-09-22T00:37:19.2943032Z</LastWriteTime>
+      <LastWriteTime>2022-09-23T17:53:13.1702287Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
