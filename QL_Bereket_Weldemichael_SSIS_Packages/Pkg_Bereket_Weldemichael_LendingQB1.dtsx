@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Pkg_Bereket_Weldemichael_LendingQB1"
   DTS:PackageType="5"
-  DTS:VersionBuild="233"
-  DTS:VersionGUID="{10B71422-8904-4DA9-AA18-215883B1E069}">
+  DTS:VersionBuild="337"
+  DTS:VersionGUID="{56B63C2C-EA5B-47BC-9551-19D4EE254622}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=QL_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{23FF89B5-0F1E-48BF-9C25-A735019EE8B0}DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=QL_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{23FF89B5-0F1E-48BF-9C25-A735019EE8B0}DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,19 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=SSIS_LOG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Pkg_Bereket_Weldemichael_LendingQB1-{AB3A11BE-4026-4604-94F0-294019EFD13A}DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=SSIS_LOG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Pkg_Bereket_Weldemichael_LendingQB1-{AB3A11BE-4026-4604-94F0-294019EFD13A}DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C23717E4-300B-44B1-B496-1529E9781A68}"
+      DTS:ObjectName="DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=SSIS_LOG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Pkg_Bereket_Weldemichael_LendingQB1-{C23717E4-300B-44B1-B496-1529E9781A68}DESKTOP-A7GEKAJ\SQLEXPRESS.SSIS_LOG 1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -65,6 +77,8 @@
       DTS:ObjectName="SMTP Connection Manager 1">
       <DTS:PropertyExpression
         DTS:Name="ConnectByProxy">@[$Package::SMTPConnectionManager1_ConnectByProxy]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Package::SMTPConnectionManager1_ConnectionString]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SmtpConnectionManager
           ConnectionString="SmtpServer=587;UseWindowsAuthentication=True;EnableSsl=False;"
@@ -103,11 +117,29 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="11"
+      DTS:DTSID="{B9828177-7EB7-4EAF-B24F-D63C6B46ABBF}"
+      DTS:ObjectName="Quciken_Loan_Conn_Mngr_ConnectByProxy">
+      <DTS:Property
+        DTS:DataType="11"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="11"
       DTS:DTSID="{0684C406-71A0-4DA8-80B4-B83BD6D17314}"
       DTS:ObjectName="SMTPConnectionManager1_ConnectByProxy">
       <DTS:Property
         DTS:DataType="11"
         DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{7CEBD412-04EE-4F7C-84CE-ABE22514346D}"
+      DTS:ObjectName="SMTPConnectionManager1_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">SmtpServer=587;UseWindowsAuthentication=True;EnableSsl=False;</DTS:Property>
     </DTS:PackageParameter>
   </DTS:PackageParameters>
   <DTS:Variables>
@@ -134,8 +166,6 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{7CE522C7-2EC3-42F2-A7E0-DF2B11BDCC26}"
-      DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::Var_RowCountLendinfQB]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Var_RowCountLendinfQB">
@@ -146,15 +176,31 @@
       DTS:CreationName=""
       DTS:DTSID="{637A63D9-34C0-4C88-9880-E1C7BAFCEA8E}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::Var_Subject]"
+      DTS:Expression="@[System::PackageName]+LEFT((dt_str,50,1252) GETDATE(),11)"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Var_Subject">
       <DTS:VariableValue
-        DTS:DataType="8">Quicken Loan ETL Error</DTS:VariableValue>
+        DTS:DataType="8">Pkg_Bereket_Weldemichael_LendingQB12022-10-07 </DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete_Diplicate_Records"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9EDE1D69-55EB-4BD6-BFAE-6B415A3FE09C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete_Diplicate_Records"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2C7621FF-C982-4449-9494-CA2F8A187800}"
+          SQLTask:SqlStatementSource="with checkdup &#xA;  as &#xA;  (&#xA;  SELECT LoanID&#xA; , ROW_NUMBER() OVER (PARTITION BY LoanID  ORDER BY LastModifiedDate DESC ) as RN &#xA;  FROM [QuickenLoan].dbo.Bereket_Weldemichael_Loan&#xA;  )&#xA;&#xA;&#xA;DELETE  FROM checkdup WHERE RN &gt; 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\DFT_Loading_LendingQB"
       DTS:CreationName="Microsoft.Pipeline"
@@ -311,6 +357,86 @@
                       refId="Package\DFT_Loading_LendingQB\DC_Changing_DataType.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT_Loading_LendingQB\DC_Changing_DataType.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Loading_LendingQB\Fuded_Tier"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Fuded_Tier"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Inputs[Derived Column Input].Columns[FinallCreditScore]"
+                      cachedDataType="r8"
+                      cachedName="FinallCreditScore"
+                      lineageId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FinallCreditScore]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT_Loading_LendingQB\Fuded_Tier.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Output].Columns[FundedTier]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Output].Columns[FundedTier]"
+                      name="FundedTier"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_I4)#{Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FinallCreditScore]} &gt; 680 ? 3 : (DT_I4)#{Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FinallCreditScore]} &gt; 620 &amp;&amp; #{Package\DFT_Loading_LendingQB\OData Source.Outputs[Output].Columns[FinallCreditScore]} &lt;= 680 ? 4 : 5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_I4)FinallCreditScore &gt; 680 ? 3 : (DT_I4)FinallCreditScore &gt; 620 &amp;&amp; FinallCreditScore &lt;= 680 ? 4 : 5</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT_Loading_LendingQB\Fuded_Tier.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -542,8 +668,8 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_Loading_LendingQB\OData Source.Connections[Connection]"
-                  connectionManagerID="{C735BA7A-B59C-4681-8A5E-22560DBF2044}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OData Source]"
+                  connectionManagerID="{3307AA0A-D7F5-4BE0-A9E6-59DFD250BE0D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[OData Source_LendingQB]"
                   description="Connection to OData Service"
                   name="Connection" />
               </connections>
@@ -2395,7 +2521,7 @@ where [refTable].[MarketSourceCode] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Stg_Bereket_Weldemichael_QL]</property>
+                  name="OpenRowset">[Stg_Bereket_Weldemichael_QL]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2429,7 +2555,7 @@ where [refTable].[MarketSourceCode] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
@@ -3079,6 +3205,12 @@ where [refTable].[MarketSourceCode] = ?</property>
                       cachedName="NewMarketSourceName"
                       externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NewMarketSourceName]"
                       lineageId="Package\DFT_Loading_LendingQB\Lookup.Outputs[Lookup Match Output].Columns[NewMarketSourceName]" />
+                    <inputColumn
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FundedTier]"
+                      cachedDataType="i4"
+                      cachedName="FundedTier"
+                      externalMetadataColumnId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FundedTier]"
+                      lineageId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Output].Columns[FundedTier]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3508,6 +3640,10 @@ where [refTable].[MarketSourceCode] = ?</property>
                       dataType="str"
                       length="100"
                       name="NewMarketSourceName" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FundedTier]"
+                      dataType="i4"
+                      name="FundedTier" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3536,40 +3672,11 @@ where [refTable].[MarketSourceCode] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\DFT_Loading_LendingQB\Row Count"
-              componentClassID="Microsoft.RowCount"
-              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="Row Count">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable to hold the row count."
-                  name="VariableName">User::Var_RowCountLendinfQB</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\DFT_Loading_LendingQB\Row Count.Inputs[Row Count Input 1]"
-                  hasSideEffects="true"
-                  name="Row Count Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\DFT_Loading_LendingQB\Row Count.Outputs[Row Count Output 1]"
-                  name="Row Count Output 1"
-                  synchronousInputId="Package\DFT_Loading_LendingQB\Row Count.Inputs[Row Count Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\DFT_Loading_LendingQB.Paths[Audit Output 1]"
-              endId="Package\DFT_Loading_LendingQB\Row Count.Inputs[Row Count Input 1]"
+              endId="Package\DFT_Loading_LendingQB\Fuded_Tier.Inputs[Derived Column Input]"
               name="Audit Output 1"
               startId="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns.Outputs[Audit Output 1]" />
             <path
@@ -3578,25 +3685,20 @@ where [refTable].[MarketSourceCode] = ?</property>
               name="Derived Column Output"
               startId="Package\DFT_Loading_LendingQB\DC_Changing_DataType.Outputs[Derived Column Output]" />
             <path
+              refId="Package\DFT_Loading_LendingQB.Paths[Derived Column Output1]"
+              endId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\DFT_Loading_LendingQB\Fuded_Tier.Outputs[Derived Column Output]" />
+            <path
               refId="Package\DFT_Loading_LendingQB.Paths[Lookup Match Output]"
               endId="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns.Inputs[Audit Input 1]"
               name="Lookup Match Output"
               startId="Package\DFT_Loading_LendingQB\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\DFT_Loading_LendingQB.Paths[Lookup No Match Output]"
-              endId="Package\DFT_Loading_LendingQB\Multicast.Inputs[Multicast Input 1]"
-              name="Lookup No Match Output"
-              startId="Package\DFT_Loading_LendingQB\Lookup.Outputs[Lookup No Match Output]" />
-            <path
               refId="Package\DFT_Loading_LendingQB.Paths[Output]"
               endId="Package\DFT_Loading_LendingQB\DC_Changing_DataType.Inputs[Derived Column Input]"
               name="Output"
               startId="Package\DFT_Loading_LendingQB\OData Source.Outputs[Output]" />
-            <path
-              refId="Package\DFT_Loading_LendingQB.Paths[Row Count Output 1]"
-              endId="Package\DFT_Loading_LendingQB\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Row Count Output 1"
-              startId="Package\DFT_Loading_LendingQB\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -3613,9 +3715,24 @@ where [refTable].[MarketSourceCode] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{688C4AA8-4FFD-4F8F-B147-A8B598A3EDC6}"
-          SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="exec udp_Stg_Bereket_Weldemichael_QL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{23FF89B5-0F1E-48BF-9C25-A735019EE8B0}"
+          SQLTask:SqlStatementSource="[udp_Stg_Bereket_Weldemichael_QL]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Loading_Data_TO_Destination"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{00D502A2-2200-43D0-B95F-438CAE0371D9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loading_Data_TO_Destination"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2C7621FF-C982-4449-9494-CA2F8A187800}"
+          SQLTask:SqlStatementSource="exec usdSSIS_Bereket_Wmichael_Transformation 'Pkg_Bereket_Weldemichael_LendingQB1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -3623,11 +3740,27 @@ where [refTable].[MarketSourceCode] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{29CD1C20-E8C3-476C-9F7B-7F236F4D3DD0}"
+      DTS:DTSID="{33D8653F-17F1-425F-B4FF-859B67EDCEE2}"
       DTS:From="Package\ESQL_Truncate_Lending_QB"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\DFT_Loading_LendingQB" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D989F3A1-A8A6-479A-A307-29B96D68972B}"
+      DTS:From="Package\DFT_Loading_LendingQB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Loading_Data_TO_Destination" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{80DFB0D2-4017-4B7D-920D-360116058008}"
+      DTS:From="Package\Loading_Data_TO_Destination"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Delete_Diplicate_Records" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -3648,21 +3781,86 @@ where [refTable].[MarketSourceCode] = ?</property>
           <DTS:VariableValue
             DTS:DataType="11">-1</DTS:VariableValue>
         </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{E1EA45E6-347B-443B-871D-C0BA1485D620}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable"
+          DTS:ReadOnly="True">
+          <DTS:VariableValue
+            DTS:DataType="8">@packageID</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{CB235982-E0A2-4420-A4A8-054F3F12A6A3}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable1"
+          DTS:ReadOnly="True">
+          <DTS:VariableValue
+            DTS:DataType="8"> @PackageName</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{31F5F575-9EAB-47DC-B729-BF07ADCD7DDE}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable2">
+          <DTS:VariableValue
+            DTS:DataType="8">@SourceName</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{E77D42C4-ADC1-4849-8A43-30B2371E5FF1}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable3">
+          <DTS:VariableValue
+            DTS:DataType="8">@LoadDate</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{D3282EFC-299E-4BFC-A705-FCC1E2D05D87}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable4">
+          <DTS:VariableValue
+            DTS:DataType="8">@RunBy</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{29C56F46-011E-4999-A966-40BE421B62A6}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable5">
+          <DTS:VariableValue
+            DTS:DataType="8">@ErrorCode</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{B9B887DD-6628-42A6-8A71-6643D01C1D57}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="Variable6">
+          <DTS:VariableValue
+            DTS:DataType="8">@ErrorDescription</DTS:VariableValue>
+        </DTS:Variable>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnError]\EST_Error _Log"
+          DTS:refId="Package.EventHandlers[OnError]\EST_Error_Log"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D920B439-6B19-4BC6-AA5D-C176D1FC51AD}"
+          DTS:DTSID="{B9B76BD1-1116-4FC2-8AB3-34FAC9D3ECBF}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="EST_Error _Log">
+          DTS:ObjectName="EST_Error_Log">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{AB3A11BE-4026-4604-94F0-294019EFD13A}"
-              SQLTask:SqlStatementSource="insert into [dbo].[Quicken_Loans_ETL_Error_Log]&#xA;values (?,?,?,?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="insert into [dbo].[Quicken_Loans_ETL_Error_Log]&#xA;values (?,?,?,?,?,?,?)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="System::PackageID"
@@ -3724,6 +3922,15 @@ where [refTable].[MarketSourceCode] = ?</property>
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="System::ErrorCode,System::ErrorDescription,User::Var_Body,User::Var_Subject,$Project::Par_ToEmail,$Project::Par_FromEmail,$Project::Par_Password,$Project::Par_SmtpClient">
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -3843,35 +4050,6 @@ where [refTable].[MarketSourceCode] = ?</property>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d31f7d366635474a98747265eec7d67c.Properties.Settings.get_Default():ST_d31f7d366635474a98747265eec7d67c.Properties.Sett" +
-    "ings")]
-
-namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ST_d31f7d366635474a98747265eec7d67c.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4055,12 +4233,14 @@ namespace ST_d31f7d366635474a98747265eec7d67c
         public void Main()
         {
             // TODO: Add your code here
-
-           // System::ErrorDescription,User::Var_Body,User::Var_Subject,$Project::Par_ToEmail,$Project::Par_FromEmail,$Project::Par_Password,$Project::Par_SmtpClient
+           // " " + Dts.Variables["System::ErrorDescription"].Value.ToString() + " " + Dts.Variables["System::ErrorCode"].Value.ToString();
+            // System::ErrorDescription,User::Var_Body,User::Var_Subject,$Project::Par_ToEmail,$Project::Par_FromEmail,$Project::Par_Password,$Project::Par_SmtpClient
+            //NOTE: AS ALTERNATIVE WE CAN ALSO CONCAT SYSTEM DESCRIPTION AS PART OF THE EMAIL BODY//
+            
             String FromEmail = Dts.Variables["Par_FromEmail"].Value.ToString();
             String ToEmail = Dts.Variables["Par_ToEmail"].Value.ToString();
-            String SenmailSubject = Dts.Variables["Var_Subject"].Value.ToString();
-            String SendMailBody = Dts.Variables["Var_Body"].Value.ToString()+ " "+ Dts.Variables["System::ErrorDescription"]. Value.ToString()+" " + Dts.Variables["System::ErrorCode"].Value.ToString();
+            String SendmailSubject = Dts.Variables["Var_Subject"].Value.ToString();
+            String SendMailBody = Dts.Variables["System::ErrorDescription"].Value.ToString();
             
             {
                 MailMessage email = new MailMessage();
@@ -4069,7 +4249,7 @@ namespace ST_d31f7d366635474a98747265eec7d67c
                 // START
                 email.From = new MailAddress(FromEmail);
                 email.To.Add(ToEmail);
-                email.Subject = SenmailSubject;
+                email.Subject = SendmailSubject;
                 email.Body = SendMailBody;
                 //END
 
@@ -4080,7 +4260,7 @@ namespace ST_d31f7d366635474a98747265eec7d67c
                 SmtpServer.Send(email);
 
                
-                MessageBox.Show("congratulations email sent sucessfully");
+                MessageBox.Show(" email sent sucessfully");
                 MessageBox.Show(SendMailBody);
 
             }
@@ -4119,7 +4299,7 @@ namespace ST_d31f7d366635474a98747265eec7d67c
     <msb:CodeName>ST_d31f7d366635474a98747265eec7d67c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_d31f7d366635474a98747265eec7d67c</msb:DisplayName>
-    <msb:ProjectId>{92163F93-999F-4D84-A647-5E0597F5586B}</msb:ProjectId>
+    <msb:ProjectId>{B87C300A-612F-430D-B5E2-FFDCA9150552}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_d31f7d366635474a98747265eec7d67c.csproj" />
@@ -4131,6 +4311,35 @@ namespace ST_d31f7d366635474a98747265eec7d67c
     <msb:File Include="ScriptMain.cs" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_d31f7d366635474a98747265eec7d67c.Properties.Settings.get_Default():ST_d31f7d366635474a98747265eec7d67c.Properties.Sett" +
+    "ings")]
+
+namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -4161,15 +4370,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -4241,104 +4441,104 @@ namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
               <BinaryItem
                 Name="ST_d31f7d366635474a98747265eec7d67c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDABPvLWMAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAAvjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDALLtNGMAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAA7jAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAGwxAABPAAAAAEAAAJQEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJwwAABPAAAAAEAAAJQEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAxBEAAAAgAAAAEgAAAAIA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA9BAAAAAgAAAAEgAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAJQEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
-LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACg
-MQAAAAAAAEgAAAACAAUAHCIAAJgOAAABAAAAAAAAALQwAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBQBaAQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADQ
+MAAAAAAAAEgAAAACAAUAvCEAACgOAAABAAAAAAAAAOQvAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBAD4AAAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
 AAAKbxQAAAoKAigQAAAKbxEAAApyHQAAcG8SAAAKbxMAAApvFAAACgsCKBAAAApvEQAACnI1AABw
-bxIAAApvEwAACm8UAAAKDBuNHAAAASUWAigQAAAKbxEAAApyTQAAcG8SAAAKbxMAAApvFAAACqIl
-F3JfAABwoiUYAigQAAAKbxEAAApyYwAAcG8SAAAKbxMAAApvFAAACqIlGXJfAABwoiUaAigQAAAK
-bxEAAApylQAAcG8SAAAKbxMAAApvFAAACqIoFQAACg1zFgAAChMEcrkAAHBzFwAAChEEBnMYAAAK
-bxkAAAoRBG8aAAAKB28bAAAKEQQIbxwAAAoRBAlvHQAACiUgSwIAAG8eAAAKJQZy1wAAcHMfAAAK
-byAAAAolF28hAAAKEQRvIgAACnL5AABwKCMAAAomCSgjAAAKJioeAigkAAAKKh4CKCUAAAoqrn4B
-AAAELR5yRwEAcNADAAACKCYAAApvJwAACnMoAAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoa
-fgMAAAQqHgIoKQAACioucwgAAAaAAwAABCpCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAF
-AGwAAABcBAAAI34AAMgEAABUBgAAI1N0cmluZ3MAAAAAHAsAALwBAAAjVVMA2AwAABAAAAAjR1VJ
-RAAAAOgMAACwAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoBMwAWAAABAAAAJgAAAAUAAAAG
-AAAACQAAAAEAAAApAAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAAAQAAAAUAAAABAAAAAQAAAAAA
-rAMBAAAAAAAGADoCsAQGAMkCsAQGAIYBnQQPACQFAAAGALMBQQQGAB0CQQQGAP4BQQQGALACQQQG
-AFoCQQQGAHMCQQQGAMoBQQQGAOUB9wIKAI4COQMKAAUBOQMOAHcAnAMGAPsD6wMGAGkBnQQGAM8F
-6wMGAIAE0AQGAHAELAQOADkBhgMOAJoBhgMOACEBFwQGAE4BsAQKAHQDOQMSAGYFsAASAIMAsAAG
-ABMD6wMOAAYGnAMOAKYFnAMOAFMEnAMOAGID4gUOABoG4gUWADIGiQUWAPkFiQUGANAA6wMGAIwA
-6wMGAEoGQQQAAAAAAQAAAAAAAQABAAEAEAAMBDoAOQABAAEAAAAQANcEMwVJAAEAAwAAARAAcAUz
-BV0AAwAHAAMBAAC6BQAAQQAEAAoAEQAABJ8AEQD1AKMAEQBnAKcABgYpAKsAVoCeBa4AVoDVAK4A
-UCAAAAAAhgASBAYAAQC2IQAAAACGGJAEBgABAL4hAAAAAIMYkAQGAAEAxiEAAAAAkwh8BLIAAQDy
-IQAAAACTCN0AtwABAPkhAAAAAJMI6QC8AAEAASIAAAAAlgjtBcIAAgAIIgAAAACGGJAEBgACABAi
-AAAAAJEYlgTHAAIAAAABAPECCQCQBAEAEQCQBAYAGQCQBAoAKQCQBBAAMQCQBBAAOQCQBBAAQQCQ
-BBAASQCQBBAAUQCQBBAAWQCQBBAAYQCQBBAAaQCQBAYAiQCQBAYAsQCQBBUAwQCQBAYAcQCyBSQA
-yQBiBSkA0QDiAy4A2QDnAjQAkQARAzgA4QDIBTwAeQCQBAYA6QCQBBAA8QCQBBAAeQDyA0IAeQBp
-BEgA+QBeABAAeQDWBRAAeQA9BhAA6QARBgEAAQGQBE0A6QB5BVMA6QDUA1oA6QBiAF8AEQEtBmUA
-cQCQBAYAkQCQBAYAIQGeAGwAIQFGBnUAmQCQBHsAuQCQBAYACAAUAJUACAAYAJoAKQBzAAIBLgAL
-ANoALgATAOMALgAbAAIBLgAjAAsBLgArADQBLgAzADQBLgA7ADoBLgBDAAsBLgBLAEcBLgBTADQB
-LgBbAGUBQwBjAJoASQBzAAIBYQB7AJoAYwBrAJoAGwADAAEABAADAAAAgATLAAAA/QDQAAAA8QXV
-AAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAbSDpXwAAAAAAADoAAAAEAAAAAAAAAAAA
-AACDADEAAAAAAA8AAAAAAAAAAAAAAIwAGgMAAAAABAAAAAAAAAAAAAAAgwDrAwAAAAAPAAAAAAAA
-AAAAAACMAAoAAAAAAAQAAAAAAAAAAAAAAIMAiQUAAAAAAAAAAAEAAADhBAAABQACAAAAAAAAPE1v
-ZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIAU1Rf
-ZDMxZjdkMzY2NjM1NDc0YTk4NzQ3MjY1ZWVjN2Q2N2MAQWRkAFNlbmQAZGVmYXVsdEluc3RhbmNl
-AE1haWxNZXNzYWdlAFZhcmlhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxl
-AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAVHlwZQBGYWlsdXJlAGdldF9DdWx0dXJl
-AHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UA
-QXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5l
-cmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0
-cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFz
-c2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJs
-eUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21w
-aWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3Nl
-bWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUA
-QXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAGdl
-dF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1pY3Jvc29m
-dC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3Jp
-cHRUYXNrAE5ldHdvcmtDcmVkZW50aWFsAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25l
-bnRNb2RlbABTeXN0ZW0uTmV0Lk1haWwAU1RfZDMxZjdkMzY2NjM1NDc0YTk4NzQ3MjY1ZWVjN2Q2
-N2MuZGxsAHNldF9FbmFibGVTc2wAZ2V0X0l0ZW0AU3lzdGVtAHNldF9Gcm9tAEVudW0AcmVzb3Vy
-Y2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlv
-bgBTeXN0ZW0uUmVmbGVjdGlvbgBNYWlsQWRkcmVzc0NvbGxlY3Rpb24AZ2V0X1RvAEN1bHR1cmVJ
-bmZvAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBT
-eXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfZDMxZjdk
-MzY2NjM1NDc0YTk4NzQ3MjY1ZWVjN2Q2N2MuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2Vz
-AERlYnVnZ2luZ01vZGVzAFNUX2QzMWY3ZDM2NjYzNTQ3NGE5ODc0NzI2NWVlYzdkNjdjLlByb3Bl
-cnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBzZXRfQ3JlZGVudGlhbHMAU3lzdGVtLldpbmRv
-d3MuRm9ybXMAU3VjY2VzcwBNYWlsQWRkcmVzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAQ29uY2F0
-AE9iamVjdABzZXRfU3ViamVjdABTeXN0ZW0uTmV0AGdldF9EZWZhdWx0AERpYWxvZ1Jlc3VsdABT
-bXRwQ2xpZW50AHNldF9Qb3J0AElDcmVkZW50aWFsc0J5SG9zdABTaG93AE1lc3NhZ2VCb3gAc2V0
-X0JvZHkAZ2V0X0Fzc2VtYmx5AAAAG1AAYQByAF8ARgByAG8AbQBFAG0AYQBpAGwAABdQAGEAcgBf
-AFQAbwBFAG0AYQBpAGwAABdWAGEAcgBfAFMAdQBiAGoAZQBjAHQAABFWAGEAcgBfAEIAbwBkAHkA
-AAMgAAAxUwB5AHMAdABlAG0AOgA6AEUAcgByAG8AcgBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AACNT
-AHkAcwB0AGUAbQA6ADoARQByAHIAbwByAEMAbwBkAGUAAB1zAG0AdABwAC4AZwBtAGEAaQBsAC4A
-YwBvAG0AACF5AG0AaABnAGIAcQBsAG0AbAByAGoAcABnAHcAdgB4AABNYwBvAG4AZwByAGEAdAB1
-AGwAYQB0AGkAbwBuAHMAIABlAG0AYQBpAGwAIABzAGUAbgB0ACAAcwB1AGMAZQBzAHMAZgB1AGwA
-bAB5AABxUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgANwA0ADcAMgA2
-ADUAZQBlAGMANwBkADYANwBjAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMA
-ZQBzAAAAAADjWfmro1b5S5cB27/sTfOGAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFVCAcFDg4O
-DhI9BCAAEmUEIAASaQUgARJtHAMgABwDIAAOBQABDh0OBSABARJ5BCAAEn0FIAIBDg4GIAEBEoCF
-BCABAQIFIAEBEj0GAAERgI0OCAABEoCREYCVBSAAEoCZByACAQ4SgJkIt3pcVhk04IkIiYRdzYCA
-zJEEAAAAAAQBAAAAAwYSTQMGElEDBhIQAgYIAwYRFAQAABJNBAAAElEFAAEBElEEAAASEAMAAAEE
-CAASTQQIABJRBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEA
-AgAAAAAAKAEAI1NUX2QzMWY3ZDM2NjYzNTQ3NGE5ODc0NzI2NWVlYzdkNjdjAAAFAQAAAAAMAQAH
-SFAgSW5jLgAAHQEAGENvcHlyaWdodCBAIEhQIEluYy4gMjAyMgAASQEAGi5ORVRGcmFtZXdvcmss
-VmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjcA
-tAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2Nvcmxp
-YiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1
-YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAA
-AABQQURQQURQtAAAAJQxAAAAAAAAAAAAAK4xAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgMQAA
-AAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAA
+bxIAAApvEwAACm8UAAAKDAIoEAAACm8RAAAKck0AAHBvEgAACm8TAAAKbxQAAAoNcxUAAAoTBHJ/
+AABwcxYAAAoRBAZzFwAACm8YAAAKEQRvGQAACgdvGgAAChEECG8bAAAKEQQJbxwAAAolIEsCAABv
+HQAACiUGcp0AAHBzHgAACm8fAAAKJRdvIAAAChEEbyEAAApyvwAAcCgiAAAKJgkoIgAACiYqHgIo
+IwAACioeAigkAAAKKq5+AQAABC0ecu8AAHDQAwAAAiglAAAKbyYAAApzJwAACoABAAAEfgEAAAQq
+Gn4CAAAEKh4CgAIAAAQqGn4DAAAEKh4CKCgAAAoqLnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAM
+AAAAdjQuMC4zMDMxOQAAAAAFAGwAAABQBAAAI34AALwEAABMBgAAI1N0cmluZ3MAAAAACAsAAGQB
+AAAjVVMAbAwAABAAAAAjR1VJRAAAAHwMAACsAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJAwAAAPoB
+MwAWAAABAAAAJQAAAAUAAAAGAAAACQAAAAEAAAAoAAAAAgAAABAAAAABAAAAAgAAAAMAAAAEAAAA
+AQAAAAUAAAABAAAAAQAAAAAArAMBAAAAAAAGADoCsAQGAMkCsAQGAIYBnQQPACQFAAAGALMBQQQG
+AB0CQQQGAP4BQQQGALACQQQGAFoCQQQGAHMCQQQGAMoBQQQGAOUB9wIKAI4COQMKAAUBOQMOAHcA
+nAMGAPsD6wMGAGkBnQQGAMgF6wMGAIAE0AQGAHAELAQOADkBhgMOAJoBhgMOACEBFwQGAE4BsAQK
+AHQDOQMSAGYFsAASAIMAsAAOAP8FnAMOAKYFnAMOAFMEnAMOAGID2wUOABMG2wUWACsGiQUWAPIF
+iQUGANAA6wMGAIwA6wMGAEMGQQQAAAAAAQAAAAAAAQABAAEAEAAMBDoAOQABAAEAAAAQANcEMwVJ
+AAEAAwAAARAAcAUzBV0AAwAHAAMBAAC6BQAAQQAEAAoAEQAABJkAEQD1AJ0AEQBnAKEABgYpAKUA
+VoCeBagAVoDVAKgAUCAAAAAAhgASBAYAAQBUIQAAAACGGJAEBgABAFwhAAAAAIMYkAQGAAEAZCEA
+AAAAkwh8BKwAAQCQIQAAAACTCN0AsQABAJchAAAAAJMI6QC2AAEAnyEAAAAAlgjmBbwAAgCmIQAA
+AACGGJAEBgACAK4hAAAAAJEYlgTBAAIAAAABAPECCQCQBAEAEQCQBAYAGQCQBAoAKQCQBBAAMQCQ
+BBAAOQCQBBAAQQCQBBAASQCQBBAAUQCQBBAAWQCQBBAAYQCQBBAAaQCQBAYAiQCQBAYAsQCQBBUA
+wQCQBAYAcQCyBSQAyQBiBSkA0QDiAy4A2QDnAjQAkQARAzgAeQCQBAYA4QCQBBAA6QCQBBAAeQDy
+AzwAeQBpBEIA8QBeABAAeQDPBRAAeQA2BhAA4QAKBgEA+QCQBEcA4QB5BU0A4QDUA1QA4QBiAFkA
+CQEmBl8AcQCQBAYAkQCQBAYAGQGeAGYAGQE/Bm8AmQCQBHUAuQCQBAYACAAUAI8ACAAYAJQAKQBz
+APwALgALANQALgATAN0ALgAbAPwALgAjAAUBLgArAC4BLgAzAC4BLgA7ADQBLgBDAAUBLgBLAEEB
+LgBTAC4BLgBbAF8BQwBjAJQASQBzAPwAYQB7AJQAYwBrAJQAGwADAAEABAADAAAAgATFAAAA/QDK
+AAAA6gXPAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAciB5kwAAAAAAADoAAAAEAAAA
+AAAAAAAAAAB9ADEAAAAAAA8AAAAAAAAAAAAAAIYAGgMAAAAABAAAAAAAAAAAAAAAfQDrAwAAAAAP
+AAAAAAAAAAAAAACGAAoAAAAAAAQAAAAAAAAAAAAAAH0AiQUAAAAAAAAAAAEAAADhBAAABQACAAAA
+AAAAPE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3Js
+aWIAU1RfZDMxZjdkMzY2NjM1NDc0YTk4NzQ3MjY1ZWVjN2Q2N2MAQWRkAFNlbmQAZGVmYXVsdElu
+c3RhbmNlAE1haWxNZXNzYWdlAFZhcmlhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9t
+SGFuZGxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAVHlwZQBGYWlsdXJlAGdldF9D
+dWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmplY3RNb2Rl
+bEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGls
+ZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dh
+YmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmli
+dXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBB
+c3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0
+ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0
+ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRy
+aWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmli
+dXRlAGdldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1p
+Y3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNr
+cy5TY3JpcHRUYXNrAE5ldHdvcmtDcmVkZW50aWFsAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5D
+b21wb25lbnRNb2RlbABTeXN0ZW0uTmV0Lk1haWwAU1RfZDMxZjdkMzY2NjM1NDc0YTk4NzQ3MjY1
+ZWVjN2Q2N2MuZGxsAHNldF9FbmFibGVTc2wAZ2V0X0l0ZW0AU3lzdGVtAHNldF9Gcm9tAEVudW0A
+cmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFs
+aXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBNYWlsQWRkcmVzc0NvbGxlY3Rpb24AZ2V0X1RvAEN1
+bHR1cmVJbmZvAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9z
+dGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1Rf
+ZDMxZjdkMzY2NjM1NDc0YTk4NzQ3MjY1ZWVjN2Q2N2MuUHJvcGVydGllcy5SZXNvdXJjZXMucmVz
+b3VyY2VzAERlYnVnZ2luZ01vZGVzAFNUX2QzMWY3ZDM2NjYzNTQ3NGE5ODc0NzI2NWVlYzdkNjdj
+LlByb3BlcnRpZXMAZ2V0X1ZhcmlhYmxlcwBTZXR0aW5ncwBzZXRfQ3JlZGVudGlhbHMAU3lzdGVt
+LldpbmRvd3MuRm9ybXMAU3VjY2VzcwBNYWlsQWRkcmVzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMA
+T2JqZWN0AHNldF9TdWJqZWN0AFN5c3RlbS5OZXQAZ2V0X0RlZmF1bHQARGlhbG9nUmVzdWx0AFNt
+dHBDbGllbnQAc2V0X1BvcnQASUNyZWRlbnRpYWxzQnlIb3N0AFNob3cATWVzc2FnZUJveABzZXRf
+Qm9keQBnZXRfQXNzZW1ibHkAABtQAGEAcgBfAEYAcgBvAG0ARQBtAGEAaQBsAAAXUABhAHIAXwBU
+AG8ARQBtAGEAaQBsAAAXVgBhAHIAXwBTAHUAYgBqAGUAYwB0AAAxUwB5AHMAdABlAG0AOgA6AEUA
+cgByAG8AcgBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAB1zAG0AdABwAC4AZwBtAGEAaQBsAC4AYwBv
+AG0AACF5AG0AaABnAGIAcQBsAG0AbAByAGoAcABnAHcAdgB4AAAvIABlAG0AYQBpAGwAIABzAGUA
+bgB0ACAAcwB1AGMAZQBzAHMAZgB1AGwAbAB5AABxUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAz
+ADUANAA3ADQAYQA5ADgANwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AUAByAG8AcABlAHIA
+dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAAB0cLFLkIguRID3t4ZVitHOAAQgAQEIAyAA
+AQUgAQEREQQgAQEOBSABARFVCAcFDg4ODhI9BCAAEmUEIAASaQUgARJtHAMgABwDIAAOBSABARJ1
+BCAAEnkFIAIBDg4GIAEBEoCBBCABAQIFIAEBEj0GAAERgIkOCAABEoCNEYCRBSAAEoCVByACAQ4S
+gJUIt3pcVhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSTQMGElEDBhIQAgYIAwYRFAQAABJNBAAA
+ElEFAAEBElEEAAASEAMAAAEECAASTQQIABJRBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25F
+eGNlcHRpb25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUX2QzMWY3ZDM2NjYzNTQ3NGE5ODc0NzI2NWVl
+YzdkNjdjAAAFAQAAAAAMAQAHSFAgSW5jLgAAHQEAGENvcHlyaWdodCBAIEhQIEluYy4gMjAyMgAA
+SQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIu
+TkVUIEZyYW1ld29yayA0LjcAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVz
+b3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwg
+UHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVS
+ZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAxDAAAAAAAAAAAAAA3jAAAAAgAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAANAwAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAA
+AP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAANgQAAAAAAAAAAAAANgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAOlfbSAAAAEA6V9tID8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAHmTciAAAAEAeZNyID8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBJYDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAHIDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAwAAgAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAEgAUAAgAEkAbgBjAC4AAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBp
 AHAAdABpAG8AbgAAAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgA
 NwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBu
-AAAAAAAxAC4AMAAuADgAMwAwADEALgAyADQANQA1ADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEA
+AAAAAAAxAC4AMAAuADgAMwAwADYALgAzADcANwA1ADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEA
 bABOAGEAbQBlAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgANwA0
 ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AZABsAGwAAABWABkAAQBMAGUAZwBhAGwAQwBvAHAA
 eQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABIAFAAIABJAG4AYwAuACAAMgAw
@@ -4347,15 +4547,15 @@ AQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2
 ADYANgAzADUANAA3ADQAYQA5ADgANwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AZABsAGwA
 AABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfAGQAMwAxAGYANwBkADMANgA2
 ADYAMwA1ADQANwA0AGEAOQA4ADcANAA3ADIANgA1AGUAZQBjADcAZAA2ADcAYwAAAEIADwABAFAA
-cgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAzADAAMQAuADIANAA1ADUAMwAA
+cgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAzADAANgAuADMANwA3ADUAMwAA
 AAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAzADAA
-MQAuADIANAA1ADUAMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+NgAuADMANwA3ADUAMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAMAxAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAPAwAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4373,8 +4573,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{71988B16-C4FD-4C52-984B-EFDAE80F3AB3}"
-          DTS:From="Package.EventHandlers[OnError]\EST_Error _Log"
+          DTS:DTSID="{D67A190B-340E-4093-AEBC-F352623A6A80}"
+          DTS:From="Package.EventHandlers[OnError]\EST_Error_Log"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package.EventHandlers[OnError]\Script Task" />
@@ -4472,29 +4672,93 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="202.4,41.6"
+          Size="214.4,41.6"
           Id="Package\DFT_Loading_LendingQB"
-          TopLeft="305.714290920571,297.470592407208" />
+          TopLeft="330.71429134632,183.529414338638" />
         <NodeLayout
           Size="212.8,41.6"
           Id="Package\ESQL_Truncate_Lending_QB"
-          TopLeft="301.428576561871,130.764707716279" />
+          TopLeft="338.095243852969,44.6928110843167" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="407.371433741221,172.364707716279">
+          TopLeft="441.204767599644,86.2928110843167">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,125.105884690929"
+              EndConnector="0,97.2366032543214"
               Start="0,0"
-              End="0,117.605884690929">
+              End="0,89.7366032543214">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,117.605884690929" />
+                    End="0,89.7366032543214" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="221.6,41.6"
+          Id="Package\Loading_Data_TO_Destination"
+          TopLeft="330.000005619867,284.470592224887" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="439.357148483094,225.129414338638">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.3411778862487"
+              Start="0,0"
+              End="0,51.8411778862487">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.8411778862487" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\Delete_Diplicate_Records"
+          TopLeft="338.571434337266,409.882358689622" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="440.800005619867,326.070592224887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.77142871739892,83.8117664647349"
+              Start="0,0"
+              End="9.77142871739892,76.3117664647349">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9058832323674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.9058832323674"
+                    Point2="0,41.9058832323674"
+                    Point3="4,41.9058832323674" />
+                  <mssgle:LineSegment
+                    End="5.77142871739892,41.9058832323674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.77142871739892,41.9058832323674"
+                    Point2="9.77142871739892,41.9058832323674"
+                    Point3="9.77142871739892,45.9058832323674" />
+                  <mssgle:LineSegment
+                    End="9.77142871739892,76.3117664647349" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4512,39 +4776,39 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="148.8,41.6"
+          Id="Package.EventHandlers[OnError]\EST_Error_Log"
+          TopLeft="376.428577839112,58.1176478739016" />
+        <NodeLayout
           Size="130.4,41.6"
           Id="Package.EventHandlers[OnError]\Script Task"
-          TopLeft="332.857148525667,165.941178797851" />
-        <NodeLayout
-          Size="152,41.6"
-          Id="Package.EventHandlers[OnError]\EST_Error _Log"
-          TopLeft="306.428576647019,48.94117715697" />
+          TopLeft="451.428579116355,256.941180074092" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="382.428576647019,90.54117715697">
+          TopLeft="450.828577839112,99.7176478739016">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="15.6285718786475,75.4000016408814"
+              EndConnector="65.8000012772429,157.22353220019"
               Start="0,0"
-              End="15.6285718786475,67.9000016408814">
+              End="65.8000012772429,149.72353220019">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.7000008204407" />
+                    End="0,74.611766100095" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.7000008204407"
-                    Point2="0,37.7000008204407"
-                    Point3="4,37.7000008204407" />
+                    Point1="0,74.611766100095"
+                    Point2="0,78.611766100095"
+                    Point3="4,78.611766100095" />
                   <mssgle:LineSegment
-                    End="11.6285718786475,37.7000008204407" />
+                    End="61.8000012772429,78.611766100095" />
                   <mssgle:CubicBezierSegment
-                    Point1="11.6285718786475,37.7000008204407"
-                    Point2="15.6285718786475,37.7000008204407"
-                    Point3="15.6285718786475,41.7000008204407" />
+                    Point1="61.8000012772429,78.611766100095"
+                    Point2="65.8000012772429,78.611766100095"
+                    Point3="65.8000012772429,82.611766100095" />
                   <mssgle:LineSegment
-                    End="15.6285718786475,67.9000016408814" />
+                    End="65.8000012772429,149.72353220019" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4556,133 +4820,191 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnInformation]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192.8,59.2"
+          Id="Package.EventHandlers[OnInformation]\ESt_ETL_Log"
+          TopLeft="490,119" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\DFT_Loading_LendingQB">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="178.4,41.6"
+          Size="176.8,41.6"
+          Id="Package\DFT_Loading_LendingQB\Lookup"
+          TopLeft="368.353180876193,168.362747459264" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\DFT_Loading_LendingQB\OLE DB Destination"
+          TopLeft="804.226204172082,496.081706303762" />
+        <NodeLayout
+          Size="192.8,45.6"
+          Id="Package\DFT_Loading_LendingQB\DC_Changing_DataType"
+          TopLeft="355.317466368482,96.8055566140255" />
+        <NodeLayout
+          Size="183.2,50.4"
           Id="Package\DFT_Loading_LendingQB\OData Source"
-          TopLeft="375.753974653021,6.26633995716414" />
+          TopLeft="359.484133106105,11.3643792443485" />
         <NodeLayout
           Size="120,41.6"
           Id="Package\DFT_Loading_LendingQB\Multicast"
-          TopLeft="25.1984131275391,312.467324643674" />
+          TopLeft="89.0674618342702,320.857847637165" />
         <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\DFT_Loading_LendingQB\DC_Changing_DataType"
-          TopLeft="367.658736419922,168.696080448214" />
+          Size="131.2,41.6"
+          Id="Package\DFT_Loading_LendingQB\Fuded_Tier"
+          TopLeft="719.960329721169,364.276148899685" />
         <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\DFT_Loading_LendingQB\Lookup"
-          TopLeft="361.50794266438,246.299023062094" />
-        <NodeLayout
-          Size="206.4,41.6"
+          Size="213.6,41.6"
           Id="Package\DFT_Loading_LendingQB\Audit_Adding More_Columns"
-          TopLeft="708.948424771732,322.924841074109" />
-        <NodeLayout
-          Size="196,41.6"
-          Id="Package\DFT_Loading_LendingQB\OLE DB Destination"
-          TopLeft="705.853186623783,516.60131443468" />
+          TopLeft="520.643659428553,267.250003691983" />
         <EdgeLayout
-          Id="Package\DFT_Loading_LendingQB.Paths[Lookup No Match Output]"
-          TopLeft="455.90794266438,287.899023062094">
+          Id="Package\DFT_Loading_LendingQB.Paths[Output]"
+          TopLeft="451.400799737294,61.7643792443485">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-370.709529536841,24.5683015815804"
+              EndConnector="0,35.041177369677"
               Start="0,0"
-              End="-370.709529536841,17.0683015815804">
+              End="0,27.541177369677">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.28415079079019" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.28415079079019"
-                    Point2="0,12.2841507907902"
-                    Point3="-4,12.2841507907902" />
-                  <mssgle:LineSegment
-                    End="-366.709529536841,12.2841507907902" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-366.709529536841,12.2841507907902"
-                    Point2="-370.709529536841,12.2841507907902"
-                    Point3="-370.709529536841,16.2841507907902" />
-                  <mssgle:LineSegment
-                    End="-370.709529536841,17.0683015815804" />
+                    End="0,27.541177369677" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-241.161151487171,17.2841507907902,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_Loading_LendingQB.Paths[Lookup Match Output]"
-          TopLeft="486.041275997714,287.899023062094">
+          TopLeft="456.753180876193,209.962747459264">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="326.107148774018,35.0258180120147"
+              EndConnector="170.69047855236,57.2872562327188"
               Start="0,0"
-              End="326.107148774018,27.5258180120147">
+              End="170.69047855236,49.7872562327188">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.1869279678917" />
+                    End="0,24.6436281163594" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.1869279678917"
-                    Point2="0,14.1869279678917"
-                    Point3="4,14.1869279678917" />
+                    Point1="0,24.6436281163594"
+                    Point2="0,28.6436281163594"
+                    Point3="4,28.6436281163594" />
                   <mssgle:LineSegment
-                    End="322.107148774018,14.1869279678917" />
+                    End="166.69047855236,28.6436281163594" />
                   <mssgle:CubicBezierSegment
-                    Point1="322.107148774018,14.1869279678917"
-                    Point2="326.107148774018,14.1869279678917"
-                    Point3="326.107148774018,18.1869279678917" />
+                    Point1="166.69047855236,28.6436281163594"
+                    Point2="170.69047855236,28.6436281163594"
+                    Point3="170.69047855236,32.6436281163594" />
                   <mssgle:LineSegment
-                    End="326.107148774018,27.5258180120147" />
+                    End="170.69047855236,49.7872562327188" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="114.862187668259,19.1869279678917,96.3827734375,11.609375"
+              BoundingBox="37.1538525574302,33.6436281163594,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT_Loading_LendingQB.Paths[Derived Column Output]"
-          TopLeft="464.058736419922,210.296080448214">
+          Id="Package\DFT_Loading_LendingQB.Paths[Derived Column Output1]"
+          TopLeft="785.560329721169,405.876148899685">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.15079375554137,36.0029426138798"
+              EndConnector="103.865874450914,90.2055574040766"
               Start="0,0"
-              End="-8.15079375554137,28.5029426138798">
+              End="103.865874450914,82.7055574040766">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.0014713069399" />
+                    End="0,41.1027787020383" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.0014713069399"
-                    Point2="0,18.0014713069399"
-                    Point3="-4,18.0014713069399" />
+                    Point1="0,41.1027787020383"
+                    Point2="0,45.1027787020383"
+                    Point3="4,45.1027787020383" />
                   <mssgle:LineSegment
-                    End="-4.15079375554137,18.0014713069399" />
+                    End="99.8658744509139,45.1027787020383" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4.15079375554137,18.0014713069399"
-                    Point2="-8.15079375554137,18.0014713069399"
-                    Point3="-8.15079375554137,22.0014713069399" />
+                    Point1="99.8658744509139,45.1027787020383"
+                    Point2="103.865874450914,45.1027787020383"
+                    Point3="103.865874450914,49.1027787020383" />
                   <mssgle:LineSegment
-                    End="-8.15079375554137,28.5029426138798" />
+                    End="103.865874450914,82.7055574040766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Loading_LendingQB.Paths[Derived Column Output]"
+          TopLeft="454.235323622338,142.405556614026">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9571908452382"
+              Start="0,0"
+              End="0,18.4571908452382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4571908452382" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_Loading_LendingQB.Paths[Audit Output 1]"
+          TopLeft="627.443659428553,308.850003691983">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158.116670292615,55.4261452077029"
+              Start="0,0"
+              End="158.116670292615,47.9261452077029">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.7130726038514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.7130726038514"
+                    Point2="0,27.7130726038514"
+                    Point3="4,27.7130726038514" />
+                  <mssgle:LineSegment
+                    End="154.116670292615,27.7130726038514" />
+                  <mssgle:CubicBezierSegment
+                    Point1="154.116670292615,27.7130726038514"
+                    Point2="158.116670292615,27.7130726038514"
+                    Point3="158.116670292615,31.7130726038514" />
+                  <mssgle:LineSegment
+                    End="158.116670292615,47.9261452077029" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4697,89 +5019,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           FontInfo="{assembly:Null}"
           Size="28.8,56"
           Id="4bc29f7c-5ebd-4c8e-99c1-fff6c4286988"
-          TopLeft="734.821441085363,126.176472357813" />
-        <NodeLayout
-          Size="148,41.6"
-          Id="Package\DFT_Loading_LendingQB\Row Count"
-          TopLeft="743.750012665987,432.058829588874" />
-        <EdgeLayout
-          Id="Package\DFT_Loading_LendingQB.Paths[Row Count Output 1]"
-          TopLeft="817.750012665987,473.658829588874">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-13.8968260422048,42.9424848458069"
-              Start="0,0"
-              End="-13.8968260422048,35.4424848458069">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.4712424229035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.4712424229035"
-                    Point2="0,21.4712424229035"
-                    Point3="-4,21.4712424229035" />
-                  <mssgle:LineSegment
-                    End="-9.89682604220479,21.4712424229035" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-9.89682604220479,21.4712424229035"
-                    Point2="-13.8968260422048,21.4712424229035"
-                    Point3="-13.8968260422048,25.4712424229035" />
-                  <mssgle:LineSegment
-                    End="-13.8968260422048,35.4424848458069" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_Loading_LendingQB.Paths[Audit Output 1]"
-          TopLeft="814.94921871886,364.524841074109">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67.533988514765"
-              Start="0,0"
-              End="0,60.033988514765">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.033988514765" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_Loading_LendingQB.Paths[Output]"
-          TopLeft="464.506355536471,47.8663399571641">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,120.82974049105"
-              Start="0,0"
-              End="0,113.32974049105">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,113.32974049105" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="790.178584885232,143.38235495206" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4799,7 +5039,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4819,17 +5059,5 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnInformation]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="192.8,59.2"
-          Id="Package.EventHandlers[OnInformation]\ESt_ETL_Log"
-          TopLeft="533,54" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

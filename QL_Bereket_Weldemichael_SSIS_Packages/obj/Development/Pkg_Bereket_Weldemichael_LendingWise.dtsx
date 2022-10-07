@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{CF3825FF-545D-430B-A77B-9FCA8864ED21}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{DEFCD8E7-9D22-4641-A6EE-42DECBC320DD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -664,7 +664,7 @@
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="59.2857152953442,20.6470591130966" />
+          TopLeft="50.7142865779446,26.7647062577181" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -674,9 +674,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="195.2,41.6"
+          Size="227.2,41.6"
           Id="Package\Data Flow Task\JSON Source (REST API or File)"
-          TopLeft="367.857149121713,32.1176475092614" />
+          TopLeft="193.571431867931,52.764706622358" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>

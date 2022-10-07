@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OData Source_LendingQB"
+  DTS:DTSID="{3307AA0A-D7F5-4BE0-A9E6-59DFD250BE0D}"
+  DTS:CreationName="ODATA">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::ODataSource_LendingQB_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <ODataConnectionManager
+      UserName="sharepoint@dunatk.com"
+      Url="https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc"
+      ConnectionString="Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie=&quot;SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDg2ODg3ODEwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwODc3NTE4MTI0NTU2NzYsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDEzZDI2OGEwLTEwZjItMjAwMC03ZDAyLWNlMGY2ZWRjMDc1MiwxM2QyNjhhMC0xMGYyLTIwMDAtN2QwMi1jZTBmNmVkYzA3NTIsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxXTDRPY2lQVmZJZ2x0V29QYjc0RzhuK0NnTkVWaW1SazRCTnkyTkMyTGlhQ2xSOElJbmFjbThxZjA3d2piWEU5QkdHQzV6R090NWdVMDcxZGtjeEUyejZ3N2dxUWUvNzBsN1VXQjZUbVZHMzVoTTZ5Y0wzNFlDNk9La0YrZ3RGOHhpTEtUb2orbTBnLys1YkFDT2dBWVNLWU1sOEtHN0U3RUxRM3VXOGU5RkhvcXhwKy9iMHllWkpoenRRcDdneENSczFUS2U4cmNtVnRvVDQyUVZrY0ZSSk5IUmVHcnhNTkdHeGJaelNLK0ZlWVhPQ1ZpMXJ6UVkrRExYanJaQ0FTS2p0N3hPbnJNYlcxcjhIUk5IL2NRbW9DdkQwVmtLdkR6disrNi9SRjR0Ylo1dlpFY0VLUmw1Nktza2w2bHdDTVp6UE1UVWg2MmlJMjF5WTdBZkdkN1E9PTwvU1A+&quot;;User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104"
+      MicrosoftOnlineServicesAuth="True"
+      AuthType="MicrosoftOnlineService"
+      ConnectByProxy="False" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

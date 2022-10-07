@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OAuth 1"
+  DTS:DTSID="{1AE7AEC7-2775-4F01-BA9D-574DECB988B6}"
+  DTS:CreationName="ZS-OAUTH">
+  <DTS:ObjectData>
+    <ConnectionManager
+      ConnectionString="Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=ql.lending.wise@gmail.com;Scope=;Timeout=100000;UseCustomApp=False;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False"
+      ConnectByProxy="False">
+      <Password
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAAo+UBJG03a4Wq54dwqxSolhGNfFZ12eh+jh5J02o+GuwAAAAAOgAAAAAIAACAAAAAuiI10iGrgmYyqMYzun7s8iZti+ZZJIZIVxR3tKbqmHjAAAABUwH5GxXjb+wNQcSUBgyBXJ3yJpHkZt/+87E0Gdxb8SZ0jkpk2DXZOA/A7RrOCoflAAAAA6Mwb+N5hPrVfv1UrDIPEgVhXK0/bjd9tx6ecp9bzgPXeKGeH7Ls+aUhzgoK3DR+WbMboGqpDlmPE2KzS/ZiqPw==</Password>
+      <ClientSecret
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAACBStsu9uTXge5juWQ2FlbPDbBfhKRAp0WYSPi1fAmL7QAAAAAOgAAAAAIAACAAAACbW+tF+WcD1/QqjC0Wa5ZB6acFM5eW280i775JMWURCEAAAAD6RIM2Et/D7hR/yuS0UfsL432tjngWPQrHekDr+qGTjPbuUTsiNPpZyjPYixBYzR2SiYvw3zXsuMtwOOp64DoPQAAAAFw2LhGZ81KvamEaWIhVnfc4Auis0/yQkv7Mmb1wlZ7I0bbxFFiaGhAiljRLruUUNaarY59mgViQ3DyEn7/cQzY=</ClientSecret>
+    </ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
