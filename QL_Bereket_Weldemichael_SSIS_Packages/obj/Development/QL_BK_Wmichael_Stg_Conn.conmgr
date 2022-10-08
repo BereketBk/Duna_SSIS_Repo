@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="QL_BK_Wmichael_Stg_Conn"
+  DTS:DTSID="{688C4AA8-4FFD-4F8F-B147-A8B598A3EDC6}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectByProxy">@[$Package::QL_BK_Wmichael_Stg_Conn_ConnectByProxy]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ\SQLEXPRESS;Initial Catalog=QL_STG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{688C4AA8-4FFD-4F8F-B147-A8B598A3EDC6}DESKTOP-A7GEKAJ\SQLEXPRESS.QL_STG;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
