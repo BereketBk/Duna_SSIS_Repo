@@ -4,7 +4,7 @@
   DTS:DTSID="{2C7621FF-C982-4449-9494-CA2F8A187800}"
   DTS:CreationName="OLEDB">
   <DTS:PropertyExpression
-    DTS:Name="ConnectByProxy">@[$Package::Quciken_Loan_Conn_Mngr_ConnectByProxy]</DTS:PropertyExpression>
+    DTS:Name="ConnectByProxy">@[$Project::Quciken_Loan_Conn_Mngr_ConnectByProxy]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"

@@ -4,7 +4,7 @@
   DTS:DTSID="{F3CE77B9-9493-4C07-9400-4340E15736D9}"
   DTS:CreationName="SMTP">
   <DTS:PropertyExpression
-    DTS:Name="ConnectByProxy">@[$Package::SMTPConnectionManager1_ConnectByProxy]</DTS:PropertyExpression>
+    DTS:Name="ConnectByProxy">@[$Project::SMTPConnectionManager1_ConnectByProxy]</DTS:PropertyExpression>
   <DTS:PropertyExpression
     DTS:Name="ConnectionString">@[$Package::SMTPConnectionManager1_ConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
