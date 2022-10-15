@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Staging_TO_Destination_Conn_Mngr"
+  DTS:DTSID="{1C2ED429-F9C6-402C-A7A2-165257F01677}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectByProxy">@[$Project::Staging_TO_Destination_Conn_Mngr_ConnectByProxy]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QUICKENLOAN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Pkg_Bereket_Weldemichael_LendingQB1-{1C2ED429-F9C6-402C-A7A2-165257F01677}DESKTOP-A7GEKAJ.QUICKENLOAN;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

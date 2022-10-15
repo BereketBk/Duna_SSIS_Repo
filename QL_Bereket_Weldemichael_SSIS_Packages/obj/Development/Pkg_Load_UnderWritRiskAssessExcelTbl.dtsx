@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{8E13840D-5FA4-4F47-92C7-22B6BAEEAD28}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{FA6C035C-BF80-48E0-9AFE-4E8353FEA5DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -376,13 +376,6 @@
                       cachedName="UnderwriterRiskAssess"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess]"
                       lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnderwriterRiskAssess]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UnderwriterRiskAssess_Val]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="UnderwriterRiskAssess_Val"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess_Val]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[UnderwriterRiskAssess_Val]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -396,10 +389,10 @@
                       length="255"
                       name="UnderwriterRiskAssess" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssess_Val]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UnderwriterRiskAssessCategory]"
                       dataType="wstr"
                       length="255"
-                      name="UnderwriterRiskAssess_Val" />
+                      name="UnderwriterRiskAssessCategory" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -460,7 +453,7 @@
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="167.857145715733,55.058824301591" />
+          TopLeft="133.571430846137,54.2941184085133" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -472,37 +465,25 @@
         <NodeLayout
           Size="138.4,41.6"
           Id="Package\Data Flow Task\Excel Source"
-          TopLeft="325.000005534717,28.2941180438732" />
+          TopLeft="378.571435018462,29.8235298300285" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="330.000005619867,146.058825577832" />
+          TopLeft="372.857149206862,145.294119684754" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="394.200005534717,69.8941180438731">
+          TopLeft="449.114292112662,71.4235298300285">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="13.4000000851495,76.1647075339585"
+              EndConnector="0,73.8705898547255"
               Start="0,0"
-              End="13.4000000851495,68.6647075339585">
+              End="0,66.3705898547255">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.0823537669792" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.0823537669792"
-                    Point2="0,38.0823537669792"
-                    Point3="4,38.0823537669792" />
-                  <mssgle:LineSegment
-                    End="9.40000008514954,38.0823537669792" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.40000008514954,38.0823537669792"
-                    Point2="13.4000000851495,38.0823537669792"
-                    Point3="13.4000000851495,42.0823537669792" />
-                  <mssgle:LineSegment
-                    End="13.4000000851495,68.6647075339585" />
+                    End="0,66.3705898547255" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -514,21 +495,21 @@
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="325.714291261167,304.352945444906" />
+          TopLeft="359.285720404314,260.76470953948" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Data Conversion Output]"
-          TopLeft="409.257148440517,187.658825577832">
+          TopLeft="447.471434805588,186.894119684754">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,116.694119867074"
+              EndConnector="0,73.8705898547255"
               Start="0,0"
-              End="0,109.194119867074">
+              End="0,66.3705898547255">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,109.194119867074" />
+                    End="0,66.3705898547255" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
