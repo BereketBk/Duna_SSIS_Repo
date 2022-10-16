@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Pkg_Bereket_Weldemichael_LendingQB1"
   DTS:PackageType="5"
-  DTS:VersionBuild="366"
-  DTS:VersionGUID="{17901201-2737-4941-8125-7F74397659BA}">
+  DTS:VersionBuild="375"
+  DTS:VersionGUID="{30023998-2F5B-42DB-AC12-C28ED65A278F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3893,14 +3893,35 @@ where [refTable].[MarketSourceCode] = ?</property>
               Language="CSharp"
               ReadOnlyVariables="System::ErrorCode,System::ErrorDescription,User::Var_Body,User::Var_Subject,$Project::Par_ToEmail,$Project::Par_FromEmail,$Project::Par_Password,$Project::Par_SmtpClient">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_d31f7d366635474a98747265eec7d67c")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("HP Inc.")]
+[assembly: AssemblyProduct("ST_d31f7d366635474a98747265eec7d67c")]
+[assembly: AssemblyCopyright("Copyright @ HP Inc. 2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4269,7 +4290,7 @@ namespace ST_d31f7d366635474a98747265eec7d67c
     <msb:CodeName>ST_d31f7d366635474a98747265eec7d67c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_d31f7d366635474a98747265eec7d67c</msb:DisplayName>
-    <msb:ProjectId>{0324A95A-C691-4802-BE97-687A66C12427}</msb:ProjectId>
+    <msb:ProjectId>{B2CF8C04-4EA2-412A-AAFD-D5BB0D377786}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_d31f7d366635474a98747265eec7d67c.csproj" />
@@ -4311,35 +4332,14 @@ namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_d31f7d366635474a98747265eec7d67c")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("ST_d31f7d366635474a98747265eec7d67c")]
-[assembly: AssemblyCopyright("Copyright @ HP Inc. 2022")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -4411,7 +4411,7 @@ namespace ST_d31f7d366635474a98747265eec7d67c.Properties {
               <BinaryItem
                 Name="ST_d31f7d366635474a98747265eec7d67c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAA0gSmMAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAA7jAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAK1YS2MAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAA7jAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJwwAABPAAAAAEAAAJQEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4444,7 +4444,7 @@ AzwAeQBpBEIA8QBeABAAeQDPBRAAeQA2BhAA4QAKBgEA+QCQBEcA4QB5BU0A4QDUA1QA4QBiAFkA
 CQEmBl8AcQCQBAYAkQCQBAYAGQGeAGYAGQE/Bm8AmQCQBHUAuQCQBAYACAAUAI8ACAAYAJQAKQBz
 APwALgALANQALgATAN0ALgAbAPwALgAjAAUBLgArAC4BLgAzAC4BLgA7ADQBLgBDAAUBLgBLAEEB
 LgBTAC4BLgBbAF8BQwBjAJQASQBzAPwAYQB7AJQAYwBrAJQAGwADAAEABAADAAAAgATFAAAA/QDK
-AAAA6gXPAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAgiCmoAAAAAAAADoAAAAEAAAA
+AAAA6gXPAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAgyA2lAAAAAAAADoAAAAEAAAA
 AAAAAAAAAAB9ADEAAAAAAA8AAAAAAAAAAAAAAIYAGgMAAAAABAAAAAAAAAAAAAAAfQDrAwAAAAAP
 AAAAAAAAAAAAAACGAAoAAAAAAAQAAAAAAAAAAAAAAH0AiQUAAAAAAAAAAAEAAADhBAAABQACAAAA
 AAAAPE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3Js
@@ -4481,7 +4481,7 @@ cgByAG8AcgBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAB1zAG0AdABwAC4AZwBtAGEAaQBsAC4AYwBv
 AG0AACF5AG0AaABnAGIAcQBsAG0AbAByAGoAcABnAHcAdgB4AAAvIABlAG0AYQBpAGwAIABzAGUA
 bgB0ACAAcwB1AGMAZQBzAHMAZgB1AGwAbAB5AABxUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAz
 ADUANAA3ADQAYQA5ADgANwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AUAByAG8AcABlAHIA
-dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAACynZCVdTuaSKNw4ogfvzLVAAQgAQEIAyAA
+dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAABRHjr9DlLRSrjqboD4HVjXAAQgAQEIAyAA
 AQUgAQEREQQgAQEOBSABARFVCAcFDg4ODhI9BCAAEmUEIAASaQUgARJtHAMgABwDIAAOBSABARJ1
 BCAAEnkFIAIBDg4GIAEBEoCBBCABAQIFIAEBEj0GAAERgIkOCAABEoCNEYCRBSAAEoCVByACAQ4S
 gJUIt3pcVhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSTQMGElEDBhIQAgYIAwYRFAQAABJNBAAA
@@ -4501,14 +4501,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAANgQAAAAAAAAAAAAANgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAKaggiAAAAEApqCCID8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABADaUgyAAAAEANpSDID8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBJYDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAHIDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAwAAgAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAEgAUAAgAEkAbgBjAC4AAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBp
 AHAAdABpAG8AbgAAAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgA
 NwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBu
-AAAAAAAxAC4AMAAuADgAMwAyADIALgA0ADEAMQAyADYAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEA
+AAAAAAAxAC4AMAAuADgAMwAyADMALgAzADcAOQA0ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEA
 bABOAGEAbQBlAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2ADYANgAzADUANAA3ADQAYQA5ADgANwA0
 ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AZABsAGwAAABWABkAAQBMAGUAZwBhAGwAQwBvAHAA
 eQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABIAFAAIABJAG4AYwAuACAAMgAw
@@ -4517,9 +4517,9 @@ AQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBUAF8AZAAzADEAZgA3AGQAMwA2
 ADYANgAzADUANAA3ADQAYQA5ADgANwA0ADcAMgA2ADUAZQBlAGMANwBkADYANwBjAC4AZABsAGwA
 AABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAVABfAGQAMwAxAGYANwBkADMANgA2
 ADYAMwA1ADQANwA0AGEAOQA4ADcANAA3ADIANgA1AGUAZQBjADcAZAA2ADcAYwAAAEIADwABAFAA
-cgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAzADIAMgAuADQAMQAxADIANgAA
+cgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAzADIAMwAuADMANwA5ADQAMgAA
 AAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAAzADIA
-MgAuADQAMQAxADIANgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MwAuADMANwA5ADQAMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4644,47 +4644,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="228,41.6"
+          Size="197.6,44"
           Id="Package\Delete_Diplicate_Records"
-          TopLeft="269.325401411982,342.970593045327" />
+          TopLeft="305.039687734479,334.686279203653" />
         <NodeLayout
-          Size="196.8,41.6"
+          Size="196.8,45.6"
           Id="Package\DFT_Loading_LendingQB"
-          TopLeft="230.119051537955,135.098041110387" />
+          TopLeft="218.809527535831,133.186276377692" />
         <NodeLayout
           Size="212.8,41.6"
           Id="Package\ESQL_Truncate_Lending_QB"
-          TopLeft="184.920638069819,29.6111115263964" />
+          TopLeft="173.611114067695,38.532680278969" />
         <NodeLayout
-          Size="221.6,41.6"
+          Size="211.2,44.8"
           Id="Package\Loading_Data_TO_Destination"
-          TopLeft="243.888893042293,239.650330158391" />
+          TopLeft="243.888893042293,233.27778104941" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="291.320638069819,71.2111115263964">
+          TopLeft="280.011114067695,80.132680278969">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="37.1984134681364,63.8869295839902"
+              EndConnector="37.1984134681366,53.0535960987235"
               Start="0,0"
-              End="37.1984134681364,56.3869295839902">
+              End="37.1984134681366,45.5535960987235">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9434647919951" />
+                    End="0,22.5267980493617" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.9434647919951"
-                    Point2="0,31.9434647919951"
-                    Point3="4,31.9434647919951" />
+                    Point1="0,22.5267980493617"
+                    Point2="0,26.5267980493617"
+                    Point3="4,26.5267980493617" />
                   <mssgle:LineSegment
-                    End="33.1984134681364,31.9434647919951" />
+                    End="33.1984134681366,26.5267980493617" />
                   <mssgle:CubicBezierSegment
-                    Point1="33.1984134681364,31.9434647919951"
-                    Point2="37.1984134681364,31.9434647919951"
-                    Point3="37.1984134681364,35.9434647919951" />
+                    Point1="33.1984134681366,26.5267980493617"
+                    Point2="37.1984134681366,26.5267980493617"
+                    Point3="37.1984134681366,30.5267980493617" />
                   <mssgle:LineSegment
-                    End="37.1984134681364,56.3869295839902" />
+                    End="37.1984134681366,45.5535960987235" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4695,30 +4695,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="328.519051537955,176.698041110387">
+          TopLeft="317.209527535831,178.786276377692">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.1698415043375,62.9522890480044"
+              EndConnector="32.2793655064613,54.491504671718"
               Start="0,0"
-              End="26.1698415043375,55.4522890480044">
+              End="32.2793655064613,46.991504671718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.4761445240022" />
+                    End="0,23.245752335859" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.4761445240022"
-                    Point2="0,31.4761445240022"
-                    Point3="4,31.4761445240022" />
+                    Point1="0,23.245752335859"
+                    Point2="0,27.245752335859"
+                    Point3="4,27.245752335859" />
                   <mssgle:LineSegment
-                    End="22.1698415043375,31.4761445240022" />
+                    End="28.2793655064613,27.245752335859" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.1698415043375,31.4761445240022"
-                    Point2="26.1698415043375,31.4761445240022"
-                    Point3="26.1698415043375,35.4761445240022" />
+                    Point1="28.2793655064613,27.245752335859"
+                    Point2="32.2793655064613,27.245752335859"
+                    Point3="32.2793655064613,31.245752335859" />
                   <mssgle:LineSegment
-                    End="26.1698415043375,55.4522890480044" />
+                    End="32.2793655064613,46.991504671718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4729,30 +4729,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="354.688893042293,281.250330158391">
+          TopLeft="349.488893042293,278.07778104941">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="28.6365083696893,61.7202628869362"
+              EndConnector="54.3507946921858,56.6084981542422"
               Start="0,0"
-              End="28.6365083696893,54.2202628869362">
+              End="54.3507946921858,49.1084981542422">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8601314434681" />
+                    End="0,24.3042490771211" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.8601314434681"
-                    Point2="0,30.8601314434681"
-                    Point3="4,30.8601314434681" />
+                    Point1="0,24.3042490771211"
+                    Point2="0,28.3042490771211"
+                    Point3="4,28.3042490771211" />
                   <mssgle:LineSegment
-                    End="24.6365083696893,30.8601314434681" />
+                    End="50.3507946921858,28.3042490771211" />
                   <mssgle:CubicBezierSegment
-                    Point1="24.6365083696893,30.8601314434681"
-                    Point2="28.6365083696893,30.8601314434681"
-                    Point3="28.6365083696893,34.8601314434681" />
+                    Point1="50.3507946921858,28.3042490771211"
+                    Point2="54.3507946921858,28.3042490771211"
+                    Point3="54.3507946921858,32.3042490771211" />
                   <mssgle:LineSegment
-                    End="28.6365083696893,54.2202628869362" />
+                    End="54.3507946921858,49.1084981542422" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4772,37 +4772,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="148.8,41.6"
           Id="Package.EventHandlers[OnError]\EST_Error_Log"
-          TopLeft="412.857149888059,65.0000009116005" />
+          TopLeft="272.142861777424,37.470588760805" />
         <NodeLayout
           Size="130.4,41.6"
           Id="Package.EventHandlers[OnError]\Script Task"
-          TopLeft="446.428579031206,200.352943986345" />
+          TopLeft="393.571435273912,230.941179709451" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="487.257149888059,106.600000911601">
+          TopLeft="346.542861777424,79.070588760805">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.3714291431465,93.7529430747447"
+              EndConnector="112.228573496487,151.870590948646"
               Start="0,0"
-              End="24.3714291431465,86.2529430747447">
+              End="112.228573496487,144.370590948646">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.8764715373723" />
+                    End="0,71.9352954743231" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,42.8764715373723"
-                    Point2="0,46.8764715373723"
-                    Point3="4,46.8764715373723" />
+                    Point1="0,71.9352954743231"
+                    Point2="0,75.9352954743231"
+                    Point3="4,75.9352954743231" />
                   <mssgle:LineSegment
-                    End="20.3714291431465,46.8764715373723" />
+                    End="108.228573496487,75.9352954743231" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.3714291431465,46.8764715373723"
-                    Point2="24.3714291431465,46.8764715373723"
-                    Point3="24.3714291431465,50.8764715373723" />
+                    Point1="108.228573496487,75.9352954743231"
+                    Point2="112.228573496487,75.9352954743231"
+                    Point3="112.228573496487,79.9352954743231" />
                   <mssgle:LineSegment
-                    End="24.3714291431465,86.2529430747447" />
+                    End="112.228573496487,144.370590948646" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4822,7 +4822,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="192.8,59.2"
           Id="Package.EventHandlers[OnInformation]\ESt_ETL_Log"
-          TopLeft="506,70" />
+          TopLeft="466,98" />
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
@@ -4834,7 +4834,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\DFT_Loading_LendingQB\Loan_TO_Staging"
-          TopLeft="1033.90307883176,559.94375201733" />
+          TopLeft="1036.96430337368,574.145432888772" />
         <NodeLayout
           Size="183.2,50.4"
           Id="Package\DFT_Loading_LendingQB\OData Source"
@@ -4846,7 +4846,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="175.2,41.6"
           Id="Package\DFT_Loading_LendingQB\Fuded_Tier"
-          TopLeft="797.808970502706,442.521948316382" />
+          TopLeft="797.808970502706,464.3706881186" />
         <NodeLayout
           Size="176.8,41.6"
           Id="Package\DFT_Loading_LendingQB\Lookup"
@@ -4927,30 +4927,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_Loading_LendingQB.Paths[Derived Column Output1]"
-          TopLeft="885.408970502706,484.121948316382">
+          TopLeft="885.408970502706,505.9706881186">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="229.29410832905,75.8218037009485"
+              EndConnector="232.355332870978,68.1747447701718"
               Start="0,0"
-              End="229.29410832905,68.3218037009485">
+              End="232.355332870978,60.6747447701718">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.9109018504742" />
+                    End="0,30.0873723850859" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.9109018504742"
-                    Point2="0,37.9109018504742"
-                    Point3="4,37.9109018504742" />
+                    Point1="0,30.0873723850859"
+                    Point2="0,34.0873723850859"
+                    Point3="4,34.0873723850859" />
                   <mssgle:LineSegment
-                    End="225.29410832905,37.9109018504742" />
+                    End="228.355332870978,34.0873723850859" />
                   <mssgle:CubicBezierSegment
-                    Point1="225.29410832905,37.9109018504742"
-                    Point2="229.29410832905,37.9109018504742"
-                    Point3="229.29410832905,41.9109018504742" />
+                    Point1="228.355332870978,34.0873723850859"
+                    Point2="232.355332870978,34.0873723850859"
+                    Point3="232.355332870978,38.0873723850859" />
                   <mssgle:LineSegment
-                    End="229.29410832905,68.3218037009485" />
+                    End="232.355332870978,60.6747447701718" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4999,26 +4999,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="164.682996560394,58.430346930509"
+              EndConnector="164.682996560394,80.2790867327277"
               Start="0,0"
-              End="164.682996560394,50.930346930509">
+              End="164.682996560394,72.7790867327277">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.2151734652545" />
+                    End="0,36.1395433663639" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.2151734652545"
-                    Point2="0,29.2151734652545"
-                    Point3="4,29.2151734652545" />
+                    Point1="0,36.1395433663639"
+                    Point2="0,40.1395433663639"
+                    Point3="4,40.1395433663639" />
                   <mssgle:LineSegment
-                    End="160.682996560394,29.2151734652545" />
+                    End="160.682996560394,40.1395433663639" />
                   <mssgle:CubicBezierSegment
-                    Point1="160.682996560394,29.2151734652545"
-                    Point2="164.682996560394,29.2151734652545"
-                    Point3="164.682996560394,33.2151734652545" />
+                    Point1="160.682996560394,40.1395433663639"
+                    Point2="164.682996560394,40.1395433663639"
+                    Point3="164.682996560394,44.1395433663639" />
                   <mssgle:LineSegment
-                    End="164.682996560394,50.930346930509" />
+                    End="164.682996560394,72.7790867327277" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5056,7 +5056,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5066,7 +5066,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
