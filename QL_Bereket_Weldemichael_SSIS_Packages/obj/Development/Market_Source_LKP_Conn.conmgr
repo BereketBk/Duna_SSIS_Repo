@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Market_Source_LKP_Conn"
+  DTS:DTSID="{EDB6E6FB-143B-4B0E-B471-A0B9EC9E4CCB}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::Market_Source_LKP_Conn_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{EDB6E6FB-143B-4B0E-B471-A0B9EC9E4CCB}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

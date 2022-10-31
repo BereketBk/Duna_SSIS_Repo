@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LW_MarketSource_and_Src_To_STG_Conn"
+  DTS:DTSID="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

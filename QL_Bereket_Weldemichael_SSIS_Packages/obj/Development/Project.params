@@ -1,49 +1,6 @@
 <?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
-    SSIS:Name="ODataSource_ConnectionString">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{b1a23958-a66a-4d5f-ac53-2d7044a321c2}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDc1NjQ0OTgwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwNzY1MDg5ODM3NDkzNzMsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLGUwYTE2NGEwLTkwZDYtMjAwMC01YmJjLWUwYjVhMDIxZjAyYixlMGExNjRhMC05MGQ2LTIwMDAtNWJiYy1lMGI1YTAyMWYwMmIsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxCbTRYTkxRNEZpam03dXpoejNnSGVISUdPdmxHRGhVUGY3TzgvVUxvL1ZFemFFRUlEVndGWENqLzg5N3BPVEl1cW10NjdEN05wVE1iT1BjTDl6aUhUOHJIejRJUXdjVlNvTC9MSWtQdEtVOHMzWkFyZGdQT0Z6dHMrbVh6Wjk1ZGdmSk5nd3ZZeVB1RCtBOWJMaHhiNkQ5NHgzUUJGLzBMOGJQS3cyRm94VWFaNTFLZXJ3Tm1Wb2pNWlMwNU1WRVBraWtTc3BiOHpIU29jYU8waFBWcGVWTkZQNmZsamE5cDJHYUpBcEszYmpSYytRNmlzZ0ptQ29kT0NUditiZFhrZGt0bGN0WktrT1I3YVNoSEV5ZGlhQmpGSmJoNjZiYnc1VmJId2dkTEhTWVk5Ykx6NHBWcHNReld2TjNmbUpQcXFTa3NIQitSYWxkK1prRitneVZJYXc9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_Password">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{6cb86107-d707-442c-a078-a1725848736c}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">1</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAC+7Q6le4mPK5OqaV0Ea3NN7UOz0dVmcy1X8izYM5fgPQAAAAAOgAAAAAIAACAAAACvw2z6tVuzwOmDwFgjx9tx0a+io0ICuJK7hiSrOSe1X4AAAAD/nx1LOXitz6Dbh+QljeOxF2/hucQ3WjroBWHf637XcfYbCBgjpMJ86NC1gA+FK9cvQ1bwUAoqeZVRWzetMs41g5fyV5JNMHcHGY3/t6MV8Qlk/qm7/toyXA0B3VYGfwOqrRqn6lLjalENs3CdY1ERJZ01x2hTwcc0nyeG9QfBxEAAAADxF8wccEikD0xU3QoNFRCF6EJHfd4cJhf2RPpshb261TneWqqhbu2zw4gwGy18G+AdpD9Fuw2N6t0WUgCAaPb/</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
     SSIS:Name="ODataSource_UserName">
     <SSIS:Properties>
       <SSIS:Property
@@ -60,177 +17,6 @@
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
         SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_AuthType">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{3d72c67c-58e0-404b-bc3b-e23c123d4e04}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">4</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">9</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_ConnectionString1">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{5366d183-853c-4f92-9bf4-9095ec429c57}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDc5OTY5NDcwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwODA4MzM0NzMxNjg5MjQsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDRiM2U2NmEwLTcwMzEtMjAwMC04NGE1LTU4ZDFhNWI4ZDAzNiw0YjNlNjZhMC03MDMxLTIwMDAtODRhNS01OGQxYTViOGQwMzYsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxObFNINkZ5cFRFSW5FbEpLQWZ4bkZGNWFvb2RLYmYybnFRYlY5S3ZsMnJNQ3EyeXB0bHZsNnhESFBoQW9rWEtkdnRvblo5d3pkdzlKOG1SbzkvZkRncVMxdHVwYk9RcTk0Um9Qc1BZT2VYMStxdUx5bmxSaG1yZm8wUngzNXlwUHVHTVVnSnpEYTJUTUgvWlg3ZTU3LzZNMlRiTjNaZ3Z0TVZMNUdEaG5yV2hENlBiOWhBYWdBZDFFWjNybXhvY0tLdndPQzZDMFkydkZHcVJsZUZiM3VQeFlBUzVzQTVMWklpRVlaemxUMWZ2KzYxMUFpb0x1c1VzMUVQb2ZUdkhoYXU3aDBwdVRCYkttWk8yVmF5aDlYZ3FYdHZTSlRua2hjdnJqZE1GRlo2UHpBNUZYNU9YZ3ViMFloM2I0VG1wMHBKOExLS0RkRjVXcHEyS2RyTDdNUXc9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_UserName1">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{b79f9629-9eaa-410a-af96-8f1e727108cd}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_Password1">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{b65be9ef-81e5-4c44-8ebc-2bd121cf12b6}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">1</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAACuto6ETwYF8KB3l6RLPDoCu7T8mNlc7U8c+Ca03p9tIwAAAAAOgAAAAAIAACAAAADyVsg1AQUe3zlFHDYFfCbxEYk3XV1RYe5Eydzj9rnkcoAAAADWyR9DcZmlcz+PpKuTrlFGlsR0+Wbnwayuj1/vYLbA2S9HSxXwksYqcUZ4//mzTVnfyEC3aslinSp7YujSeDLBsvJhSzE7pu2AP3tGvu6n0wR+0YcnPuWoLiDAa2jVXFfwpvEaWlAyVEspHM2pjpk14wwkf1IqIdGVjl0x2PnqZkAAAAAKfUS6LACaiQAOrxnXKlJZgfOKBDfucIHLs6FLee+UqCzZB38ZhvgroJ5ejK4UA/vO9aDcI5jE/deqDYPo8zig</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_Password2">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{667e4962-f47e-4bb3-a106-a83a741ddf6f}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">1</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAArX1bz3AGcOGyf+amGLHO96QF5ieMqylVvc2XepssEBQAAAAAOgAAAAAIAACAAAABdCTncDErJVXHc9Sfzwl7FCAPWW2PtAheQ+meOnCPZy4AAAAC45eZjw9qMMj6hnHNgvrDavDvBi9d9mUU2wkBgdeR0AJxfdHXg8dK9Oov0ZXxMuTry44lvBj9GGhOtgzVbgREW+H6PkODjnRyLoSewcwvHBwsQU1cTfJ7pm+2QfOYLbViBcj+iiM8zqs1dGWzrucw2vOleardrM9kDpUhy/7qHKEAAAABH1uOqMf/Kto/Aa+It9iYOzd5VXOuB/H8z0riTVKwQNcKlWNbZ9LpKAgNwQvZ1S5VMcFImYSyNZfu8mF0HZ3DG</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_ConnectionString2">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{fdd67988-e821-4f8a-9c1c-45aa18c8a1d8}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDgxNjgwNjkwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwODI1NDQ2OTc0MzAzOTEsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDdkZTE2NmEwLTAwMjQtMjAwMC03ZDAyLWMwYzU2MDEzYTYxYyw3ZGUxNjZhMC0wMDI0LTIwMDAtN2QwMi1jMGM1NjAxM2E2MWMsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxuSzFMMzFSLy9RWGdpL3RXN0Mxc25PaHN4UmhxdUh3dTRUY3h6dnNCTW1GM3JUZnN6YlVxbk5SMTdzbnNCRU42TGhtN0VRTWd4WGtPRDROb1lPbTVVQWlJVElDT1FYbU5GN0lXdnZqMWlLMDVlQTBxaFhKTkQrS3dxSUlRcW1SQ1VON0VYUWt1eEtnMUE3c2I2OW04eUNiWm5ZSndSbW9vazZkN3Z6am9ZU2wyUDZlZ1hsT2dzNHplSWg1TFArc2pEQWpoRXZVdGZOemF3UTc5Z1BxMWQwS240YmpsbGRoSTVWMUxtL2hjZlFHaWFtaE1MWDdLY3JLM1pyVytyVlpHaUYraFp6YzY3aytkcHpTS2VNNys5ZVlreUV3ckhyVlBxaUc0OUxEViszWTFIRTliVWNaaXhNOVdVMzIyZWVvOXJzeEQyRzBMSkhDMFRnMWNBcldRM2c9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_UserName2">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{ebb123d8-467d-4de7-8b75-d42a12b449ca}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">sharepoint@dunatk.com</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="ODataSource_Password3">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{a35dc091-4f67-480f-a8a7-6b06c1a7d008}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">1</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value"
-        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAoBPEJbETr0msruPTF/8EXwAAAAACAAAAAAAQZgAAAAEAACAAAAAeSKsdqXxFMjKNK34/gkuOixoybBR5Ra6qq1lIRHXuJQAAAAAOgAAAAAIAACAAAAAGF5C62g6owMvJUcOpmSMqagW3LFUwkN+rq+KKlAgJG4AAAAAongVEt7cway6lbM9gvikENGwt/8onRd74egIk/ZVy+ZyszBLJHOAVn28v0Pt4E342M6jwiXtCSxg6ZL4dWVTjw3XfV0wLD1C8QI9Saplj0VGxH5gESgdv3OoNN0X1W35kIyG165S/hozMrnuYQdShdYAbOVGMuIfcUvqFF6TDGUAAAAAQfezCX01XXdXk86Fs/B3SjioIHJNtvfFIoC2BJbl2Az90AA0yeFMaYpjDAnL5GiWIq5izGsZ+D8CcJ2YMYljG</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -341,10 +127,10 @@
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="ODataSource_LendingQB_ConnectionString">
+    SSIS:Name="ODataSource_Password">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{d48a8170-9cf8-4b59-918d-ba56f4b33190}</SSIS:Property>
+        SSIS:Name="ID">{e9a9a930-cb71-484a-93e6-93af06afc8f5}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -354,18 +140,19 @@
       <SSIS:Property
         SSIS:Name="Required">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
+        SSIS:Name="Sensitive">1</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMDg2ODg3ODEwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMwODc3NTE4MTI0NTU2NzYsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDEzZDI2OGEwLTEwZjItMjAwMC03ZDAyLWNlMGY2ZWRjMDc1MiwxM2QyNjhhMC0xMGYyLTIwMDAtN2QwMi1jZTBmNmVkYzA3NTIsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxXTDRPY2lQVmZJZ2x0V29QYjc0RzhuK0NnTkVWaW1SazRCTnkyTkMyTGlhQ2xSOElJbmFjbThxZjA3d2piWEU5QkdHQzV6R090NWdVMDcxZGtjeEUyejZ3N2dxUWUvNzBsN1VXQjZUbVZHMzVoTTZ5Y0wzNFlDNk9La0YrZ3RGOHhpTEtUb2orbTBnLys1YkFDT2dBWVNLWU1sOEtHN0U3RUxRM3VXOGU5RkhvcXhwKy9iMHllWkpoenRRcDdneENSczFUS2U4cmNtVnRvVDQyUVZrY0ZSSk5IUmVHcnhNTkdHeGJaelNLK0ZlWVhPQ1ZpMXJ6UVkrRExYanJaQ0FTS2p0N3hPbnJNYlcxcjhIUk5IL2NRbW9DdkQwVmtLdkR6disrNi9SRjR0Ylo1dlpFY0VLUmw1Nktza2w2bHdDTVp6UE1UVWg2MmlJMjF5WTdBZkdkN1E9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
+        SSIS:Name="Value"
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAAAkZRuG5wYhML1T1Xe6UISLl1el9S149FsEjcSbp5xIIAAAAAAOgAAAAAIAACAAAADDmVqPMRVisQGiCxbX/HDQiaxbhtds0w++DR/McVSbioAAAAAO8Iu7jtq4Rcv+eDUTTWlRI6woNJsMjr/QAjCJenhSdRLvQKaJyzHGDzKgAVlD6/RFRtqbb/2r9bGSTEkqE78XUnnZO+UcpGEb/Uae5WDSj9DWEG5N2yobb4dkJELERbkaRDDIuvTkVmZHVN8Uf41fRyVIRjhsy7DsXW2xuY7ATkAAAADtoQI8Qq4DbAkjxWQXSsQef4cF97/o3vUZreX7ZC1PSFVBietJJ+s5tzWWFwmYPRnAK57SmMVVifZtt7cnBYN+</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="SMTPConnectionManager1_ConnectByProxy">
+    SSIS:Name="ODataSource_Conn_Mngr_AuthType">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{f0b4bcab-52c0-426d-8210-601c267147f2}</SSIS:Property>
+        SSIS:Name="ID">{f5bbe034-1e68-43b3-86c4-9f47d416a397}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -377,16 +164,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">false</SSIS:Property>
+        SSIS:Name="Value">4</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="DataType">3</SSIS:Property>
+        SSIS:Name="DataType">9</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="Quciken_Loan_Conn_Mngr_ConnectByProxy">
+    SSIS:Name="ODataSource_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{7eea6b4d-81bd-45a3-87f2-c7084881c429}</SSIS:Property>
+        SSIS:Name="ID">{63622256-f92c-49d5-8f0b-ccc6edb7f304}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -398,16 +185,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">false</SSIS:Property>
+        SSIS:Name="Value">Service Document Url=https://dunatkcom.sharepoint.com/sites/LendingQB2/_vti_bin/listdata.svc;Include Atom Elements=Auto;Include Expanded Entities=False;Integrated Security=False;Cookie="SPOIDCRL=77u/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48U1A+VjEyLDBoLmZ8bWVtYmVyc2hpcHwxMDAzMjAwMDQ1MzllODlmQGxpdmUuY29tLDAjLmZ8bWVtYmVyc2hpcHxzaGFyZXBvaW50QGR1bmF0ay5jb20sMTMzMTA2MTY0NzkwMDAwMDAwLDEzMzA1ODYzNzg1MDAwMDAwMCwxMzMxMDcwMjg3OTQxNDAwMDMsMC4wLjAuMCw0LDg1ZGRmN2U5LTgwNjgtNGJiNi04OTc5LTQ0NzYxNDQyZTM5YSwsLDc5MDA3MGEwLTcwNjgtMjAwMC1hOGYzLTFlN2JkOTQxMWRhNiw3OTAwNzBhMC03MDY4LTIwMDAtYThmMy0xZTdiZDk0MTFkYTYsLDAsMCwwLCwsLDI2NTA0Njc3NDM5OTk5OTk5OTksMCwsLCwsLCwwLCxPdk9uMGVtaGthOU1qS0tVVU9wcWFGNERQMFA5RFNSZENVUjN4SFVlVzJxeGp0aEY2eTZvTm9kNzZkZ2JhdnNQTHlwS0F0dXBZMTJZOGZuUjl4bnU3cXN0NU9BbWU3TUlKQUxJOUNOODhGcmNTcCtyU2IvRElHS1YxRERuc2JGMVRyeWZFR1BnMkpIZkgrZkIvSmNrN2ZTNVpzYWxxM01SYUJLNnVWUHNBTUNRdXN3WjF1QlBaVzFYdnpocjBjRXFrV0NVb0pDcEhlTzBxSnpleEJTTHMwOS9YeVJEazd5V3Z0VHJva3ozN2hmSis2WlQ1dVlCNHFXRVVhUUlvVFBlMHdVdVhaaXNxMkE1VUV0aWcwNlJXd3lSTXFDZml0UWZiZVJrN3ozcVArSGVxQ2JsRW5LcXZHV3phWTZ1SmppR3FJcE9BeTlRWXRJdkRkczRpekFoVUE9PTwvU1A+";User ID=sharepoint@dunatk.com;Persist Security Info=False;Time Out=600;Schema Sample Size=25;Retry Count=5;Retry Sleep=100;Keep Alive=False;Max Received Message Size=4398046511104</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="DataType">3</SSIS:Property>
+        SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="Staging_TO_Destination_Conn_Mngr_ConnectByProxy">
+    SSIS:Name="Source_To_STG_Conn_ConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{4d16f66d-0537-4c76-a4ea-4942584fc37f}</SSIS:Property>
+        SSIS:Name="ID">{6eb2f782-8594-4fee-a58b-d102ef8259e7}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -419,9 +206,135 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">false</SSIS:Property>
+        SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Wmichael_LendingQB-{ABC5462D-87FB-497A-9A19-839C2AEC88AA}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="DataType">3</SSIS:Property>
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="STG_TO_Destination_Conn_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{a9a9e2fc-9a70-4339-8d6b-ba2a7038c7fb}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QUICKENLOAN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Wmichael_LendingQB-{A3C0BCF2-FCB0-404A-8572-13135FFA9EEA}DESKTOP-A7GEKAJ.QUICKENLOAN;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="Market_Source_CONN1_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{68498235-3806-4c42-96e1-3155e8d75598}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Wmichael_LendingQB-{4A7B811F-069C-489D-B6FD-998C607EC439}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="Error_Log_Conn_Mngr_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{c2d723be-835a-4a40-b436-0ffbcee7c37a}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ;Initial Catalog=SSIS_LOGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Wmichael_LendingQB-{4C79A54E-A535-4735-9BB3-883F2369899E}DESKTOP-A7GEKAJ.SSIS_LOGG;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="LendingWise_Conn_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{4c50fd6f-40e2-4ebe-b8bd-eb3e21b2726d}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\beki2\OneDrive\Documents\Project_Duna\LendingWise.xlsx;Extended Properties="Excel 3.0;HDR=YES";</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="Market_Source_LKP_Conn_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{6b961582-b13c-468e-a4f0-1bafd056266e}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{EDB6E6FB-143B-4B0E-B471-A0B9EC9E4CCB}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+  <SSIS:Parameter
+    SSIS:Name="OAuth1_LW_ConnectionString">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{3691dee7-e0d5-4f41-9489-f72b91eb3c30}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value">Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-c0lkhalesh05uuhoqpj1euja5v258g66.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
 </SSIS:Parameters>

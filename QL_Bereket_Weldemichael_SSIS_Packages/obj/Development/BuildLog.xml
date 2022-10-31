@@ -2,15 +2,10 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>QL_Bereket_Weldemichael_SSIS_Packages</Name>
-    <LastWriteTime>2022-10-14T17:31:21.6504902Z</LastWriteTime>
+    <LastWriteTime>2022-10-31T19:03:01.8233735Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
-    <ProjectBuildItemInfo>
-      <Name>Pkg_Bereket_Weldemichael_LendingWise.dtsx</Name>
-      <LastWriteTime>2022-09-26T17:52:12.1866913Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Pkg_Bereket_Weldemichael_QL_Master.dtsx</Name>
       <LastWriteTime>2022-09-09T01:42:45.1732619Z</LastWriteTime>
@@ -23,12 +18,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Pkg_Bereket_Weldemichael_LendingQB1.dtsx</Name>
-      <LastWriteTime>2022-10-16T01:07:41.6884534Z</LastWriteTime>
+      <LastWriteTime>2022-10-31T20:20:19.0583745Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Pkg_Load_UnderWritRiskAssessExcelTbl.dtsx</Name>
-      <LastWriteTime>2022-10-14T16:42:28.2076967Z</LastWriteTime>
+      <Name>PKG_Bereket_Wmichael_LendingQB.dtsx</Name>
+      <LastWriteTime>2022-10-29T15:43:28.0292823Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_Bereket_Weldemicahel_LendingWise_FTP.dtsx</Name>
+      <LastWriteTime>2022-10-31T20:48:47.576852Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

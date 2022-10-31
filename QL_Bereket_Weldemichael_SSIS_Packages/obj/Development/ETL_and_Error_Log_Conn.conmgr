@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="ETL_and_Error_Log_Conn"
+  DTS:DTSID="{417B5E63-100A-48C8-87EA-F0E49F9EB89B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=SSIS_LOGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Weldemicahel_LendingWise_FTP-{417B5E63-100A-48C8-87EA-F0E49F9EB89B}DESKTOP-A7GEKAJ.SSIS_LOGG;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

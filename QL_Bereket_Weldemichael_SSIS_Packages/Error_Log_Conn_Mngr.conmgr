@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Error_Log_Conn_Mngr"
+  DTS:DTSID="{4C79A54E-A535-4735-9BB3-883F2369899E}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::Error_Log_Conn_Mngr_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=SSIS_LOGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Wmichael_LendingQB-{4C79A54E-A535-4735-9BB3-883F2369899E}DESKTOP-A7GEKAJ.SSIS_LOGG;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
