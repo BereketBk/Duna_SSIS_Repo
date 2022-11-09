@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OAuth 1"
+  DTS:DTSID="{70D123F6-15D1-4E27-BC91-DE542DB68F99}"
+  DTS:CreationName="ZS-OAUTH">
+  <DTS:ObjectData>
+    <ConnectionManager
+      ConnectionString="Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-6p2mm35n6sur4id126j21la1tgsrrssu.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False"
+      ConnectByProxy="False">
+      <Password
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAAAKcg+uLzVM9n2YHKKdKKOnsJ1WS2onWthalQ5SgmnxugAAAAAOgAAAAAIAACAAAABC9MgKBcH3LKiZNaBBJ+CLkKNjDjqgKk3RD75PDRU3xjAAAABZ3PEl0XS9bsHwkqsSR612FMVoa3bDE9mkHovtofn9LWopgTzS+wmae1xyegTzZw9AAAAAy2qn084KMZIvWQyj6XrzUZbfCUNB+rPDsAlhTRf7XTvmQc66UOm6GNIcLSwWxrZRBoa31NY8gqomWa8FkaZ3AQ==</Password>
+      <ClientSecret
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAABil8XNwFvVLeWykF++rDD3EFDNmVKxalJ3oSeMNwY7cQAAAAAOgAAAAAIAACAAAADN9UFGq7LvFvtT2zyHUKaBoo7nT6IbUO1UAxxA6w+GBlAAAABgyXR7ZjUW395cqJGH6aP3SCkEoOwvgUC77kzx8NahSod19wiCj1se1Ql+VOcl3PybAwyZUdW1cUbJ3PrZ42SsM5sTF+EUrSDOrK1eNOcw90AAAABwcycdj0eTOWKtecI6gWer6WUA6z5yVuZHblnsiHsTL2AsZleZfTUTUa+dT3AgZeAb17H+r3ZjSfRaHSgKTL7K</ClientSecret>
+      <AccessToken
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAAAedbLZzgxBjXqnwTMyX/sYGMOO08ShMx7Xy3YPYpMqGwAAAAAOgAAAAAIAACAAAAChMy2P8uUNA6zxBdEnX5DNwbRnj4Z9TOvIsCiL0wUlVAABAAAkalXHLPxQObwwUzkIBKRn9pEtnm7otCaCbz+ltQwO/8A1xlDpWKAl1+mBPI4Y4WuJvgVq81ghsnP2IwDZmXWBcfAZlmmvdL6P2AGm/jMsLznrm0bYBpIlLFBUfh8fK44KG/GA7dq2ENFsasXg2b/r1Kd+ty1MjDH0Y4H1gfL2+Om46P4I7NSDMox4gy/A7KNc9mLzGhHAd81N5bKUW9n0/bCrXc0hLhM5kxc9UvvSSSn9JwaMTi2tIEjvDiDHiz5NUy+sLaUlkH+SbawFzqeI2zN2T3QqwbmrSKN9uYgq8TYjaskem3tELFRozTaGze0xRJCV1fBPq7yHvTbWG1LuQAAAAGRpvp0ltjqUixHl36LIoOAQYdl4CEau8lePsRaVCokf06qua61HndrPolq2poi824pISvku2VwYY+BbV1K49Bs=</AccessToken>
+      <RefreshToken
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAAC/AwJDFKb+Q5fhbZ7TATvHyC8uoqvV47Cb6JLrV1TSEgAAAAAOgAAAAAIAACAAAAApU1IPrBQsnUOFh3xbZ4MFyGt5uHFLaDtOlWPuXPYrpqAAAADcINL8DMjJFGd5wP6Bj9whozqzaKxYLCg1wNmLVQ0EBrYgIaEBQKDR0QHvKEonxx8p66skKYL7y0dz27hiZdZe5/GSFbswzXAqhLqbbwxiinludQMdQwl9lSAhAHV4KQ041Ok2Y4FTji3Z/G8vNIVhxDYAATeF4a8eP0cxlkMrEF9ue0vabwHzKEF362mNPExvhs3jmbd+7TAPk7j4Wee/QAAAAOhHjare2KBemeDnWJQ8lKuwmZmy9ZxzdlxoLG2cj+cR9nrYTB+B3R7dIPFyhnESwIkHWNbXy27xq2IxCORU/II=</RefreshToken>
+    </ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

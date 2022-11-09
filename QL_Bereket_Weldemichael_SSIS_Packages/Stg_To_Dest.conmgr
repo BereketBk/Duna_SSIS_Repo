@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Stg_To_Dest"
+  DTS:DTSID="{4960D6AE-51F2-41EE-A85F-DFB99088C325}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QUICKENLOAN;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Pkg_Bereket_Weldemichael_LendingQB1-{4960D6AE-51F2-41EE-A85F-DFB99088C325}DESKTOP-A7GEKAJ.QUICKENLOAN;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

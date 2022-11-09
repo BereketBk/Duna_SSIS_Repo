@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Mrkt_Src_Error_Src_to_Stg_Conn"
+  DTS:DTSID="{BCB92EEB-166E-4743-BDD7-5ED589AEDEB0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Pkg_Bereket_Weldemichael_LendingQB1-{BCB92EEB-166E-4743-BDD7-5ED589AEDEB0}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

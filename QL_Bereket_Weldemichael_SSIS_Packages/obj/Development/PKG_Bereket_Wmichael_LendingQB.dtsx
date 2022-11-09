@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="PKG_Bereket_Wmichael_LendingQB"
   DTS:PackageType="5"
-  DTS:VersionBuild="124"
-  DTS:VersionGUID="{B42EBAE9-0B49-4597-87C2-39EF9F704AFA}">
+  DTS:VersionBuild="130"
+  DTS:VersionGUID="{20B92C5C-558F-40B3-A971-5FEDD516A438}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -26,6 +26,18 @@
       DTS:ObjectName="Var_Body">
       <DTS:VariableValue
         DTS:DataType="8">Hello team, Please attend to this error messageplease refer to the log info should you seek furhter details
+
+Pssosble error is [System::ErrorDescription] 
+
+Thank youplease refer to the log info should you seek furhter details
+
+Pssosble error is [System::ErrorDescription] 
+
+Thank youplease refer to the log info should you seek furhter details
+
+Pssosble error is [System::ErrorDescription] 
+
+Thank youplease refer to the log info should you seek furhter details
 
 Pssosble error is [System::ErrorDescription] 
 
@@ -94,7 +106,7 @@ Thank you</DTS:VariableValue>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A3C0BCF2-FCB0-404A-8572-13135FFA9EEA}"
+          SQLTask:Connection="{8872D797-0A71-4D86-AF9F-A72E32EAA7DA}"
           SQLTask:SqlStatementSource="WITH checkdup &#xA;  AS &#xA;  (&#xA;  SELECT LoanID&#xA; , ROW_NUMBER() OVER (PARTITION BY LoanID  ORDER BY LastModifiedDate DESC )AS RN &#xA;  FROM [QUICKENLOAN].dbo.Bereket_Weldemichael_Loan&#xA;  )&#xA;&#xA;DELETE  FROM checkdup WHERE RN &gt; 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -513,8 +525,8 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_Lending_QB\Market_Source_LkUP.Connections[OleDbConnection]"
-                  connectionManagerID="{4A7B811F-069C-489D-B6FD-998C607EC439}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Market_Source_CONN 1]"
+                  connectionManagerID="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}:invalid"
+                  connectionManagerRefId="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -643,8 +655,8 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_Lending_QB\OData Source.Connections[Connection]"
-                  connectionManagerID="{6E122B16-3F77-4D8A-AB19-AA4C930ACA56}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OData Source]"
+                  connectionManagerID="{6E122B16-3F77-4D8A-AB19-AA4C930ACA56}:invalid"
+                  connectionManagerRefId="{6E122B16-3F77-4D8A-AB19-AA4C930ACA56}:invalid"
                   description="Connection to OData Service"
                   name="Connection" />
               </connections>
@@ -2568,8 +2580,8 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_Lending_QB\Source_To_Stg.Connections[OleDbConnection]"
-                  connectionManagerID="{ABC5462D-87FB-497A-9A19-839C2AEC88AA}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Source_To_STG_Conn]"
+                  connectionManagerID="{ABC5462D-87FB-497A-9A19-839C2AEC88AA}:invalid"
+                  connectionManagerRefId="{ABC5462D-87FB-497A-9A19-839C2AEC88AA}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3748,7 +3760,7 @@ where [refTable].[MarketSourceCode] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{A3C0BCF2-FCB0-404A-8572-13135FFA9EEA}"
+          SQLTask:Connection="{8872D797-0A71-4D86-AF9F-A72E32EAA7DA}"
           SQLTask:SqlStatementSource="exec usp_SSIS_Bereket_Wmichael_Transformation 'PKG_Bereket_Wmichael_LendingQB'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4630,45 +4642,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="180.8,41.6"
           Id="Package\Delete_Duplicate"
-          TopLeft="435.714293134456,429.764711909641" />
+          TopLeft="625.255112688848,528.220595643389" />
         <NodeLayout
           Size="160,41.6"
           Id="Package\DFT_Lending_QB"
-          TopLeft="248.571432804575,153.705884508608" />
+          TopLeft="259.285718701324,169.955884736508" />
         <NodeLayout
           Size="173.6,41.6"
           Id="Package\Execute SQL Task"
-          TopLeft="185.714288876981,33.6470592954167" />
+          TopLeft="171.428574347982,35.176471081572" />
         <NodeLayout
           Size="174.4,41.6"
           Id="Package\Load_To_Destination_Tbl"
-          TopLeft="330.000005619866,300.529415979517" />
+          TopLeft="403.469394626144,329.342441593693" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="272.514288876981,75.2470592954167">
+          TopLeft="258.228574347982,76.776471081572">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="56.057143927594,78.4588252131911"
+              EndConnector="81.0571443533419,93.1794136549361"
               Start="0,0"
-              End="56.057143927594,70.9588252131911">
+              End="81.0571443533419,85.6794136549361">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.2294126065955" />
+                    End="0,42.589706827468" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.2294126065955"
-                    Point2="0,39.2294126065955"
-                    Point3="4,39.2294126065955" />
+                    Point1="0,42.589706827468"
+                    Point2="0,46.589706827468"
+                    Point3="4,46.589706827468" />
                   <mssgle:LineSegment
-                    End="52.057143927594,39.2294126065955" />
+                    End="77.0571443533419,46.589706827468" />
                   <mssgle:CubicBezierSegment
-                    Point1="52.057143927594,39.2294126065955"
-                    Point2="56.057143927594,39.2294126065955"
-                    Point3="56.057143927594,43.2294126065955" />
+                    Point1="77.0571443533419,46.589706827468"
+                    Point2="81.0571443533419,46.589706827468"
+                    Point3="81.0571443533419,50.589706827468" />
                   <mssgle:LineSegment
-                    End="56.057143927594,70.9588252131911" />
+                    End="81.0571443533419,85.6794136549361" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4679,30 +4691,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="328.571432804575,195.305884508608">
+          TopLeft="339.285718701324,211.555884736508">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88.6285728152907,105.22353147091"
+              EndConnector="151.383675924821,117.786556857185"
               Start="0,0"
-              End="88.6285728152907,97.7235314709097">
+              End="151.383675924821,110.286556857185">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.6117657354548" />
+                    End="0,54.8932784285924" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,48.6117657354548"
-                    Point2="0,52.6117657354548"
-                    Point3="4,52.6117657354548" />
+                    Point1="0,54.8932784285924"
+                    Point2="0,58.8932784285924"
+                    Point3="4,58.8932784285924" />
                   <mssgle:LineSegment
-                    End="84.6285728152907,52.6117657354548" />
+                    End="147.383675924821,58.8932784285924" />
                   <mssgle:CubicBezierSegment
-                    Point1="84.6285728152907,52.6117657354548"
-                    Point2="88.6285728152907,52.6117657354548"
-                    Point3="88.6285728152907,56.6117657354548" />
+                    Point1="147.383675924821,58.8932784285924"
+                    Point2="151.383675924821,58.8932784285924"
+                    Point3="151.383675924821,62.8932784285924" />
                   <mssgle:LineSegment
-                    End="88.6285728152907,97.7235314709097" />
+                    End="151.383675924821,110.286556857185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4713,30 +4725,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="417.200005619866,342.129415979517">
+          TopLeft="490.669394626144,370.942441593693">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.91428751459,87.6352959301235"
+              EndConnector="224.985718062704,157.278154049696"
               Start="0,0"
-              End="108.91428751459,80.1352959301235">
+              End="224.985718062704,149.778154049696">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8176479650618" />
+                    End="0,74.639077024848" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.8176479650618"
-                    Point2="0,43.8176479650618"
-                    Point3="4,43.8176479650618" />
+                    Point1="0,74.639077024848"
+                    Point2="0,78.639077024848"
+                    Point3="4,78.639077024848" />
                   <mssgle:LineSegment
-                    End="104.91428751459,43.8176479650618" />
+                    End="220.985718062704,78.639077024848" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.91428751459,43.8176479650618"
-                    Point2="108.91428751459,43.8176479650618"
-                    Point3="108.91428751459,47.8176479650618" />
+                    Point1="220.985718062704,78.639077024848"
+                    Point2="224.985718062704,78.639077024848"
+                    Point3="224.985718062704,82.639077024848" />
                   <mssgle:LineSegment
-                    End="108.91428751459,80.1352959301235" />
+                    End="224.985718062704,149.778154049696" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4820,7 +4832,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="188.8,41.6"
           Id="Package\DFT_Lending_QB\Source_To_Stg"
-          TopLeft="775.595251303547,556.884928445022" />
+          TopLeft="776.488108461609,549.237869514245" />
         <NodeLayout
           Size="177.6,41.6"
           Id="Package\DFT_Lending_QB\Market_Source_LkUP"
@@ -4851,26 +4863,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="161.173811921173,66.4025693907599"
+              EndConnector="162.066669079235,58.7555104599834"
               Start="0,0"
-              End="161.173811921173,58.9025693907599">
+              End="162.066669079235,51.2555104599834">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.20128469538" />
+                    End="0,25.3777552299917" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.20128469538"
-                    Point2="0,33.20128469538"
-                    Point3="4,33.20128469538" />
+                    Point1="0,25.3777552299917"
+                    Point2="0,29.3777552299917"
+                    Point3="4,29.3777552299917" />
                   <mssgle:LineSegment
-                    End="157.173811921173,33.20128469538" />
+                    End="158.066669079235,29.3777552299917" />
                   <mssgle:CubicBezierSegment
-                    Point1="157.173811921173,33.20128469538"
-                    Point2="161.173811921173,33.20128469538"
-                    Point3="161.173811921173,37.20128469538" />
+                    Point1="158.066669079235,29.3777552299917"
+                    Point2="162.066669079235,29.3777552299917"
+                    Point3="162.066669079235,33.3777552299917" />
                   <mssgle:LineSegment
-                    End="161.173811921173,58.9025693907599" />
+                    End="162.066669079235,51.2555104599834" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

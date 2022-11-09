@@ -8,18 +8,15 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
-        <ServerName>DESKTOP-A7GEKAJ</ServerName>
-        <PathOnServer>/SSISDB/QL_Bereket_Wmichael_ETL/QL_Bereket_Weldemichael_SSIS_Packages</PathOnServer>
-        <Run64BitRuntime>false</Run64BitRuntime>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
-        <ProgressReporting>false</ProgressReporting>
+        <ProgressReporting>true</ProgressReporting>
         <ParameterConfigurationSensitiveValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
             <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2022-09-08T01:03:34.8349566Z</Value>
+            <Value xsi:type="xsd:dateTime">2022-11-08T22:45:04.2650244Z</Value>
           </ConfigurationSetting>
         </ParameterConfigurationSensitiveValues>
       </Options>

@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>QL_Bereket_Weldemichael_SSIS_Packages</Name>
-    <LastWriteTime>2022-11-09T19:17:05.780052Z</LastWriteTime>
+    <Name>QL_Bereket_WMichael_SSIS_pkg</Name>
+    <LastWriteTime>2022-11-09T00:29:46.0677238Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Pkg_Bereket_Weldemichael_QL_Master.dtsx</Name>
-      <LastWriteTime>2022-09-09T01:42:45.1732619Z</LastWriteTime>
+      <Name>pkg_Bereket_Wmichael_LendingQB.dtsx</Name>
+      <LastWriteTime>2022-11-09T00:42:22.499479Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Pkg_Bereket_Weldemichael_QuickenLoan.dtsx</Name>
-      <LastWriteTime>2022-11-09T19:11:15.4380369Z</LastWriteTime>
+      <Name>pkg_Bereket_Wmichael_LendingWise.dtsx</Name>
+      <LastWriteTime>2022-11-09T00:41:56.0962137Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Pkg_Bereket_Weldemichael_LendingQB1.dtsx</Name>
-      <LastWriteTime>2022-11-09T19:39:23.285935Z</LastWriteTime>
+      <Name>pkg_Bereket_Wmichael_QuikecnLoan.dtsx</Name>
+      <LastWriteTime>2022-11-08T23:20:40.8343191Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>PKG_Bereket_Weldemicahel_LendingWise_FTP.dtsx</Name>
-      <LastWriteTime>2022-11-09T19:39:36.1606098Z</LastWriteTime>
+      <Name>pkg_Bereket_Wmihcael_QL_Master.dtsx</Name>
+      <LastWriteTime>2022-11-09T00:12:08.5236375Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

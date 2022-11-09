@@ -11,10 +11,77 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="PKG_Bereket_Weldemicahel_LendingWise_FTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="90"
-  DTS:VersionGUID="{231FCD2F-4ED8-4D9D-AA5C-BD188225E0A3}">
+  DTS:VersionBuild="200"
+  DTS:VersionGUID="{0C155F23-BFCA-40CF-AE76-64096E6FEC05}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lw_Mkt_Src_and_Stg_to_Dest]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{01E72755-97C2-495F-9C7B-2A670FF87909}"
+      DTS:ObjectName="Lw_Mkt_Src_and_Stg_to_Dest">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-A7GEKAJ;Initial Catalog=QL_STGG;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-PKG_Bereket_Weldemicahel_LendingWise_FTP-{01E72755-97C2-495F-9C7B-2A670FF87909}DESKTOP-A7GEKAJ.QL_STGG;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[OAuth 1_LW]"
+      DTS:CreationName="ZS-OAUTH"
+      DTS:DTSID="{40C3B894-82F5-4B9C-8C5F-977E2365D07C}"
+      DTS:ObjectName="OAuth 1_LW">
+      <DTS:PropertyExpression
+        DTS:Name="AccessToken">@[$Package::OAuth1_LW_AccessToken]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[$Project::OAuth1_LW_ConnectionString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-c0lkhalesh05uuhoqpj1euja5v258g66.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False"
+          ConnectByProxy="False">
+          <Password
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB1tj2xzOEoTdnEYwg7dgg1UWoZMoLE/GeImUklDuwCsgAAAAAOgAAAAAIAACAAAADvrqr7/x8bR13xhwaz/Rdz2cqvZIt0L5NZJ1w0vCrY3hAAAAA+lxn77t+WEqFlJCU7kqxjQAAAAAiDkcfjWIV15nE/VGnxe2DmNl0ywFtK1pUiMInniN5MagvvBilnv4Qr6XWMJh72X/tztL79zJ8wfW+BCUVRUjI</Password>
+          <ClientSecret
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACouQO7eUna+XtlwGkV0kPL/GFMq16pBLGMbyb3YFRHyAAAAAAOgAAAAAIAACAAAAAAVrbndTxcMM2hbhnBSPNGxyZbWAUEYc2vym/PFFzwlVAAAAAiiig5IM0mSDF6+9wZchGN96+RureHkowi7J1ukVIETgaFoWTQxx7xqc1ec/j/kp8DICmfO4k/L3ZMiBCr1RW5JoIPvidO5ZDpwHD5FSst2UAAAADB6l+Mssn1iyy94mIVQrj7lQdfb++5A8L7f+BmGMk9IXAZ0TSbFcIYBqWTiH3NGcxtHd8Waei6Hc4M0QfDHBSl</ClientSecret>
+          <AccessToken
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABT0J0blYgsdROlrOo3gwbQD2XrrvWR1thzSoZe2duv3gAAAAAOgAAAAAIAACAAAADWCRRX5BJEN2T8txwIYrACGytS/lBcy0yLwfsOaMuyLrABAACVOfRGUalVdZbNO6gYwX0NzwnCgk5Z7Ko0og8BLnB1lT/x5EAxjvfDNVtHab/x3R9SRs9hoTCM9NfzUzUseY8hKYgr5hROMEKL9o+ZrM4lgeFFwItV4YDoC7v7suo7S64hiSVzKLsBEA1ufyeJWKHHl3Qi7sXQ3ayEAsYy5MAheH+ktcwXPuVwGfg4euazzWcnIHpvhOb40cWOyRDHC7O/YdngRt6HJVj5eqUbzcYqSAQSykmocnPcajXSCKcKkk1qUM7ss1kjE57BCib5QUy/73LMn2jcgFnW1h8qVOTaK/wEc/VTBGOlx/jbntT9SCpQDE9adkSL3A3ImzbJ6KNnAvL8hs8+lRYaSEYjlWrUCYv5l/WyQIfn6isx4HdJsPPFuS3ELQGChAt0IBWe5FApblzY2XUFdpH0GRIpJpLCZwXg0hpsFmgjq6MzTAZf8380kGE3EcGSXvLdbbbt8RlsAJCDCPFuCDDWqlbfhlfsMvHlq45INNbRTg9ewaEGs0Jk8U4C8ZoDhpVgbVrPcvfs5LpxTYPxLZ2baa/0RXXtn4O6eIVcYq89eo/tl3d2xbRAAAAAOsfOcTNHJUbaFK2luhi7r5KDyMCV+pMLo5dqS1oTts18T+Dz2xpR3i41/IW9Nt/LMCPHwFFqXPn34oI+BrUahg</AccessToken>
+          <RefreshToken
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNTmFKWU84iUssjK2IU7EjVDChmrIIwh+KprzjXnD5HAAAAAAOgAAAAAIAACAAAACP4yPAg66xlvQGqYULonOsTk2cIcQ9iDPaJw/CMBUsAdAAAACzm5Y1tVftGIstvq6Sy4G3JqqbJoDNDwK71JgsMcaH5nDGVCH5CW28th7H1IQYeMigmOoRksmmj0nCk+E00fJT8q0xVLUei2aYZKdqg9PD+hA77Keggh05H+zdjHsvSLDVKFxZU03cuRTeW6VaDom3isyxkv8H5K8ExzK7LITROGdcXqRGP2fH6gTHHkzAKib35cudYiDffJ4jLieXRNyJuEXGPAV2DVnzoasRf9I8jNrAgfE+SyLbKdXBQpsQHah9wA2AKJE7Y/1EBvCEGcoeQAAAAOqLlTY/9EJwE09j8WWBfUhMU068tbsSy8NWKYTuP1HvalmMCFsq+RXJGVZGz+Eia7JXfA9U1IdBQM5vb90vuEQ</RefreshToken>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{84703860-59D1-4645-A76C-E994B74AEF6C}"
+      DTS:ObjectName="OAuth1_LW_AccessToken"
+      DTS:Sensitive="True">
+      <DTS:Property
+        DTS:Name="ParameterValue">
+        <DTS:Property
+          DTS:DataType="8"
+          DTS:Name="ParameterValue"
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSHhAKJMgWTsI8gBGXjwK16Q5vIm0L71Zw9EODwZjGLAAAAAAOgAAAAAIAACAAAADg0AAAfM+IG0kJeH51lbEmyXootgH/MdfIlAG2hjMF0LABAAC2jAc7XMaJ4D21mjXS0/aiebv5jNRIqzF5h87qzoFtafGLEnh6n6vFpUmwt31J1MzhG6Ng0XZHUgTcDB631gopPbMwOsEWA0BM4TFtWYuEkeLgLcJ1jGaxEtk2SipoLI7Cn238MxY+VrFlQ/STHT8qzHRLlm+rfxAX7wSi438nJZzV7Hk07rUzmgYDl/JrxmQe65CqrhjYRI9jVJjzT0rEdI8wHtZfCWUXX37HtmY0YlPnI3FLzCGprSqzEFKaspCaf1KWG/zclfTK9uqz6slwrvjJ+IKCfRCNwXPDA95BgYRsphzR2UCBfgQGunlrlFpwgY2w+TBCeWwh5qqFFgbdBc6TDF5pR/H1cu/beluo3e75FLvYVc0ukwbnT9VWHgqD724YKbjpqy9GgDQC8/7wM7ymC2sbBvA1jmF8CPtwCYY2lzrWvy6PJQVQhmSRL3jX3DGcJG6Sc3POa2cMa24mkHrOUL71U/tPKvD693F+Ea7ek/IVAHZ7BJbJ+8/0z+/qBT5KmN93yLTYVWTzf7j2MWw88zRxSHonFcliuLcDI2M0xFQy6XLh5zb2pZETWeBAAAAAgpCzA8SaD9yHwa0wv2sjbV+MGTmMUhk6se7dWcgZ6jrdDNJlSaxYWtLjt+HQcZBhOuSNzsry8lcsXc7dFDM/cA</DTS:Property>
+      </DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{29268144-AD68-490B-BAEA-80BD045DA77E}"
+      DTS:ObjectName="OAuth1_LW_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-c0lkhalesh05uuhoqpj1euja5v258g66.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -73,19 +140,19 @@ Thank you</DTS:VariableValue>
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Delete_Duplicate_Record"
+      DTS:refId="Package\Delete_Duplicate_Record_At_Destination"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{CB754008-249C-4DB9-B728-1CEE7F59A974}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Delete_Duplicate_Record"
+      DTS:ObjectName="Delete_Duplicate_Record_At_Destination"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}"
-          SQLTask:SqlStatementSource="With Dup_flag &#xA;as &#xA;(select LoanId, ROW_NUMBER() over (partition by Loanid order by LastmodifiedDate) as RN&#xA; from [QUICKENLOAN].DBO.Bereket_WMichael_LendingWise)&#xA;&#xA; delete from Dup_flag&#xA; where RN&gt;1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{4960D6AE-51F2-41EE-A85F-DFB99088C325}"
+          SQLTask:SqlStatementSource="With Dup_flag &#xA;as &#xA;(select LoanId, ROW_NUMBER() over (partition by Loanid order by LastmodifiedDate) as RN&#xA; from [QUICKENLOAN].[dbo].[Bereket_Weldemichael_Loan])&#xA;&#xA; delete from Dup_flag&#xA; where RN&gt;1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -903,8 +970,8 @@ Thank you</DTS:VariableValue>
               <connections>
                 <connection
                   refId="Package\DFT_LendingWise\JSON Source (REST API or File).Connections[Connection]"
-                  connectionManagerID="{40C3B894-82F5-4B9C-8C5F-977E2365D07C}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[OAuth 1_LW]"
+                  connectionManagerID="Package.ConnectionManagers[OAuth 1_LW]"
+                  connectionManagerRefId="Package.ConnectionManagers[OAuth 1_LW]"
                   description="Select Runtime Connection Type (allowed ZS-OAUTH, ZS-HTTP, ZS-SALESFORCE)"
                   name="Connection" />
               </connections>
@@ -2633,8 +2700,8 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_LendingWise\MarketSource_LKP.Connections[OleDbConnection]"
-                  connectionManagerID="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LW_MarketSource_and_Src_To_STG_Conn]"
+                  connectionManagerID="Package.ConnectionManagers[Lw_Mkt_Src_and_Stg_to_Dest]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lw_Mkt_Src_and_Stg_to_Dest]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2769,7 +2836,7 @@ where [refTable].[MarketSourceCode] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[stg_Bereket_Wmichael_LW]</property>
+                  name="OpenRowset">[dbo].[stg_Bereket_Wmichael_LW]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2812,8 +2879,8 @@ where [refTable].[MarketSourceCode] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_LendingWise\SourceTo_Stg_LW.Connections[OleDbConnection]"
-                  connectionManagerID="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[LW_MarketSource_and_Src_To_STG_Conn]"
+                  connectionManagerID="Package.ConnectionManagers[Lw_Mkt_Src_and_Stg_to_Dest]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lw_Mkt_Src_and_Stg_to_Dest]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4044,8 +4111,8 @@ where [refTable].[MarketSourceCode] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}"
-          SQLTask:SqlStatementSource="Exec [dbo].[udp_SSIS_Bk_Wmichael_Transformation_LW] 'PKG_Bereket_Weldemicahel_LendingWise_FTP'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{4960D6AE-51F2-41EE-A85F-DFB99088C325}"
+          SQLTask:SqlStatementSource="exec [usdSSIS_Bereket_Wmichael_Transformation_LQ] 'Pkg_Bereket_Weldemichael_LendingQB1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -4060,7 +4127,7 @@ where [refTable].[MarketSourceCode] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D5F4CA25-0BC0-4777-A3F7-FD50B76F3E09}"
+          SQLTask:Connection="{BCB92EEB-166E-4743-BDD7-5ED589AEDEB0}"
           SQLTask:SqlStatementSource="exec [dbo].[udp_Stg_Bereket_Weldemichael_LW]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4089,7 +4156,7 @@ where [refTable].[MarketSourceCode] = ?</property>
       DTS:From="Package\Stg_To_Destination"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Delete_Duplicate_Record" />
+      DTS:To="Package\Delete_Duplicate_Record_At_Destination" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -4116,6 +4183,7 @@ where [refTable].[MarketSourceCode] = ?</property>
           DTS:refId="Package.EventHandlers[OnError]\Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{32C378BD-C0E0-460E-BDE2-26A5DCB27CB7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -4123,7 +4191,7 @@ where [refTable].[MarketSourceCode] = ?</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{417B5E63-100A-48C8-87EA-F0E49F9EB89B}"
+              SQLTask:Connection="{BCB92EEB-166E-4743-BDD7-5ED589AEDEB0}"
               SQLTask:SqlStatementSource=" insert into [SSIS_LOGG].[dbo].[Quicken_Loans_ETL_Error_Log]&#xA;  values (?,?,?,?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -4863,17 +4931,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package.EventHandlers[OnInformation]\Execute SQL Task"
+          DTS:refId="Package.EventHandlers[OnInformation]\ETL_LOG_LendingWise"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{CEA53EE9-A474-47A6-9B24-3DD1E82DCB7B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Execute SQL Task">
+          DTS:ObjectName="ETL_LOG_LendingWise">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{417B5E63-100A-48C8-87EA-F0E49F9EB89B}"
+              SQLTask:Connection="{4960D6AE-51F2-41EE-A85F-DFB99088C325}"
               SQLTask:SqlStatementSource=" insert into [SSIS_LOGG].[dbo].[QL_Bereket_Wmichael_ETL_Log]&#xA;  values (?,?,?,?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -4936,77 +5004,47 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\DFT_LendingWise"
-          TopLeft="228.571432463977,188.117649697103" />
+          Size="191.2,44"
+          Id="Package\Delete_Duplicate_Record_At_Destination"
+          TopLeft="443.571436125406,441.235300305804" />
         <NodeLayout
           Size="162.4,41.6"
-          Id="Package\Truncate_Stg_LW"
-          TopLeft="136.428573751937,51.2352948362027" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="217.628573751937,92.8352948362027">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92.1428587120404,95.2823548608998"
-              Start="0,0"
-              End="92.1428587120404,87.7823548608998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.6411774304499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.6411774304499"
-                    Point2="0,47.6411774304499"
-                    Point3="4,47.6411774304499" />
-                  <mssgle:LineSegment
-                    End="88.1428587120404,47.6411774304499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="88.1428587120404,47.6411774304499"
-                    Point2="92.1428587120404,47.6411774304499"
-                    Point3="92.1428587120404,51.6411774304499" />
-                  <mssgle:LineSegment
-                    End="92.1428587120404,87.7823548608998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\DFT_LendingWise"
+          TopLeft="165.000002809933,178.176473087094" />
         <NodeLayout
           Size="170.4,41.6"
           Id="Package\Stg_To_Destination"
-          TopLeft="285.714290579971,303.588239551828" />
+          TopLeft="294.28571929737,305.117651337983" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Truncate_Stg_LW"
+          TopLeft="55.7142866630947,52.0000007292804" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="309.771432463977,229.717649697103">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="136.914286663095,93.6000007292804">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61.1428581159943,73.8705898547256"
+              EndConnector="109.285716146839,84.5764723578137"
               Start="0,0"
-              End="61.1428581159943,66.3705898547256">
+              End="109.285716146839,77.0764723578137">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.9352949273628" />
+                    End="0,38.2882361789069" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.9352949273628"
-                    Point2="0,36.9352949273628"
-                    Point3="4,36.9352949273628" />
+                    Point1="0,38.2882361789069"
+                    Point2="0,42.2882361789069"
+                    Point3="4,42.2882361789069" />
                   <mssgle:LineSegment
-                    End="57.1428581159943,36.9352949273628" />
+                    End="105.285716146839,42.2882361789069" />
                   <mssgle:CubicBezierSegment
-                    Point1="57.1428581159943,36.9352949273628"
-                    Point2="61.1428581159943,36.9352949273628"
-                    Point3="61.1428581159943,40.9352949273628" />
+                    Point1="105.285716146839,42.2882361789069"
+                    Point2="109.285716146839,42.2882361789069"
+                    Point3="109.285716146839,46.2882361789069" />
                   <mssgle:LineSegment
-                    End="61.1428581159943,66.3705898547256" />
+                    End="109.285716146839,77.0764723578137" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5015,36 +5053,66 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Delete_Duplicate_Record"
-          TopLeft="375.000006386212,433.588241375029" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="370.914290579971,345.188239551828">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="246.200002809933,219.776473087094">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="102.485715806241,88.4000018232009"
+              EndConnector="133.285716487437,85.3411782508886"
               Start="0,0"
-              End="102.485715806241,80.9000018232009">
+              End="133.285716487437,77.8411782508886">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.2000009116004" />
+                    End="0,38.6705891254443" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.2000009116004"
-                    Point2="0,44.2000009116004"
-                    Point3="4,44.2000009116004" />
+                    Point1="0,38.6705891254443"
+                    Point2="0,42.6705891254443"
+                    Point3="4,42.6705891254443" />
                   <mssgle:LineSegment
-                    End="98.4857158062409,44.2000009116004" />
+                    End="129.285716487437,42.6705891254443" />
                   <mssgle:CubicBezierSegment
-                    Point1="98.4857158062409,44.2000009116004"
-                    Point2="102.485715806241,44.2000009116004"
-                    Point3="102.485715806241,48.2000009116004" />
+                    Point1="129.285716487437,42.6705891254443"
+                    Point2="133.285716487437,42.6705891254443"
+                    Point3="133.285716487437,46.6705891254443" />
                   <mssgle:LineSegment
-                    End="102.485715806241,80.9000018232009" />
+                    End="133.285716487437,77.8411782508886" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="379.48571929737,346.717651337983">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.685716828036,94.5176489678209"
+              Start="0,0"
+              End="159.685716828036,87.0176489678209">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2588244839104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.2588244839104"
+                    Point2="0,47.2588244839104"
+                    Point3="4,47.2588244839104" />
+                  <mssgle:LineSegment
+                    End="155.685716828036,47.2588244839104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="155.685716828036,47.2588244839104"
+                    Point2="159.685716828036,47.2588244839104"
+                    Point3="159.685716828036,51.2588244839104" />
+                  <mssgle:LineSegment
+                    End="159.685716828036,87.0176489678209" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5056,97 +5124,231 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213.6,61.6"
+          Id="Package.EventHandlers[OnError]\Error"
+          TopLeft="340.757934681615,122.101307779998" />
+        <NodeLayout
+          Size="226.4,60.8"
+          Id="Package.EventHandlers[OnError]\Script Task"
+          TopLeft="419.82539421685,315.946078711109" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="447.557934681615,183.701307779998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.4674595352353,132.244770931111"
+              Start="0,0"
+              End="85.4674595352353,124.744770931111">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.1223854655557" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.1223854655557"
+                    Point2="0,66.1223854655557"
+                    Point3="4,66.1223854655557" />
+                  <mssgle:LineSegment
+                    End="81.4674595352353,66.1223854655557" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.4674595352353,66.1223854655557"
+                    Point2="85.4674595352353,66.1223854655557"
+                    Point3="85.4674595352353,70.1223854655557" />
+                  <mssgle:LineSegment
+                    End="85.4674595352353,124.744770931111" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnInformation]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="211.2,74.4"
+          Id="Package.EventHandlers[OnInformation]\ETL_LOG_LendingWise"
+          TopLeft="474,109" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\DFT_LendingWise">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\DFT_LendingWise\SourceTo_Stg_LW"
-          TopLeft="727.500012389251,550.970595962449" />
+          Size="129.6,41.6"
+          Id="Package\DFT_LendingWise\Row Count"
+          TopLeft="610.357153251464,445.176476551174" />
         <NodeLayout
           Size="195.2,41.6"
           Id="Package\DFT_LendingWise\JSON Source (REST API or File)"
-          TopLeft="60.0000010217938,30.5529416161838" />
+          TopLeft="25.8928575838095,47.5130258876561" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="230.4,41.6"
           Id="Package\DFT_LendingWise\DataConversion_MarketSource"
-          TopLeft="163.214288493808,108.970589763566" />
+          TopLeft="113.928573368763,135.544119548014" />
         <NodeLayout
           Size="165.6,41.6"
           Id="Package\DFT_LendingWise\MarketSource_LKP"
-          TopLeft="270.000004598073,204.005885146728" />
+          TopLeft="253.571432889724,217.825213071632" />
         <NodeLayout
-          Size="178.4,41.6"
+          Size="131.2,41.6"
           Id="Package\DFT_LendingWise\FundedTier"
-          TopLeft="523.928580351023,400.847064400379" />
+          TopLeft="496.071437019476,373.89118166939" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\DFT_LendingWise\SourceTo_Stg_LW"
+          TopLeft="733.112257382784,531.033620892923" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\DFT_LendingWise\Audit"
-          TopLeft="429.464293028019,302.058827765672" />
+          TopLeft="407.397966121618,305.445382435017" />
         <EdgeLayout
-          Id="Package\DFT_LendingWise.Paths[Lookup Match Output]"
-          TopLeft="352.800004598073,245.605885146728">
+          Id="Package\DFT_LendingWise.Paths[Row Count Output 1]"
+          TopLeft="675.157153251463,486.776476551174">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="141.464288429946,56.4529426189435"
+              EndConnector="140.355104131321,44.2571443417488"
               Start="0,0"
-              End="141.464288429946,48.9529426189435">
+              End="140.355104131321,36.7571443417488">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.2264713094718" />
+                    End="0,18.1285721708744" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.2264713094718"
-                    Point2="0,28.2264713094718"
-                    Point3="4,28.2264713094718" />
+                    Point1="0,18.1285721708744"
+                    Point2="0,22.1285721708744"
+                    Point3="4,22.1285721708744" />
                   <mssgle:LineSegment
-                    End="137.464288429946,28.2264713094718" />
+                    End="136.355104131321,22.1285721708744" />
                   <mssgle:CubicBezierSegment
-                    Point1="137.464288429946,28.2264713094718"
-                    Point2="141.464288429946,28.2264713094718"
-                    Point3="141.464288429946,32.2264713094718" />
+                    Point1="136.355104131321,22.1285721708744"
+                    Point2="140.355104131321,22.1285721708744"
+                    Point3="140.355104131321,26.1285721708744" />
                   <mssgle:LineSegment
-                    End="141.464288429946,48.9529426189435" />
+                    End="140.355104131321,36.7571443417488" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LendingWise.Paths[Lookup Match Output]"
+          TopLeft="336.371432889724,259.425213071632">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.826533231893,46.0201693633848"
+              Start="0,0"
+              End="135.826533231893,38.5201693633848">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0100846816924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0100846816924"
+                    Point2="0,23.0100846816924"
+                    Point3="4,23.0100846816924" />
+                  <mssgle:LineSegment
+                    End="131.826533231893,23.0100846816924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.826533231893,23.0100846816924"
+                    Point2="135.826533231893,23.0100846816924"
+                    Point3="135.826533231893,27.0100846816924" />
+                  <mssgle:LineSegment
+                    End="135.826533231893,38.5201693633848" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.5407574962229,33.2264713094718,96.3827734375,11.609375"
+              BoundingBox="19.7218798971965,28.0100846816924,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[JsonSourceOutput]"
-          TopLeft="157.600001021794,72.1529416161838">
+          TopLeft="123.492857583809,89.1130258876561">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116.814287472014,36.8176481473817"
+              EndConnector="105.635715784954,46.4310936603579"
               Start="0,0"
-              End="116.814287472014,29.3176481473817">
+              End="105.635715784954,38.9310936603579">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.4088240736909" />
+                    End="0,19.215546830179" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.4088240736909"
-                    Point2="0,18.4088240736909"
-                    Point3="4,18.4088240736909" />
+                    Point1="0,19.215546830179"
+                    Point2="0,23.215546830179"
+                    Point3="4,23.215546830179" />
                   <mssgle:LineSegment
-                    End="112.814287472014,18.4088240736909" />
+                    End="101.635715784954,23.215546830179" />
                   <mssgle:CubicBezierSegment
-                    Point1="112.814287472014,18.4088240736909"
-                    Point2="116.814287472014,18.4088240736909"
-                    Point3="116.814287472014,22.4088240736909" />
+                    Point1="101.635715784954,23.215546830179"
+                    Point2="105.635715784954,23.215546830179"
+                    Point3="105.635715784954,27.215546830179" />
                   <mssgle:LineSegment
-                    End="116.814287472014,29.3176481473817" />
+                    End="105.635715784954,38.9310936603579" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT_LendingWise.Paths[Derived Column Output1]"
+          TopLeft="561.671437019476,415.49118166939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="113.485716231988,29.6852948817837"
+              Start="0,0"
+              End="113.485716231988,22.1852948817837">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.8426474408919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.8426474408919"
+                    Point2="0,14.8426474408919"
+                    Point3="4,14.8426474408919" />
+                  <mssgle:LineSegment
+                    End="109.485716231988,14.8426474408919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="109.485716231988,14.8426474408919"
+                    Point2="113.485716231988,14.8426474408919"
+                    Point3="113.485716231988,18.8426474408919" />
+                  <mssgle:LineSegment
+                    End="113.485716231988,22.1852948817837" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5157,30 +5359,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[Derived Column Output]"
-          TopLeft="274.414288493808,150.570589763566">
+          TopLeft="229.128573368763,177.144119548014">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.3857161042648,53.4352953831629"
+              EndConnector="107.242859520962,40.6810935236178"
               Start="0,0"
-              End="78.3857161042648,45.9352953831629">
+              End="107.242859520962,33.1810935236178">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.7176476915815" />
+                    End="0,16.3405467618089" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.7176476915815"
-                    Point2="0,26.7176476915815"
-                    Point3="4,26.7176476915815" />
+                    Point1="0,16.3405467618089"
+                    Point2="0,20.3405467618089"
+                    Point3="4,20.3405467618089" />
                   <mssgle:LineSegment
-                    End="74.3857161042648,26.7176476915815" />
+                    End="103.242859520962,20.3405467618089" />
                   <mssgle:CubicBezierSegment
-                    Point1="74.3857161042648,26.7176476915815"
-                    Point2="78.3857161042648,26.7176476915815"
-                    Point3="78.3857161042648,30.7176476915815" />
+                    Point1="103.242859520962,20.3405467618089"
+                    Point2="107.242859520962,20.3405467618089"
+                    Point3="107.242859520962,24.3405467618089" />
                   <mssgle:LineSegment
-                    End="78.3857161042648,45.9352953831629" />
+                    End="107.242859520962,33.1810935236178" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5191,102 +5393,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[Audit Output 1]"
-          TopLeft="494.264293028019,343.658827765672">
+          TopLeft="472.197966121618,347.045382435017">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.864287323004,57.1882366347069"
+              EndConnector="89.4734708978581,26.8457992343734"
               Start="0,0"
-              End="118.864287323004,49.6882366347069">
+              End="89.4734708978581,19.3457992343734">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5941183173534" />
+                    End="0,9.42289961718672" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5941183173534"
-                    Point2="0,28.5941183173534"
-                    Point3="4,28.5941183173534" />
+                    Point1="0,9.42289961718672"
+                    Point2="0,13.4228996171867"
+                    Point3="4,13.4228996171867" />
                   <mssgle:LineSegment
-                    End="114.864287323004,28.5941183173534" />
+                    End="85.4734708978581,13.4228996171867" />
                   <mssgle:CubicBezierSegment
-                    Point1="114.864287323004,28.5941183173534"
-                    Point2="118.864287323004,28.5941183173534"
-                    Point3="118.864287323004,32.5941183173534" />
+                    Point1="85.4734708978581,13.4228996171867"
+                    Point2="89.4734708978581,13.4228996171867"
+                    Point3="89.4734708978581,17.4228996171867" />
                   <mssgle:LineSegment
-                    End="118.864287323004,49.6882366347069" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\DFT_LendingWise\Row Count"
-          TopLeft="667.857154230682,475.95588874755" />
-        <EdgeLayout
-          Id="Package\DFT_LendingWise.Paths[Derived Column Output1]"
-          TopLeft="613.128580351023,442.447064400379">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119.528573879659,33.5088243471713"
-              Start="0,0"
-              End="119.528573879659,26.0088243471713">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.7544121735856" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.7544121735856"
-                    Point2="0,16.7544121735856"
-                    Point3="4,16.7544121735856" />
-                  <mssgle:LineSegment
-                    End="115.528573879659,16.7544121735856" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115.528573879659,16.7544121735856"
-                    Point2="119.528573879659,16.7544121735856"
-                    Point3="119.528573879659,20.7544121735856" />
-                  <mssgle:LineSegment
-                    End="119.528573879659,26.0088243471713" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT_LendingWise.Paths[Row Count Output 1]"
-          TopLeft="732.657154230682,517.55588874755">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="77.2428581585683,33.4147072148987"
-              Start="0,0"
-              End="77.2428581585683,25.9147072148987">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.7073536074494" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.7073536074494"
-                    Point2="0,16.7073536074494"
-                    Point3="4,16.7073536074494" />
-                  <mssgle:LineSegment
-                    End="73.2428581585683,16.7073536074494" />
-                  <mssgle:CubicBezierSegment
-                    Point1="73.2428581585683,16.7073536074494"
-                    Point2="77.2428581585683,16.7073536074494"
-                    Point3="77.2428581585683,20.7073536074494" />
-                  <mssgle:LineSegment
-                    End="77.2428581585683,25.9147072148987" />
+                    End="89.4734708978581,19.3457992343734" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5298,19 +5428,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT_LendingWise\SourceTo_Stg_LW">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT_LendingWise\MarketSource_LKP">
     <Properties>
@@ -5334,67 +5451,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="178.4,61.6"
-          Id="Package.EventHandlers[OnError]\Error"
-          TopLeft="520,75.0000000000001" />
-        <NodeLayout
-          Size="178.4,60.8"
-          Id="Package.EventHandlers[OnError]\Script Task"
-          TopLeft="552.000000000001,267" />
-        <EdgeLayout
-          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="609.2,136.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32.0000000000005,130.4"
-              Start="0,0"
-              End="32.0000000000005,122.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,61.2"
-                    Point2="0,65.2"
-                    Point3="4,65.2" />
-                  <mssgle:LineSegment
-                    End="28.0000000000005,65.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.0000000000005,65.2"
-                    Point2="32.0000000000005,65.2"
-                    Point3="32.0000000000005,69.2" />
-                  <mssgle:LineSegment
-                    End="32.0000000000005,122.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnInformation]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="262.4,56.8"
-          Id="Package.EventHandlers[OnInformation]\Execute SQL Task"
-          TopLeft="466,167" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_LendingWise\SourceTo_Stg_LW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
