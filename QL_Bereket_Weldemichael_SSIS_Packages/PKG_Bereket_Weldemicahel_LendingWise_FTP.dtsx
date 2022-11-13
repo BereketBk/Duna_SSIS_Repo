@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="PKG_Bereket_Weldemicahel_LendingWise_FTP"
   DTS:PackageType="5"
-  DTS:VersionBuild="200"
-  DTS:VersionGUID="{0C155F23-BFCA-40CF-AE76-64096E6FEC05}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{84DD3471-075E-495D-B062-D79A42420F71}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -36,23 +36,23 @@
       <DTS:PropertyExpression
         DTS:Name="AccessToken">@[$Package::OAuth1_LW_AccessToken]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="ConnectionString">@[$Project::OAuth1_LW_ConnectionString]</DTS:PropertyExpression>
+        DTS:Name="ConnectionString">@[$Package::OAuth1_LW_ConnectionString1]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <ConnectionManager
           ConnectionString="Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-c0lkhalesh05uuhoqpj1euja5v258g66.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False"
           ConnectByProxy="False">
           <Password
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB1tj2xzOEoTdnEYwg7dgg1UWoZMoLE/GeImUklDuwCsgAAAAAOgAAAAAIAACAAAADvrqr7/x8bR13xhwaz/Rdz2cqvZIt0L5NZJ1w0vCrY3hAAAAA+lxn77t+WEqFlJCU7kqxjQAAAAAiDkcfjWIV15nE/VGnxe2DmNl0ywFtK1pUiMInniN5MagvvBilnv4Qr6XWMJh72X/tztL79zJ8wfW+BCUVRUjI</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAwH2wkVA1fS7IQ3RWimR7dm1MaLIGL3H5E1QntPmF5rQAAAAAOgAAAAAIAACAAAAAMJqaHTglksM/w4yB5203jK6TfsRixK4ScZFmRjsXWPhAAAACUVyS+/y1tFwf0ppp9Bgz5QAAAAN/FcArqycrS9JjZQG0lF9yBOMXsv9ClVdNtDqMObSujXjIJ6CHjBmBJze76xRROGT2GiqUrjtT8rul1W5j6QYo</Password>
           <ClientSecret
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACouQO7eUna+XtlwGkV0kPL/GFMq16pBLGMbyb3YFRHyAAAAAAOgAAAAAIAACAAAAAAVrbndTxcMM2hbhnBSPNGxyZbWAUEYc2vym/PFFzwlVAAAAAiiig5IM0mSDF6+9wZchGN96+RureHkowi7J1ukVIETgaFoWTQxx7xqc1ec/j/kp8DICmfO4k/L3ZMiBCr1RW5JoIPvidO5ZDpwHD5FSst2UAAAADB6l+Mssn1iyy94mIVQrj7lQdfb++5A8L7f+BmGMk9IXAZ0TSbFcIYBqWTiH3NGcxtHd8Waei6Hc4M0QfDHBSl</ClientSecret>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAuVaGnGsMznf3wBISOZOcaPdcyuRqhQfDl8nIKZa+YNAAAAAAOgAAAAAIAACAAAABiklWmJs397Sw8qDHTzTJpjMO77GdRydYzWwdL68+HM1AAAAAh8yw73W6w2T1v9oYOZ4DmDILNeHcwJaTFexsyx6rAIEscZeSxAzhf3/CDlEBXeO9odgB1/WMbyrEfsVMKUowvGZvtK0sVZ03uIchGNdvkgUAAAADpTJntiDJKcJbH6h6JFewikW81eZHiaNbxUNcTJD/N3qSREqDL3JBcNoA4EQ/wgy3xHni98KrjDwsG/zaJkHqs</ClientSecret>
           <AccessToken
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABT0J0blYgsdROlrOo3gwbQD2XrrvWR1thzSoZe2duv3gAAAAAOgAAAAAIAACAAAADWCRRX5BJEN2T8txwIYrACGytS/lBcy0yLwfsOaMuyLrABAACVOfRGUalVdZbNO6gYwX0NzwnCgk5Z7Ko0og8BLnB1lT/x5EAxjvfDNVtHab/x3R9SRs9hoTCM9NfzUzUseY8hKYgr5hROMEKL9o+ZrM4lgeFFwItV4YDoC7v7suo7S64hiSVzKLsBEA1ufyeJWKHHl3Qi7sXQ3ayEAsYy5MAheH+ktcwXPuVwGfg4euazzWcnIHpvhOb40cWOyRDHC7O/YdngRt6HJVj5eqUbzcYqSAQSykmocnPcajXSCKcKkk1qUM7ss1kjE57BCib5QUy/73LMn2jcgFnW1h8qVOTaK/wEc/VTBGOlx/jbntT9SCpQDE9adkSL3A3ImzbJ6KNnAvL8hs8+lRYaSEYjlWrUCYv5l/WyQIfn6isx4HdJsPPFuS3ELQGChAt0IBWe5FApblzY2XUFdpH0GRIpJpLCZwXg0hpsFmgjq6MzTAZf8380kGE3EcGSXvLdbbbt8RlsAJCDCPFuCDDWqlbfhlfsMvHlq45INNbRTg9ewaEGs0Jk8U4C8ZoDhpVgbVrPcvfs5LpxTYPxLZ2baa/0RXXtn4O6eIVcYq89eo/tl3d2xbRAAAAAOsfOcTNHJUbaFK2luhi7r5KDyMCV+pMLo5dqS1oTts18T+Dz2xpR3i41/IW9Nt/LMCPHwFFqXPn34oI+BrUahg</AccessToken>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD/fBOUOj3iUqQYlckoxn8/wd/gjGmdqkgUJMkooz2rRQAAAAAOgAAAAAIAACAAAABp/Pbx6JngmLqw/6e5PTunotXl57IxndG2lCYL+LLYorABAADo/ZAanQF1KZ9K9yu1aBlHuHtsiIEH/hymJAAbeHaxxd4e17A5nBmfb2JUA2ryVPW6vbyGv9jiVCxALlJ7j6q187MfTycYFbPlpY98YNzaL6I8hp3Ph50qpLqF7QPqhYNPJtITa6lCUdEHUPcWi+/l2KbBbBQniImj+1N1WHvOrLr92m2ZwFvlYj7CHkeH774Ez8+nWRKP8WlEDLBs4UFdtT3vi32u4B8xWcUVaeqoahWC28yVQPjJioxMGArvWVE8a1wugjrOTzMFm40soMNPqT52Dzs69tI+PAk99jpcNVuAvt5WXU5PCAbm8sRGsv2DYg3uUjGRM28a9brUlR/GH0M1KmSyvx5FUqtnbOWhh76KKavgNQOSaJWd8pU95VrGEcCJ8zyfyqwdQeAOO08EAPPEf6lgsUduAOmw48gmj7r+8HE1Rx+qdmOE//Y9M7FEWTVXHw86zDDpSXk4eR8fNgDuuTW4aoHJUgyfyOq/ZnfYqTjW/8AQhrLOBSYXsvUe1k1V9o/vhSc7RwVBvsXcEbYv+q0vvZBuVTs8VoSIfHOwnN4r8B/kjGnuWOe5wg1AAAAA202ek9Rp2cJotk1vpHcKHdXMlEMbNuxoxmoDKS9OELz65av8AnwUqK1UJ1RQ33gAN7i2/+GAse+qI7JdKKdr0w</AccessToken>
           <RefreshToken
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACNTmFKWU84iUssjK2IU7EjVDChmrIIwh+KprzjXnD5HAAAAAAOgAAAAAIAACAAAACP4yPAg66xlvQGqYULonOsTk2cIcQ9iDPaJw/CMBUsAdAAAACzm5Y1tVftGIstvq6Sy4G3JqqbJoDNDwK71JgsMcaH5nDGVCH5CW28th7H1IQYeMigmOoRksmmj0nCk+E00fJT8q0xVLUei2aYZKdqg9PD+hA77Keggh05H+zdjHsvSLDVKFxZU03cuRTeW6VaDom3isyxkv8H5K8ExzK7LITROGdcXqRGP2fH6gTHHkzAKib35cudYiDffJ4jLieXRNyJuEXGPAV2DVnzoasRf9I8jNrAgfE+SyLbKdXBQpsQHah9wA2AKJE7Y/1EBvCEGcoeQAAAAOqLlTY/9EJwE09j8WWBfUhMU068tbsSy8NWKYTuP1HvalmMCFsq+RXJGVZGz+Eia7JXfA9U1IdBQM5vb90vuEQ</RefreshToken>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACoicdsg/288JULaK989eFIOJ/VsS7Hkbuc6L+J86Lu/AAAAAAOgAAAAAIAACAAAABvjR0Tyhj855oUxb6rRbjVIDrkbQ6NS0JqAxkuh7BU3NAAAACkFysWmuAdOWXEL6SAzRt+/EG9x6cfM17hfp/6DlabGDYyq3kKCPiq4SIrClqnGpybq7Q4KzZASaS6CJ+LvQQPQNrWQ+pE1waWV3VrsX6b9KkjK9OTUsEdIAnb0dh00k1TZ3PgMU6rvbWA87D+WlvhA3d7S5kvscFjXMERAFjheG4UanTFoAzGPpjzAKRu0IOtQ3PwuR+Rn0y6uVbF5OF2NBb/KbdcxNvjjLWZSIDB0MTuCA0AtsUnErn0L7boGBfYQeV7ceRA/g6VS9bQWbq6QAAAACfOWNNnNXNQ9V9N4Rv8RG5NjiXE3nMgXGQDEderNWjRZaXh+FwO299FfaSTBR3SoeIfbeTko8ZyE57X7F1MT1A</RefreshToken>
         </ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -69,7 +69,7 @@
         <DTS:Property
           DTS:DataType="8"
           DTS:Name="ParameterValue"
-          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADSHhAKJMgWTsI8gBGXjwK16Q5vIm0L71Zw9EODwZjGLAAAAAAOgAAAAAIAACAAAADg0AAAfM+IG0kJeH51lbEmyXootgH/MdfIlAG2hjMF0LABAAC2jAc7XMaJ4D21mjXS0/aiebv5jNRIqzF5h87qzoFtafGLEnh6n6vFpUmwt31J1MzhG6Ng0XZHUgTcDB631gopPbMwOsEWA0BM4TFtWYuEkeLgLcJ1jGaxEtk2SipoLI7Cn238MxY+VrFlQ/STHT8qzHRLlm+rfxAX7wSi438nJZzV7Hk07rUzmgYDl/JrxmQe65CqrhjYRI9jVJjzT0rEdI8wHtZfCWUXX37HtmY0YlPnI3FLzCGprSqzEFKaspCaf1KWG/zclfTK9uqz6slwrvjJ+IKCfRCNwXPDA95BgYRsphzR2UCBfgQGunlrlFpwgY2w+TBCeWwh5qqFFgbdBc6TDF5pR/H1cu/beluo3e75FLvYVc0ukwbnT9VWHgqD724YKbjpqy9GgDQC8/7wM7ymC2sbBvA1jmF8CPtwCYY2lzrWvy6PJQVQhmSRL3jX3DGcJG6Sc3POa2cMa24mkHrOUL71U/tPKvD693F+Ea7ek/IVAHZ7BJbJ+8/0z+/qBT5KmN93yLTYVWTzf7j2MWw88zRxSHonFcliuLcDI2M0xFQy6XLh5zb2pZETWeBAAAAAgpCzA8SaD9yHwa0wv2sjbV+MGTmMUhk6se7dWcgZ6jrdDNJlSaxYWtLjt+HQcZBhOuSNzsry8lcsXc7dFDM/cA</DTS:Property>
+          Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACZ0P8g3i5zDbzFz1eg0ibUblWz3IgX8Vd25QydjZxDZwAAAAAOgAAAAAIAACAAAAB4z2OEHixQlP/F60lZCBy6cKGhyPjNCpuQF88dt6dp/rABAABCBu+GHAqeePX1ZBf3v6TLLv9Mpu3OexEuG8akOOjIpAw9z3EaYaMXDVXpKBb3AR7U0nEiPgPHyQD2x8I1aJ3piV9sTT58eKLECCDkNLUJ6h15lFy6YsOLvf8uO8/l3kkqI9WGSGZ6eToPehzxgfTo8MtbLOlYAMtiLWbsNZg997oZNkk8PEahdUbOxWJMyUgZXza3KpZE5y+GVRGifTB4v0MQS+j8elGkLKLu4cSZp2qPxlbfCXPKP2OH9BcGl6edcZHDA6sUlA+3mQVQUMuft50eg1KB0s+jbKEOYHg8wZd5MczEw0VZ+783LMDtmfQqo4Q4/mehruYJQQRB0WDtGmhTEOLDtDrKlE0ie72vBzokKciDsTjuXYGHASNFCx/4enozHww+p4zI6rEXwTIWtuIoYEPg1eDWTLF4w/4hxmKF3BEwgVDX0OB7meEitSLkFKCxejAuz28ErgnEkakLbcdOLUokI2luHpo4m+hB1XuWNxMgiu8m5Wx7H8uT7dZF/CI1OwRnJJyHdgPieaR7supNd9+qjJCx5lvpZKBLZrhdhg0vCZY8UwvJ4ZgnZQJAAAAASWRVdiTNhHU/H93IehOdhgiXBRS4H2jf41rL/HE4qcssvKxnYYzghTLr9bYh8w6OO47Uwwe7W4iP33jcYefBvg</DTS:Property>
       </DTS:Property>
     </DTS:PackageParameter>
     <DTS:PackageParameter
@@ -77,6 +77,15 @@
       DTS:DataType="8"
       DTS:DTSID="{29268144-AD68-490B-BAEA-80BD045DA77E}"
       DTS:ObjectName="OAuth1_LW_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-c0lkhalesh05uuhoqpj1euja5v258g66.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{C08618EC-8841-452C-B269-CEF4A9A4FB73}"
+      DTS:ObjectName="OAuth1_LW_ConnectionString1">
       <DTS:Property
         DTS:DataType="8"
         DTS:Name="ParameterValue">Provider=GoogleSheets;OAuthVersion=Default;ScopeSeparator={space};ReturnUrl=;ExtraAttributesForTokenRequest=;ExtraAttributesForAuthRequest=;TokenRefreshMode=Default;SslVersion=Default;Prop1Name=;Prop1Value=;Prop2Name=;Prop2Value=;GrantType=Default;UserName=;DoNotIncludeCredentialsInHeader=False;DoNotIncludeCredentialsInBody=False;DoNotIncludeEmptyParamsInSignature=False;SignatureMethod=;ContentType=;ExpiresInAttribute=;AccessTokenAttrName=;RenewBeforeSec=0;AuthUrl=;TokenUrl=;RequestTokenUrl=;ClientId=704225581094-c0lkhalesh05uuhoqpj1euja5v258g66.apps.googleusercontent.com;Scope=https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly;Timeout=100000;UseCustomApp=True;CustomAuthHeader=;CustomTokenPrefix=;EnableOAuthOverUrl=False;RefreshTokenFilePath=;RetryMode=None;RetryCountMax=3;RetryWaitTimeMs=2000;RetryMultiplyWaitTime=False;RetryMessageList=;RetryStatusCodeList=;RetainSameConnection=False;UseClientCertificate=False;CertificatePath=;CertificateStorageType=CurrentUser;CertificateStoreName=My;CertificateThumbprint=;UseProxy=False;ProxyUrl=;UseProxyCreds=False;ProxyUserName=;DoNotUseDefaultProxy=False</DTS:Property>
@@ -5006,7 +5015,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="191.2,44"
           Id="Package\Delete_Duplicate_Record_At_Destination"
-          TopLeft="443.571436125406,441.235300305804" />
+          TopLeft="454.285722022155,440.470594412726" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\DFT_LendingWise"
@@ -5018,33 +5027,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Truncate_Stg_LW"
-          TopLeft="55.7142866630947,52.0000007292804" />
+          TopLeft="34.2857148695968,61.9411773392899" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="136.914286663095,93.6000007292804">
+          TopLeft="115.485714869597,103.54117733929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.285716146839,84.5764723578137"
+              EndConnector="130.714287940336,74.6352957478041"
               Start="0,0"
-              End="109.285716146839,77.0764723578137">
+              End="130.714287940336,67.1352957478041">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.2882361789069" />
+                    End="0,33.317647873902" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.2882361789069"
-                    Point2="0,42.2882361789069"
-                    Point3="4,42.2882361789069" />
+                    Point1="0,33.317647873902"
+                    Point2="0,37.317647873902"
+                    Point3="4,37.317647873902" />
                   <mssgle:LineSegment
-                    End="105.285716146839,42.2882361789069" />
+                    End="126.714287940336,37.317647873902" />
                   <mssgle:CubicBezierSegment
-                    Point1="105.285716146839,42.2882361789069"
-                    Point2="109.285716146839,42.2882361789069"
-                    Point3="109.285716146839,46.2882361789069" />
+                    Point1="126.714287940336,37.317647873902"
+                    Point2="130.714287940336,37.317647873902"
+                    Point3="130.714287940336,41.317647873902" />
                   <mssgle:LineSegment
-                    End="109.285716146839,77.0764723578137" />
+                    End="130.714287940336,67.1352957478041" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5093,26 +5102,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="159.685716828036,94.5176489678209"
+              EndConnector="170.400002724785,93.7529430747434"
               Start="0,0"
-              End="159.685716828036,87.0176489678209">
+              End="170.400002724785,86.2529430747434">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.2588244839104" />
+                    End="0,42.8764715373717" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,43.2588244839104"
-                    Point2="0,47.2588244839104"
-                    Point3="4,47.2588244839104" />
+                    Point1="0,42.8764715373717"
+                    Point2="0,46.8764715373717"
+                    Point3="4,46.8764715373717" />
                   <mssgle:LineSegment
-                    End="155.685716828036,47.2588244839104" />
+                    End="166.400002724785,46.8764715373717" />
                   <mssgle:CubicBezierSegment
-                    Point1="155.685716828036,47.2588244839104"
-                    Point2="159.685716828036,47.2588244839104"
-                    Point3="159.685716828036,51.2588244839104" />
+                    Point1="166.400002724785,46.8764715373717"
+                    Point2="170.400002724785,46.8764715373717"
+                    Point3="170.400002724785,50.8764715373717" />
                   <mssgle:LineSegment
-                    End="159.685716828036,87.0176489678209" />
+                    End="170.400002724785,86.2529430747434" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5194,7 +5203,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\DFT_LendingWise\Row Count"
-          TopLeft="610.357153251464,445.176476551174" />
+          TopLeft="615.714296199838,446.132358917521" />
         <NodeLayout
           Size="195.2,41.6"
           Id="Package\DFT_LendingWise\JSON Source (REST API or File)"
@@ -5202,49 +5211,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="230.4,41.6"
           Id="Package\DFT_LendingWise\DataConversion_MarketSource"
-          TopLeft="113.928573368763,135.544119548014" />
+          TopLeft="114.821430526825,135.544119548014" />
         <NodeLayout
           Size="165.6,41.6"
           Id="Package\DFT_LendingWise\MarketSource_LKP"
-          TopLeft="253.571432889724,217.825213071632" />
+          TopLeft="255.357147205849,217.825213071632" />
         <NodeLayout
           Size="131.2,41.6"
           Id="Package\DFT_LendingWise\FundedTier"
-          TopLeft="496.071437019476,373.89118166939" />
+          TopLeft="509.464294390412,373.89118166939" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\DFT_LendingWise\SourceTo_Stg_LW"
-          TopLeft="733.112257382784,531.033620892923" />
+          TopLeft="752.755114860157,533.901267991964" />
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\DFT_LendingWise\Audit"
           TopLeft="407.397966121618,305.445382435017" />
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[Row Count Output 1]"
-          TopLeft="675.157153251463,486.776476551174">
+          TopLeft="680.514296199838,487.732358917521">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="140.355104131321,44.2571443417488"
+              EndConnector="154.640818660319,46.1689090744432"
               Start="0,0"
-              End="140.355104131321,36.7571443417488">
+              End="154.640818660319,38.6689090744432">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.1285721708744" />
+                    End="0,19.0844545372216" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.1285721708744"
-                    Point2="0,22.1285721708744"
-                    Point3="4,22.1285721708744" />
+                    Point1="0,19.0844545372216"
+                    Point2="0,23.0844545372216"
+                    Point3="4,23.0844545372216" />
                   <mssgle:LineSegment
-                    End="136.355104131321,22.1285721708744" />
+                    End="150.640818660319,23.0844545372216" />
                   <mssgle:CubicBezierSegment
-                    Point1="136.355104131321,22.1285721708744"
-                    Point2="140.355104131321,22.1285721708744"
-                    Point3="140.355104131321,26.1285721708744" />
+                    Point1="150.640818660319,23.0844545372216"
+                    Point2="154.640818660319,23.0844545372216"
+                    Point3="154.640818660319,27.0844545372216" />
                   <mssgle:LineSegment
-                    End="140.355104131321,36.7571443417488" />
+                    End="154.640818660319,38.6689090744432" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5255,37 +5264,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[Lookup Match Output]"
-          TopLeft="336.371432889724,259.425213071632">
+          TopLeft="338.157147205849,259.425213071632">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="135.826533231893,46.0201693633848"
+              EndConnector="134.040818915769,46.020169363385"
               Start="0,0"
-              End="135.826533231893,38.5201693633848">
+              End="134.040818915769,38.520169363385">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.0100846816924" />
+                    End="0,19.0100846816925" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.0100846816924"
-                    Point2="0,23.0100846816924"
-                    Point3="4,23.0100846816924" />
+                    Point1="0,19.0100846816925"
+                    Point2="0,23.0100846816925"
+                    Point3="4,23.0100846816925" />
                   <mssgle:LineSegment
-                    End="131.826533231893,23.0100846816924" />
+                    End="130.040818915769,23.0100846816925" />
                   <mssgle:CubicBezierSegment
-                    Point1="131.826533231893,23.0100846816924"
-                    Point2="135.826533231893,23.0100846816924"
-                    Point3="135.826533231893,27.0100846816924" />
+                    Point1="130.040818915769,23.0100846816925"
+                    Point2="134.040818915769,23.0100846816925"
+                    Point3="134.040818915769,27.0100846816925" />
                   <mssgle:LineSegment
-                    End="135.826533231893,38.5201693633848" />
+                    End="134.040818915769,38.520169363385" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="19.7218798971965,28.0100846816924,96.3827734375,11.609375"
+              BoundingBox="18.8290227391346,28.0100846816925,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5295,9 +5304,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.635715784954,46.4310936603579"
+              EndConnector="106.528572943016,46.4310936603579"
               Start="0,0"
-              End="105.635715784954,38.9310936603579">
+              End="106.528572943016,38.9310936603579">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5308,13 +5317,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
                     Point2="0,23.215546830179"
                     Point3="4,23.215546830179" />
                   <mssgle:LineSegment
-                    End="101.635715784954,23.215546830179" />
+                    End="102.528572943016,23.215546830179" />
                   <mssgle:CubicBezierSegment
-                    Point1="101.635715784954,23.215546830179"
-                    Point2="105.635715784954,23.215546830179"
-                    Point3="105.635715784954,27.215546830179" />
+                    Point1="102.528572943016,23.215546830179"
+                    Point2="106.528572943016,23.215546830179"
+                    Point3="106.528572943016,27.215546830179" />
                   <mssgle:LineSegment
-                    End="105.635715784954,38.9310936603579" />
+                    End="106.528572943016,38.9310936603579" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5325,30 +5334,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[Derived Column Output1]"
-          TopLeft="561.671437019476,415.49118166939">
+          TopLeft="575.064294390412,415.49118166939">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="113.485716231988,29.6852948817837"
+              EndConnector="105.450001809426,30.641177248131"
               Start="0,0"
-              End="113.485716231988,22.1852948817837">
+              End="105.450001809426,23.141177248131">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.8426474408919" />
+                    End="0,11.3205886240655" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.8426474408919"
-                    Point2="0,14.8426474408919"
-                    Point3="4,14.8426474408919" />
+                    Point1="0,11.3205886240655"
+                    Point2="0,15.3205886240655"
+                    Point3="4,15.3205886240655" />
                   <mssgle:LineSegment
-                    End="109.485716231988,14.8426474408919" />
+                    End="101.450001809426,15.3205886240655" />
                   <mssgle:CubicBezierSegment
-                    Point1="109.485716231988,14.8426474408919"
-                    Point2="113.485716231988,14.8426474408919"
-                    Point3="113.485716231988,18.8426474408919" />
+                    Point1="101.450001809426,15.3205886240655"
+                    Point2="105.450001809426,15.3205886240655"
+                    Point3="105.450001809426,19.3205886240655" />
                   <mssgle:LineSegment
-                    End="113.485716231988,22.1852948817837" />
+                    End="105.450001809426,23.141177248131" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5359,30 +5368,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_LendingWise.Paths[Derived Column Output]"
-          TopLeft="229.128573368763,177.144119548014">
+          TopLeft="230.021430526825,177.144119548014">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="107.242859520962,40.6810935236178"
+              EndConnector="108.135716679023,40.681093523618"
               Start="0,0"
-              End="107.242859520962,33.1810935236178">
+              End="108.135716679023,33.181093523618">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.3405467618089" />
+                    End="0,16.340546761809" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.3405467618089"
-                    Point2="0,20.3405467618089"
-                    Point3="4,20.3405467618089" />
+                    Point1="0,16.340546761809"
+                    Point2="0,20.340546761809"
+                    Point3="4,20.340546761809" />
                   <mssgle:LineSegment
-                    End="103.242859520962,20.3405467618089" />
+                    End="104.135716679023,20.340546761809" />
                   <mssgle:CubicBezierSegment
-                    Point1="103.242859520962,20.3405467618089"
-                    Point2="107.242859520962,20.3405467618089"
-                    Point3="107.242859520962,24.3405467618089" />
+                    Point1="104.135716679023,20.340546761809"
+                    Point2="108.135716679023,20.340546761809"
+                    Point3="108.135716679023,24.340546761809" />
                   <mssgle:LineSegment
-                    End="107.242859520962,33.1810935236178" />
+                    End="108.135716679023,33.181093523618" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5397,26 +5406,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="89.4734708978581,26.8457992343734"
+              EndConnector="102.866328268794,26.845799234373"
               Start="0,0"
-              End="89.4734708978581,19.3457992343734">
+              End="102.866328268794,19.345799234373">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.42289961718672" />
+                    End="0,9.42289961718649" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.42289961718672"
-                    Point2="0,13.4228996171867"
-                    Point3="4,13.4228996171867" />
+                    Point1="0,9.42289961718649"
+                    Point2="0,13.4228996171865"
+                    Point3="4,13.4228996171865" />
                   <mssgle:LineSegment
-                    End="85.4734708978581,13.4228996171867" />
+                    End="98.8663282687941,13.4228996171865" />
                   <mssgle:CubicBezierSegment
-                    Point1="85.4734708978581,13.4228996171867"
-                    Point2="89.4734708978581,13.4228996171867"
-                    Point3="89.4734708978581,17.4228996171867" />
+                    Point1="98.8663282687941,13.4228996171865"
+                    Point2="102.866328268794,13.4228996171865"
+                    Point3="102.866328268794,17.4228996171865" />
                   <mssgle:LineSegment
-                    End="89.4734708978581,19.3457992343734" />
+                    End="102.866328268794,19.345799234373" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

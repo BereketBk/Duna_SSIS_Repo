@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Salesforce Connection Manager"
+  DTS:DTSID="{5BBE06C8-A0FE-460E-B3A5-97405CE721EA}"
+  DTS:CreationName="Salesforce (KingswaySoft)">
+  <DTS:ObjectData>
+    <SalesforceConnectionManager
+      ConnectionString="InstanceType=Sandbox;AuthenticationType=AuthorizationCode;ServiceEndpoint=SOAP;TokenPath=;ClientId=;RedirectUri=;CertificateThumbprint=;UserName=salesforce@dunallc.com.sandboxdev;ServiceTimeout=120;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ProxyUsername=;RetryOnIntermittentErrors=True"
+      ConnectByProxy="False">
+      <Password
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAAC5kCS8YWEQeNf2UlUC3H7G54nbeyuF6JVcmzoiDCT8yQAAAAAOgAAAAAIAACAAAACLkmYgbnVxZTfrtyrOdzXniHgyC3OKqJ1RNsu1iNbSImAAAABM9ApaXmp7A2lc7CswoT6JnNitkWnpvGvtNwTShYU+7T5pFYNmo1A11GVbd/HImrgO/aNIA8+uE25z5nOO/lp7nl04SEtnnjCKBKBi8iHcHCgkFYvIDxYK/I4cvky/moxAAAAA4pJ72jCLe34rLimfiRnUbcUQ2czhPJtEu/kK3QCeP/fTqp++0VQmDy0H4RKRK+Qv5o6kYVBBoDLpBq/Qyt8hcg==</Password>
+      <SecurityToken
+        Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArWp9R9QT/0qON3fqZhErmAAAAAACAAAAAAAQZgAAAAEAACAAAABZ/q4N1Ox58UyzrkCkzIovfqyVQC2cCynsKb3lUTfKtAAAAAAOgAAAAAIAACAAAABrHdK1Yk1zn+sRg/JuzoJtUbeFu3QlQ8xydQYR5Ud/hHAAAABygpOpAT0506IYepfgzUlxLNT8oGn+gFvayAQSF0mvitz1ihvGePTYoy0bhvt/wMPsgE/EdwQcSF/3Ytcr3abTJdo7PpwvnlasLgrBiX5MYdryaTW8UHaUKqlhvx0ph/FsEym8OVA14XxXWH2Ak8Q/QAAAAJCPy0qheAFdfrkP9MPjqhBRgJMnU1raGYwkTX00oXcZX1AhV3H/izzG0iTRfuADV47qBl/zS2aSAdwzDCYMpco=</SecurityToken>
+    </SalesforceConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
